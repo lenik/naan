@@ -3,12 +3,12 @@
 pkgname=naan
 pkgver=0.0.0
 pkgrel=1
-pkgdesc="Meson-based CLI template"
-arch=('any')
+pkgdesc="Compute a number from a name"
+arch=('x86_64')
 url="https://github.com/lenik/naan"
 license=('AGPL-3.0-or-later')
-depends=('bash')
-makedepends=('meson' 'ninja' 'asciidoctor')
+depends=('openssl')
+makedepends=('meson' 'ninja' 'gettext' 'asciidoctor')
 source=()
 sha256sums=()
 

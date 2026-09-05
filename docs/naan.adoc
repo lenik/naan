@@ -1,0 +1,130 @@
+= naan(1)
+{project-author} <{project-email}>
+:doctype: manpage
+:manmanual: User Commands
+:mansource: naan
+:man-linkstyle: pass:[blue R < >]
+
+== Name
+
+naan - compute a number from a name
+
+== Synopsis
+
+*naan* [_OPTION_]... _NAME_...
+
+== Description
+
+*naan* (name as a number) hashes each _NAME_ and prints one decimal number
+per argument.
+
+The number is:
+
+  (digest(NAME) mod DIV) + BIAS
+
+The digest is interpreted as a big-endian integer.  The default hash is
+SHA-256.  The default range is profile *w* (`DIV=65536`, `BIAS=0`).
+
+== Options
+
+*-5, --md5*::
+    Use MD5.
+
+*-1, --sha1*::
+    Use SHA-1.
+
+*--sha224*::
+    Use SHA-224.
+
+*-2, --sha256*::
+    Use SHA-256 (default).
+
+*--sha384*::
+    Use SHA-384.
+
+*-8, --sha512*::
+    Use SHA-512.
+
+*-3, --sha3-256*::
+    Use SHA3-256.
+
+*--sha3-512*::
+    Use SHA3-512.
+
+*--blake2s*::
+    Use BLAKE2s.
+
+*--blake2b*::
+    Use BLAKE2b.
+
+*--ripemd160*::
+    Use RIPEMD-160.
+
+*--crc16*::
+    Use CRC-16/CCITT-FALSE (poly `0x1021`, init `0xFFFF`).
+
+*-c, --crc32*::
+    Use CRC-32/ISO-HDLC (the zlib/PNG polynomial).
+
+*-m, --mod* _DIV_::
+    Modulus.  Default is `65536` (profile *w*).
+    Accepts decimal or `0x` hex, with an optional `k`/`m`/`g` suffix
+    (powers of 1024).  Example: `4G` is 4294967296.
+
+*-b, --bias* _BIAS_::
+    Value added after reduction.  Default is `0`.  Same number syntax as
+    *--mod*.  `DIV` must be greater than 0.
+
+*-p, --profile* _NAME_::
+    Set `DIV` and `BIAS` from a predefined profile.  Later *--mod* or
+    *--bias* options override the profile values.
+
+*-h, --help*::
+    Print help and exit.
+
+*--version*::
+    Print version and exit.
+
+== Profiles
+
+*b*::
+    `DIV=256` `BIAS=0` (byte).
+
+*w*::
+    `DIV=65536` `BIAS=0` (word).  This is the default.
+
+*dw*::
+    `DIV=4G` `BIAS=0` (double word).
+
+*wm*::
+    `DIV=2000` `BIAS=2000` (2000 through 3999).
+
+== Examples
+
+Compute the default 16-bit number for a name:
+
+  $ naan hello
+  38948
+
+Use MD5 and the byte profile:
+
+  $ naan -5 -p b hello
+  146
+
+Keep numbers in 2000 through 3999:
+
+  $ naan -p wm hello
+  3620
+
+== Exit status
+
+*0*::
+    Success.
+
+*1*::
+    Invalid options, missing name, or a write error.
+
+== Copyright
+
+Copyright (C) {project-year} {project-author} <{project-email}>.
+License AGPL-3.0-or-later.

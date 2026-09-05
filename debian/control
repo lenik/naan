@@ -2,7 +2,8 @@ Source: naan
 Section: utils
 Priority: optional
 Maintainer: Lenik <naan@bodz.net>
-Build-Depends: debhelper-compat (= 13), meson, ninja-build, pkgconf, asciidoctor
+Build-Depends: debhelper-compat (= 13), meson, ninja-build, pkgconf,
+               libssl-dev, gettext, asciidoctor
 Standards-Version: 4.6.0
 Homepage: https://github.com/lenik/naan
 Rules-Requires-Root: no
@@ -12,7 +13,7 @@ Architecture: any
 Depends:
     ${shlibs:Depends},
     ${misc:Depends}
-Description: Simple C CLI project template with example app
- naan is a Meson-based template for small C command-line utilities
- (no shared/static library packaging). It ships the some_puff1 example
- application, AsciiDoc man pages, bash completion, and Debian packaging.
+Description: compute a number from a name
+ naan hashes each name and prints one decimal number:
+ (digest(NAME) mod DIV) + BIAS. SHA-256 is the default hash;
+ profiles set common DIV/BIAS ranges (byte, word, dword, wm).

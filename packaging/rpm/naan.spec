@@ -7,7 +7,7 @@
 Name:           naan
 Version:        %{version}
 Release:        1%{?dist}
-Summary:        Simple C CLI project template with example app
+Summary:        compute a number from a name
 
 License:        AGPL-3.0-or-later
 URL:            https://github.com/lenik/naan
@@ -17,12 +17,14 @@ Source0:        %{name}-%{srcversion}.tar.xz
 BuildRequires:  meson
 BuildRequires:  ninja-build
 BuildRequires:  pkgconf
+BuildRequires:  openssl-devel
+BuildRequires:  gettext
 BuildRequires:  asciidoctor
 
 %description
-naan is a Meson-based template for small C command-line utilities
-(no shared/static library packaging). It ships the some_puff1 example
-application, AsciiDoc man pages, bash completion, and Debian packaging.
+naan hashes each name and prints one decimal number:
+(digest(NAME) mod DIV) + BIAS. SHA-256 is the default hash;
+profiles set common DIV/BIAS ranges (byte, word, dword, wm).
 
 %prep
 %setup -q -n %{name}-%{srcversion}
@@ -42,9 +44,11 @@ meson compile -C build
 meson install -C build --destdir=%{buildroot}
 
 %files
-%{_bindir}/some_puff1
-%{_datadir}/bash-completion/completions/some_puff1
-%{_mandir}/man1/some_puff1.1*
+%{_bindir}/naan
+%{_datadir}/bash-completion/completions/naan
+%{_mandir}/man1/naan.1*
+%{_mandir}/*/man1/naan.1*
+%{_datadir}/locale/*/LC_MESSAGES/naan.mo
 %{_datadir}/doc/%{name}/
 
 %changelog

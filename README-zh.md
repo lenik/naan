@@ -1,32 +1,74 @@
-本文件由模板生成。
-除项目名称和程序名称外，其余内容均为占位符。
-请根据当前项目的具体情况重写此文档。
-
 # naan
 
-`naan` 是一个简单的基于 Meson 的 **C 命令行** 模板（不含共享/静态库打包）。  
-`some_puff1` 是示例应用；可在 `meson.build` 的 `app_sources` 中继续添加应用。
+`naan`（name as a number）把名字哈希成一个数字。
+
+```bash
+naan [OPTION]... NAME...
+```
+
+每个参数输出一行：
+
+```
+number = (digest(NAME) mod DIV) + BIAS
+```
+
+摘要按大端整数解释。默认哈希为 SHA-256。
+默认范围是 profile `w`（`DIV=65536`，`BIAS=0`）。
+
+## 选项
+
+| 选项 | 含义 |
+|------|------|
+| `-5`, `--md5` | MD5 |
+| `-1`, `--sha1` | SHA-1 |
+| `--sha224` | SHA-224 |
+| `-2`, `--sha256` | SHA-256（默认） |
+| `--sha384` | SHA-384 |
+| `-8`, `--sha512` | SHA-512 |
+| `-3`, `--sha3-256` | SHA3-256 |
+| `--sha3-512` | SHA3-512 |
+| `--blake2s` | BLAKE2s |
+| `--blake2b` | BLAKE2b |
+| `--ripemd160` | RIPEMD-160 |
+| `--crc16` | CRC-16/CCITT-FALSE |
+| `-c`, `--crc32` | CRC-32/ISO-HDLC |
+| `-m`, `--mod DIV` | 模数（默认 65536） |
+| `-b`, `--bias BIAS` | 约简后加上的偏置（默认 0） |
+| `-p`, `--profile NAME` | 预设 `DIV` 与 `BIAS` |
+
+`DIV` 和 `BIAS` 可以是十进制或 `0x` 十六进制，并可带 `k`/`m`/`g`
+后缀（1024 的幂）。
+
+帮助文本与 man 页已覆盖 L3 语言（第一至第三档）。
+
+## 预置 profile
+
+| Profile | DIV | BIAS |
+|---------|-----|------|
+| `b` | 256 | 0 |
+| `w`（默认） | 65536 | 0 |
+| `dw` | 4G（4294967296） | 0 |
+| `wm` | 2000 | 2000 |
+
+## 示例
+
+```bash
+naan hello
+naan -5 -p b alice bob
+naan -p wm service-name
+```
 
 ## 仓库结构
 
-- `src/` - 应用源码（`some_puff1.c`）与小型辅助模块（`commons.c`）
-- `tests/` - 最小化单元测试（不依赖 Check）
-- `debian/` - Debian 打包元数据
+- `src/` - 应用源码（`naan.c`）与辅助模块（`name_number.c`）
+- `tests/` - 单元测试与命令行测试
 - `docs/` - AsciiDoc man 页源文件
 - `meson.build` - 顶层构建定义
-
-## 示例应用：`some_puff1`
-
-```bash
-some_puff1 [OPTION]... [FILE]...
-```
-
-类似 `cat`：将文件拼接输出到 stdout。支持 `-v`/`--verbose`、`-q`/`--quiet`、`-h`/`--help`、`--version`。
 
 ## 构建
 
 ```bash
-sudo apt install meson ninja-build gcc pkg-config asciidoctor
+sudo apt install meson ninja-build gcc pkg-config libssl-dev gettext asciidoctor
 meson setup /build
 ninja -C /build
 meson test -C /build

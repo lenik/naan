@@ -1,32 +1,74 @@
-THIS FILE IS GENERATED FROM A TEMPLATE.
-Except for the project and program names, all content is placeholder text.
-Please rewrite this file to reflect the specific details of the current project.
-
 # naan
 
-`naan` is a simple Meson-based **C CLI** template (no shared/static library packaging).
-`some_puff1` is one **example app**; more apps can be added via `app_sources` in `meson.build`.
+`naan` (name as a number) hashes a name and prints a number.
+
+```bash
+naan [OPTION]... NAME...
+```
+
+Each argument prints one line:
+
+```
+number = (digest(NAME) mod DIV) + BIAS
+```
+
+The digest is treated as a big-endian integer.  Default hash is SHA-256.
+Default range is profile `w` (`DIV=65536`, `BIAS=0`).
+
+## Options
+
+| Option | Meaning |
+|--------|---------|
+| `-5`, `--md5` | MD5 |
+| `-1`, `--sha1` | SHA-1 |
+| `--sha224` | SHA-224 |
+| `-2`, `--sha256` | SHA-256 (default) |
+| `--sha384` | SHA-384 |
+| `-8`, `--sha512` | SHA-512 |
+| `-3`, `--sha3-256` | SHA3-256 |
+| `--sha3-512` | SHA3-512 |
+| `--blake2s` | BLAKE2s |
+| `--blake2b` | BLAKE2b |
+| `--ripemd160` | RIPEMD-160 |
+| `--crc16` | CRC-16/CCITT-FALSE |
+| `-c`, `--crc32` | CRC-32/ISO-HDLC |
+| `-m`, `--mod DIV` | modulus (default 65536) |
+| `-b`, `--bias BIAS` | added after reduction (default 0) |
+| `-p`, `--profile NAME` | preset `DIV` and `BIAS` |
+
+`DIV` and `BIAS` accept decimal or `0x` hex, with optional `k`/`m`/`g`
+(powers of 1024).
+
+Help text and man pages are translated for L3 locales (Tier I–III).
+
+## Profiles
+
+| Profile | DIV | BIAS |
+|---------|-----|------|
+| `b` | 256 | 0 |
+| `w` (default) | 65536 | 0 |
+| `dw` | 4G (4294967296) | 0 |
+| `wm` | 2000 | 2000 |
+
+## Examples
+
+```bash
+naan hello
+naan -5 -p b alice bob
+naan -p wm service-name
+```
 
 ## Repository layout
 
-- `src/` - application sources (`some_puff1.c`) and small helpers (`commons.c`)
-- `tests/` - minimal unit tests (no Check dependency)
-- `debian/` - Debian packaging metadata
-- `docs/` - AsciiDoc man page sources (`docs/*.adoc`)
+- `src/` - application sources (`naan.c`) and helpers (`name_number.c`)
+- `tests/` - unit and CLI tests
+- `docs/` - AsciiDoc man page sources
 - `meson.build` - top-level build definition
-
-## Example app: `some_puff1`
-
-```bash
-some_puff1 [OPTION]... [FILE]...
-```
-
-Cat-like: concatenates files to stdout. Supports `-v`/`--verbose`, `-q`/`--quiet`, `-h`/`--help`, `--version`.
 
 ## Build
 
 ```bash
-sudo apt install meson ninja-build gcc pkg-config asciidoctor
+sudo apt install meson ninja-build gcc pkg-config libssl-dev gettext asciidoctor
 meson setup /build
 ninja -C /build
 meson test -C /build
@@ -36,5 +78,5 @@ meson test -C /build
 
 Copyright (C) 2026 Lenik <naan@bodz.net>
 
-Licensed under **AGPL-3.0-or-later**.  
+Licensed under **AGPL-3.0-or-later**.
 See `LICENSE` for the full text and supplemental project terms.
