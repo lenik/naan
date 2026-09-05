@@ -1,3 +1,13 @@
+naan (1.0.0) unstable; urgency=medium
+
+  * First stable release.
+  * Profiles now bind a hash as well as DIV and BIAS: b, w, and dw use
+    SHA-256; wm uses SHA-1 with DIV=2000 and BIAS=2000 (2000 through 3999).
+  * A later hash, --mod, or --bias option still overrides the matching
+    profile field.
+
+ -- Lenik (谢继雷) <lenik@bodz.net>  Sun, 06 Sep 2026 07:45:20 +0800
+
 naan (0.1.0) unstable; urgency=medium
 
   * Implement naan: print (digest(NAME) mod DIV) + BIAS for each name.
