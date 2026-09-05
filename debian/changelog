@@ -1,5 +1,16 @@
+naan (0.1.0) unstable; urgency=medium
+
+  * Implement naan: print (digest(NAME) mod DIV) + BIAS for each name.
+  * Add digest algorithms: MD5, SHA-1/224/256/384/512, SHA3-256/512,
+    BLAKE2s, BLAKE2b, RIPEMD-160, CRC-16/CCITT-FALSE, and CRC-32/ISO-HDLC.
+  * Add range profiles b, w (default), dw, and wm (2000 through 3999).
+  * Translate help and man pages for L3 locales (Tier I–III primaries).
+  * Build-depend on libssl-dev and gettext; ship locale catalogs.
+
+ -- Lenik (谢继雷) <lenik@bodz.net>  Sun, 06 Sep 2026 07:37:05 +0800
+
 naan (0.0.1) unstable; urgency=medium
 
   * Initial release
 
- -- Lenik <pub.lenik@bodz.net>  Sun, 06 Sep 2026 07:10:18 +0800
+ -- Lenik (谢继雷) <lenik@bodz.net>  Sun, 06 Sep 2026 07:10:18 +0800
