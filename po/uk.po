@@ -1,0 +1,113 @@
+# Copyright (C) 2026 Lenik <naan@bodz.net>
+# SPDX-License-Identifier: AGPL-3.0-or-later
+msgid ""
+msgstr ""
+"Project-Id-Version: naan\n"
+"Report-Msgid-Bugs-To: naan@bodz.net\n"
+"POT-Creation-Date: 2026-09-06 07:28+0800\n"
+"PO-Revision-Date: 2026-09-06 07:28+0800\n"
+"Last-Translator: Lenik <naan@bodz.net>\n"
+"Language-Team: Ukrainian\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "License AGPL-3.0-or-later: GNU AGPL version 3 or later"
+msgstr "Ліцензія AGPL-3.0-or-later: GNU AGPL версії 3 або новішої"
+
+msgid "Usage: %s [OPTION]... NAME...\n"
+msgstr "Використання: %s [ПАРАМЕТР]... ІМ'Я...\n"
+
+msgid "Compute a number from each name."
+msgstr "Обчислює число з кожного імені."
+
+msgid "  -5, --md5           hash with MD5"
+msgstr "  -5, --md5           хешувати MD5"
+
+msgid "  -1, --sha1          hash with SHA-1"
+msgstr "  -1, --sha1          хешувати SHA-1"
+
+msgid "      --sha224        hash with SHA-224"
+msgstr "      --sha224        хешувати SHA-224"
+
+msgid "  -2, --sha256        hash with SHA-256 (default)"
+msgstr "  -2, --sha256        хешувати SHA-256 (типово)"
+
+msgid "      --sha384        hash with SHA-384"
+msgstr "      --sha384        хешувати SHA-384"
+
+msgid "  -8, --sha512        hash with SHA-512"
+msgstr "  -8, --sha512        хешувати SHA-512"
+
+msgid "  -3, --sha3-256      hash with SHA3-256"
+msgstr "  -3, --sha3-256      хешувати SHA3-256"
+
+msgid "      --sha3-512      hash with SHA3-512"
+msgstr "      --sha3-512      хешувати SHA3-512"
+
+msgid "      --blake2s       hash with BLAKE2s"
+msgstr "      --blake2s       хешувати BLAKE2s"
+
+msgid "      --blake2b       hash with BLAKE2b"
+msgstr "      --blake2b       хешувати BLAKE2b"
+
+msgid "      --ripemd160     hash with RIPEMD-160"
+msgstr "      --ripemd160     хешувати RIPEMD-160"
+
+msgid "      --crc16         digest with CRC-16"
+msgstr "      --crc16         дайджест CRC-16"
+
+msgid "  -c, --crc32         digest with CRC-32"
+msgstr "  -c, --crc32         дайджест CRC-32"
+
+msgid "  -m, --mod DIV       modulus (default: 65536)"
+msgstr "  -m, --mod DIV       модуль (типово: 65536)"
+
+msgid "  -b, --bias BIAS     added after reduction (default: 0)"
+msgstr "  -b, --bias BIAS     додається після зведення (типово: 0)"
+
+msgid "  -p, --profile NAME  range profile (default: w)"
+msgstr "  -p, --profile NAME  профіль діапазону (типово: w)"
+
+msgid "  -h, --help          display this help and exit"
+msgstr "  -h, --help          показати цю довідку і вийти"
+
+msgid "      --version       output version information and exit"
+msgstr "      --version       показати версію і вийти"
+
+msgid "Each output line is:"
+msgstr "Кожен рядок виводу:"
+
+msgid "Profiles:"
+msgstr "Профілі:"
+
+msgid "default"
+msgstr "типово"
+
+msgid "DIV and BIAS accept decimal or 0x hex, with optional k/m/g suffix (1024)."
+msgstr "DIV і BIAS приймають десятковий або 0x шістнадцятковий запис, з необов'язковим суфіксом k/m/g (1024)."
+
+msgid "Try '%s --help' for more information.\n"
+msgstr "Спробуйте «%s --help» для докладнішої інформації.\n"
+
+msgid "%s: invalid DIV: %s\n"
+msgstr "%s: недійсний DIV: %s\n"
+
+msgid "%s: invalid BIAS: %s\n"
+msgstr "%s: недійсний BIAS: %s\n"
+
+msgid "%s: unknown profile: %s\n"
+msgstr "%s: невідомий профіль: %s\n"
+
+msgid "%s: missing name\n"
+msgstr "%s: відсутнє ім'я\n"
+
+msgid "%s: DIV must be greater than 0\n"
+msgstr "%s: DIV має бути більшим за 0\n"
+
+msgid "%s: failed to compute number for '%s'\n"
+msgstr "%s: не вдалося обчислити число для «%s»\n"
+
+msgid "%s: write error\n"
+msgstr "%s: помилка запису\n"

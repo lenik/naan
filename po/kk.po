@@ -1,0 +1,113 @@
+# Copyright (C) 2026 Lenik <naan@bodz.net>
+# SPDX-License-Identifier: AGPL-3.0-or-later
+msgid ""
+msgstr ""
+"Project-Id-Version: naan\n"
+"Report-Msgid-Bugs-To: naan@bodz.net\n"
+"POT-Creation-Date: 2026-09-06 07:28+0800\n"
+"PO-Revision-Date: 2026-09-06 07:28+0800\n"
+"Last-Translator: Lenik <naan@bodz.net>\n"
+"Language-Team: Kazakh\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "License AGPL-3.0-or-later: GNU AGPL version 3 or later"
+msgstr "Лицензия AGPL-3.0-or-later: GNU AGPL 3-нші нұсқасы немесе кейінгі"
+
+msgid "Usage: %s [OPTION]... NAME...\n"
+msgstr "Қолданылуы: %s [ОПЦИЯ]... АТАУ...\n"
+
+msgid "Compute a number from each name."
+msgstr "Әр атаудан сан есептейді."
+
+msgid "  -5, --md5           hash with MD5"
+msgstr "  -5, --md5           MD5 арқылы хештеу"
+
+msgid "  -1, --sha1          hash with SHA-1"
+msgstr "  -1, --sha1          SHA-1 арқылы хештеу"
+
+msgid "      --sha224        hash with SHA-224"
+msgstr "      --sha224        SHA-224 арқылы хештеу"
+
+msgid "  -2, --sha256        hash with SHA-256 (default)"
+msgstr "  -2, --sha256        SHA-256 арқылы хештеу (әдепкі)"
+
+msgid "      --sha384        hash with SHA-384"
+msgstr "      --sha384        SHA-384 арқылы хештеу"
+
+msgid "  -8, --sha512        hash with SHA-512"
+msgstr "  -8, --sha512        SHA-512 арқылы хештеу"
+
+msgid "  -3, --sha3-256      hash with SHA3-256"
+msgstr "  -3, --sha3-256      SHA3-256 арқылы хештеу"
+
+msgid "      --sha3-512      hash with SHA3-512"
+msgstr "      --sha3-512      SHA3-512 арқылы хештеу"
+
+msgid "      --blake2s       hash with BLAKE2s"
+msgstr "      --blake2s       BLAKE2s арқылы хештеу"
+
+msgid "      --blake2b       hash with BLAKE2b"
+msgstr "      --blake2b       BLAKE2b арқылы хештеу"
+
+msgid "      --ripemd160     hash with RIPEMD-160"
+msgstr "      --ripemd160     RIPEMD-160 арқылы хештеу"
+
+msgid "      --crc16         digest with CRC-16"
+msgstr "      --crc16         CRC-16 дайджесті"
+
+msgid "  -c, --crc32         digest with CRC-32"
+msgstr "  -c, --crc32         CRC-32 дайджесті"
+
+msgid "  -m, --mod DIV       modulus (default: 65536)"
+msgstr "  -m, --mod DIV       модуль (әдепкі: 65536)"
+
+msgid "  -b, --bias BIAS     added after reduction (default: 0)"
+msgstr "  -b, --bias BIAS     қысқартудан кейін қосылады (әдепкі: 0)"
+
+msgid "  -p, --profile NAME  range profile (default: w)"
+msgstr "  -p, --profile NAME  ауқым профилі (әдепкі: w)"
+
+msgid "  -h, --help          display this help and exit"
+msgstr "  -h, --help          осы анықтаманы көрсетіп шығу"
+
+msgid "      --version       output version information and exit"
+msgstr "      --version       нұсқаны көрсетіп шығу"
+
+msgid "Each output line is:"
+msgstr "Әр шығыс жолы:"
+
+msgid "Profiles:"
+msgstr "Профильдер:"
+
+msgid "default"
+msgstr "әдепкі"
+
+msgid "DIV and BIAS accept decimal or 0x hex, with optional k/m/g suffix (1024)."
+msgstr "DIV және BIAS ондық немесе 0x оналтылықты қабылдайды, қосымша k/m/g жұрнағымен (1024)."
+
+msgid "Try '%s --help' for more information.\n"
+msgstr "Қосымша ақпарат үшін «%s --help» қолданып көріңіз.\n"
+
+msgid "%s: invalid DIV: %s\n"
+msgstr "%s: жарамсыз DIV: %s\n"
+
+msgid "%s: invalid BIAS: %s\n"
+msgstr "%s: жарамсыз BIAS: %s\n"
+
+msgid "%s: unknown profile: %s\n"
+msgstr "%s: белгісіз профиль: %s\n"
+
+msgid "%s: missing name\n"
+msgstr "%s: атау жоқ\n"
+
+msgid "%s: DIV must be greater than 0\n"
+msgstr "%s: DIV 0-ден үлкен болуы керек\n"
+
+msgid "%s: failed to compute number for '%s'\n"
+msgstr "%s: «%s» үшін сан есептелмеді\n"
+
+msgid "%s: write error\n"
+msgstr "%s: жазу қатесі\n"

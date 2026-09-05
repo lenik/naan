@@ -1,0 +1,115 @@
+= naan(1)
+{project-author} <{project-email}>
+:doctype: manpage
+:manmanual: Felhasználói parancsok
+:mansource: naan
+:man-linkstyle: pass:[blue R < >]
+
+== Név
+
+naan - szám számítása névből
+
+== Áttekintés
+
+*naan* [_OPTION_]... _NAME_...
+
+== Leírás
+
+*naan* (name as a number) minden _NÉV_ hashét kiszámítja, és argumentumonként egy tizedes számot ír ki.
+
+A szám:
+
+  (digest(NAME) mod DIV) + BIAS
+
+A kivonatot big-endian egésznek tekintjük.  Az alapértelmezett hash SHA-256.  Az alapértelmezett tartomány a *w* profil (`DIV=65536`, `BIAS=0`).
+
+== Kapcsolók
+
+*-5, --md5*::
+    MD5 használata.
+
+*-1, --sha1*::
+    SHA-1 használata.
+
+*--sha224*::
+    SHA-224 használata.
+
+*-2, --sha256*::
+    SHA-256 használata.
+
+*--sha384*::
+    SHA-384 használata.
+
+*-8, --sha512*::
+    SHA-512 használata.
+
+*-3, --sha3-256*::
+    SHA3-256 használata.
+
+*--sha3-512*::
+    SHA3-512 használata.
+
+*--blake2s*::
+    BLAKE2s használata.
+
+*--blake2b*::
+    BLAKE2b használata.
+
+*--ripemd160*::
+    RIPEMD-160 használata.
+
+*--crc16*::
+    CRC-16/CCITT-FALSE (poly `0x1021`, init `0xFFFF`).
+
+*-c, --crc32*::
+    CRC-32/ISO-HDLC.
+
+*-m, --mod* _DIV_::
+    DIV.
+
+*-b, --bias* _BIAS_::
+    BIAS.
+
+*-p, --profile* _NAME_::
+    b, w, dw, wm.
+
+*-h, --help*::
+    --help
+
+*--version*::
+    --version
+
+== Profilok
+
+*b*::
+    `DIV=256` `BIAS=0`
+
+*w*::
+    `DIV=65536` `BIAS=0`
+
+*dw*::
+    `DIV=4G` `BIAS=0`
+
+*wm*::
+    `DIV=2000` `BIAS=2000`
+
+== Példák
+
+  $ naan hello
+  38948
+
+  $ naan --crc32 hello
+  42630
+
+== Kilépési állapot
+
+*0*::
+    0
+
+*1*::
+    1
+
+== Szerzői jog
+
+Copyright (C) {project-year} {project-author} <{project-email}>.
+AGPL-3.0-or-later.

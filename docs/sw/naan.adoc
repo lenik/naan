@@ -1,0 +1,115 @@
+= naan(1)
+{project-author} <{project-email}>
+:doctype: manpage
+:manmanual: Amri za mtumiaji
+:mansource: naan
+:man-linkstyle: pass:[blue R < >]
+
+== Jina
+
+naan - hesabu namba kutoka jina
+
+== Muhtasari
+
+*naan* [_OPTION_]... _NAME_...
+
+== Maelezo
+
+*naan* (name as a number) husha kila _JINA_ na kuchapisha namba moja ya desimali kwa kila hoja.
+
+Namba ni:
+
+  (digest(NAME) mod DIV) + BIAS
+
+Digest inasomwa kama namba kamili ya big-endian. Hashi chaguo-msingi ni SHA-256. Masafa chaguo-msingi ni wasifu *w* (`DIV=65536`, `BIAS=0`).
+
+== Chaguo
+
+*-5, --md5*::
+    Tumia MD5.
+
+*-1, --sha1*::
+    Tumia SHA-1.
+
+*--sha224*::
+    Tumia SHA-224.
+
+*-2, --sha256*::
+    Tumia SHA-256.
+
+*--sha384*::
+    Tumia SHA-384.
+
+*-8, --sha512*::
+    Tumia SHA-512.
+
+*-3, --sha3-256*::
+    Tumia SHA3-256.
+
+*--sha3-512*::
+    Tumia SHA3-512.
+
+*--blake2s*::
+    Tumia BLAKE2s.
+
+*--blake2b*::
+    Tumia BLAKE2b.
+
+*--ripemd160*::
+    Tumia RIPEMD-160.
+
+*--crc16*::
+    CRC-16/CCITT-FALSE (poly `0x1021`, init `0xFFFF`).
+
+*-c, --crc32*::
+    CRC-32/ISO-HDLC.
+
+*-m, --mod* _DIV_::
+    DIV.
+
+*-b, --bias* _BIAS_::
+    BIAS.
+
+*-p, --profile* _NAME_::
+    b, w, dw, wm.
+
+*-h, --help*::
+    --help
+
+*--version*::
+    --version
+
+== Wasifu
+
+*b*::
+    `DIV=256` `BIAS=0`
+
+*w*::
+    `DIV=65536` `BIAS=0`
+
+*dw*::
+    `DIV=4G` `BIAS=0`
+
+*wm*::
+    `DIV=2000` `BIAS=2000`
+
+== Mifano
+
+  $ naan hello
+  38948
+
+  $ naan --crc32 hello
+  42630
+
+== Hali ya kutoka
+
+*0*::
+    0
+
+*1*::
+    1
+
+== Hakimiliki
+
+Copyright (C) {project-year} {project-author} <{project-email}>.
+AGPL-3.0-or-later.

@@ -1,0 +1,115 @@
+= naan(1)
+{project-author} <{project-email}>
+:doctype: manpage
+:manmanual: Потребителски команди
+:mansource: naan
+:man-linkstyle: pass:[blue R < >]
+
+== Име
+
+naan - изчисли число от име
+
+== Обзор
+
+*naan* [_OPTION_]... _NAME_...
+
+== Описание
+
+*naan* (name as a number) хешира всяко _ИМЕ_ и отпечатва по едно десетично число на аргумент.
+
+Числото е:
+
+  (digest(NAME) mod DIV) + BIAS
+
+Дайджестът се чете като цяло число big-endian.  Хешът по подразбиране е SHA-256.  Обхватът по подразбиране е профил *w* (`DIV=65536`, `BIAS=0`).
+
+== Опции
+
+*-5, --md5*::
+    Използвай MD5.
+
+*-1, --sha1*::
+    Използвай SHA-1.
+
+*--sha224*::
+    Използвай SHA-224.
+
+*-2, --sha256*::
+    Използвай SHA-256.
+
+*--sha384*::
+    Използвай SHA-384.
+
+*-8, --sha512*::
+    Използвай SHA-512.
+
+*-3, --sha3-256*::
+    Използвай SHA3-256.
+
+*--sha3-512*::
+    Използвай SHA3-512.
+
+*--blake2s*::
+    Използвай BLAKE2s.
+
+*--blake2b*::
+    Използвай BLAKE2b.
+
+*--ripemd160*::
+    Използвай RIPEMD-160.
+
+*--crc16*::
+    CRC-16/CCITT-FALSE (poly `0x1021`, init `0xFFFF`).
+
+*-c, --crc32*::
+    CRC-32/ISO-HDLC.
+
+*-m, --mod* _DIV_::
+    DIV.
+
+*-b, --bias* _BIAS_::
+    BIAS.
+
+*-p, --profile* _NAME_::
+    b, w, dw, wm.
+
+*-h, --help*::
+    --help
+
+*--version*::
+    --version
+
+== Профили
+
+*b*::
+    `DIV=256` `BIAS=0`
+
+*w*::
+    `DIV=65536` `BIAS=0`
+
+*dw*::
+    `DIV=4G` `BIAS=0`
+
+*wm*::
+    `DIV=2000` `BIAS=2000`
+
+== Примери
+
+  $ naan hello
+  38948
+
+  $ naan --crc32 hello
+  42630
+
+== Код за изход
+
+*0*::
+    0
+
+*1*::
+    1
+
+== Авторски права
+
+Copyright (C) {project-year} {project-author} <{project-email}>.
+AGPL-3.0-or-later.

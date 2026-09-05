@@ -1,0 +1,115 @@
+= naan(1)
+{project-author} <{project-email}>
+:doctype: manpage
+:manmanual: वापरकर्ता आज्ञा
+:mansource: naan
+:man-linkstyle: pass:[blue R < >]
+
+== नाव
+
+naan - नावातून संख्या काढा
+
+== सारांश
+
+*naan* [_OPTION_]... _NAME_...
+
+== वर्णन
+
+*naan* (name as a number) प्रत्येक _नाव_ हॅश करून प्रत्येक युक्तिवादासाठी एक दशमान संख्या छापतो.
+
+संख्या:
+
+  (digest(NAME) mod DIV) + BIAS
+
+डायजेस्ट बिग-एंडियन पूर्णांक म्हणून वाचला जातो. मुलभूत हॅश SHA-256 आहे. मुलभूत श्रेणी प्रोफाइल *w* (`DIV=65536`, `BIAS=0`) आहे.
+
+== पर्याय
+
+*-5, --md5*::
+    MD5 वापरा.
+
+*-1, --sha1*::
+    SHA-1 वापरा.
+
+*--sha224*::
+    SHA-224 वापरा.
+
+*-2, --sha256*::
+    SHA-256 वापरा.
+
+*--sha384*::
+    SHA-384 वापरा.
+
+*-8, --sha512*::
+    SHA-512 वापरा.
+
+*-3, --sha3-256*::
+    SHA3-256 वापरा.
+
+*--sha3-512*::
+    SHA3-512 वापरा.
+
+*--blake2s*::
+    BLAKE2s वापरा.
+
+*--blake2b*::
+    BLAKE2b वापरा.
+
+*--ripemd160*::
+    RIPEMD-160 वापरा.
+
+*--crc16*::
+    CRC-16/CCITT-FALSE (poly `0x1021`, init `0xFFFF`).
+
+*-c, --crc32*::
+    CRC-32/ISO-HDLC.
+
+*-m, --mod* _DIV_::
+    DIV.
+
+*-b, --bias* _BIAS_::
+    BIAS.
+
+*-p, --profile* _NAME_::
+    b, w, dw, wm.
+
+*-h, --help*::
+    --help
+
+*--version*::
+    --version
+
+== प्रोफाइल
+
+*b*::
+    `DIV=256` `BIAS=0`
+
+*w*::
+    `DIV=65536` `BIAS=0`
+
+*dw*::
+    `DIV=4G` `BIAS=0`
+
+*wm*::
+    `DIV=2000` `BIAS=2000`
+
+== उदाहरणे
+
+  $ naan hello
+  38948
+
+  $ naan --crc32 hello
+  42630
+
+== निर्गमन स्थिती
+
+*0*::
+    0
+
+*1*::
+    1
+
+== कॉपीराइट
+
+Copyright (C) {project-year} {project-author} <{project-email}>.
+AGPL-3.0-or-later.

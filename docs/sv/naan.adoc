@@ -1,0 +1,115 @@
+= naan(1)
+{project-author} <{project-email}>
+:doctype: manpage
+:manmanual: Användarkommandon
+:mansource: naan
+:man-linkstyle: pass:[blue R < >]
+
+== Namn
+
+naan - beräkna ett tal från ett namn
+
+== Synopsis
+
+*naan* [_OPTION_]... _NAME_...
+
+== Beskrivning
+
+*naan* (name as a number) hashar varje _NAMN_ och skriver ett decimaltal per argument.
+
+Talet är:
+
+  (digest(NAME) mod DIV) + BIAS
+
+Digest tolkas som ett big-endian-heltal.  Standardhash är SHA-256.  Standardintervallet är profil *w* (`DIV=65536`, `BIAS=0`).
+
+== Alternativ
+
+*-5, --md5*::
+    Använd MD5.
+
+*-1, --sha1*::
+    Använd SHA-1.
+
+*--sha224*::
+    Använd SHA-224.
+
+*-2, --sha256*::
+    Använd SHA-256.
+
+*--sha384*::
+    Använd SHA-384.
+
+*-8, --sha512*::
+    Använd SHA-512.
+
+*-3, --sha3-256*::
+    Använd SHA3-256.
+
+*--sha3-512*::
+    Använd SHA3-512.
+
+*--blake2s*::
+    Använd BLAKE2s.
+
+*--blake2b*::
+    Använd BLAKE2b.
+
+*--ripemd160*::
+    Använd RIPEMD-160.
+
+*--crc16*::
+    CRC-16/CCITT-FALSE (poly `0x1021`, init `0xFFFF`).
+
+*-c, --crc32*::
+    CRC-32/ISO-HDLC.
+
+*-m, --mod* _DIV_::
+    DIV.
+
+*-b, --bias* _BIAS_::
+    BIAS.
+
+*-p, --profile* _NAME_::
+    b, w, dw, wm.
+
+*-h, --help*::
+    --help
+
+*--version*::
+    --version
+
+== Profiler
+
+*b*::
+    `DIV=256` `BIAS=0`
+
+*w*::
+    `DIV=65536` `BIAS=0`
+
+*dw*::
+    `DIV=4G` `BIAS=0`
+
+*wm*::
+    `DIV=2000` `BIAS=2000`
+
+== Exempel
+
+  $ naan hello
+  38948
+
+  $ naan --crc32 hello
+  42630
+
+== Avslutningsstatus
+
+*0*::
+    0
+
+*1*::
+    1
+
+== Copyright
+
+Copyright (C) {project-year} {project-author} <{project-email}>.
+AGPL-3.0-or-later.

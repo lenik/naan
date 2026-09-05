@@ -1,0 +1,115 @@
+= naan(1)
+{project-author} <{project-email}>
+:doctype: manpage
+:manmanual: பயனர் கட்டளைகள்
+:mansource: naan
+:man-linkstyle: pass:[blue R < >]
+
+== பெயர்
+
+naan - பெயரிலிருந்து எண்ணைக் கணக்கிடு
+
+== சுருக்கம்
+
+*naan* [_OPTION_]... _NAME_...
+
+== விளக்கம்
+
+*naan* (name as a number) ஒவ்வொரு _பெயரையும்_ ஹாஷ் செய்து வாதத்திற்கு ஒரு தசம எண்ணை அச்சிடும்.
+
+எண்:
+
+  (digest(NAME) mod DIV) + BIAS
+
+டைஜெஸ்ட் பிக்-எண்டியன் முழுஎண்ணாகப் படிக்கப்படும். இயல்பு ஹாஷ் SHA-256. இயல்பு வரம்பு சுயவிவரம் *w* (`DIV=65536`, `BIAS=0`).
+
+== விருப்பங்கள்
+
+*-5, --md5*::
+    MD5 பயன்படுத்து.
+
+*-1, --sha1*::
+    SHA-1 பயன்படுத்து.
+
+*--sha224*::
+    SHA-224 பயன்படுத்து.
+
+*-2, --sha256*::
+    SHA-256 பயன்படுத்து.
+
+*--sha384*::
+    SHA-384 பயன்படுத்து.
+
+*-8, --sha512*::
+    SHA-512 பயன்படுத்து.
+
+*-3, --sha3-256*::
+    SHA3-256 பயன்படுத்து.
+
+*--sha3-512*::
+    SHA3-512 பயன்படுத்து.
+
+*--blake2s*::
+    BLAKE2s பயன்படுத்து.
+
+*--blake2b*::
+    BLAKE2b பயன்படுத்து.
+
+*--ripemd160*::
+    RIPEMD-160 பயன்படுத்து.
+
+*--crc16*::
+    CRC-16/CCITT-FALSE (poly `0x1021`, init `0xFFFF`).
+
+*-c, --crc32*::
+    CRC-32/ISO-HDLC.
+
+*-m, --mod* _DIV_::
+    DIV.
+
+*-b, --bias* _BIAS_::
+    BIAS.
+
+*-p, --profile* _NAME_::
+    b, w, dw, wm.
+
+*-h, --help*::
+    --help
+
+*--version*::
+    --version
+
+== சுயவிவரங்கள்
+
+*b*::
+    `DIV=256` `BIAS=0`
+
+*w*::
+    `DIV=65536` `BIAS=0`
+
+*dw*::
+    `DIV=4G` `BIAS=0`
+
+*wm*::
+    `DIV=2000` `BIAS=2000`
+
+== எடுத்துக்காட்டுகள்
+
+  $ naan hello
+  38948
+
+  $ naan --crc32 hello
+  42630
+
+== வெளியேறும் நிலை
+
+*0*::
+    0
+
+*1*::
+    1
+
+== பதிப்புரிமை
+
+Copyright (C) {project-year} {project-author} <{project-email}>.
+AGPL-3.0-or-later.

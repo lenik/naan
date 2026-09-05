@@ -1,0 +1,113 @@
+# Copyright (C) 2026 Lenik <naan@bodz.net>
+# SPDX-License-Identifier: AGPL-3.0-or-later
+msgid ""
+msgstr ""
+"Project-Id-Version: naan\n"
+"Report-Msgid-Bugs-To: naan@bodz.net\n"
+"POT-Creation-Date: 2026-09-06 07:28+0800\n"
+"PO-Revision-Date: 2026-09-06 07:28+0800\n"
+"Last-Translator: Lenik <naan@bodz.net>\n"
+"Language-Team: Romanian\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "License AGPL-3.0-or-later: GNU AGPL version 3 or later"
+msgstr "Licență AGPL-3.0-or-later: GNU AGPL versiunea 3 sau ulterioară"
+
+msgid "Usage: %s [OPTION]... NAME...\n"
+msgstr "Utilizare: %s [OPȚIUNE]... NUME...\n"
+
+msgid "Compute a number from each name."
+msgstr "Calculează un număr din fiecare nume."
+
+msgid "  -5, --md5           hash with MD5"
+msgstr "  -5, --md5           hash cu MD5"
+
+msgid "  -1, --sha1          hash with SHA-1"
+msgstr "  -1, --sha1          hash cu SHA-1"
+
+msgid "      --sha224        hash with SHA-224"
+msgstr "      --sha224        hash cu SHA-224"
+
+msgid "  -2, --sha256        hash with SHA-256 (default)"
+msgstr "  -2, --sha256        hash cu SHA-256 (implicit)"
+
+msgid "      --sha384        hash with SHA-384"
+msgstr "      --sha384        hash cu SHA-384"
+
+msgid "  -8, --sha512        hash with SHA-512"
+msgstr "  -8, --sha512        hash cu SHA-512"
+
+msgid "  -3, --sha3-256      hash with SHA3-256"
+msgstr "  -3, --sha3-256      hash cu SHA3-256"
+
+msgid "      --sha3-512      hash with SHA3-512"
+msgstr "      --sha3-512      hash cu SHA3-512"
+
+msgid "      --blake2s       hash with BLAKE2s"
+msgstr "      --blake2s       hash cu BLAKE2s"
+
+msgid "      --blake2b       hash with BLAKE2b"
+msgstr "      --blake2b       hash cu BLAKE2b"
+
+msgid "      --ripemd160     hash with RIPEMD-160"
+msgstr "      --ripemd160     hash cu RIPEMD-160"
+
+msgid "      --crc16         digest with CRC-16"
+msgstr "      --crc16         digest CRC-16"
+
+msgid "  -c, --crc32         digest with CRC-32"
+msgstr "  -c, --crc32         digest CRC-32"
+
+msgid "  -m, --mod DIV       modulus (default: 65536)"
+msgstr "  -m, --mod DIV       modul (implicit: 65536)"
+
+msgid "  -b, --bias BIAS     added after reduction (default: 0)"
+msgstr "  -b, --bias BIAS     adăugat după reducere (implicit: 0)"
+
+msgid "  -p, --profile NAME  range profile (default: w)"
+msgstr "  -p, --profile NAME  profil de interval (implicit: w)"
+
+msgid "  -h, --help          display this help and exit"
+msgstr "  -h, --help          afișează acest ajutor și ieși"
+
+msgid "      --version       output version information and exit"
+msgstr "      --version       afișează versiunea și ieși"
+
+msgid "Each output line is:"
+msgstr "Fiecare linie de ieșire este:"
+
+msgid "Profiles:"
+msgstr "Profiluri:"
+
+msgid "default"
+msgstr "implicit"
+
+msgid "DIV and BIAS accept decimal or 0x hex, with optional k/m/g suffix (1024)."
+msgstr "DIV și BIAS acceptă zecimal sau hexazecimal 0x, cu sufix opțional k/m/g (1024)."
+
+msgid "Try '%s --help' for more information.\n"
+msgstr "Încercați „%s --help” pentru mai multe informații.\n"
+
+msgid "%s: invalid DIV: %s\n"
+msgstr "%s: DIV nevalid: %s\n"
+
+msgid "%s: invalid BIAS: %s\n"
+msgstr "%s: BIAS nevalid: %s\n"
+
+msgid "%s: unknown profile: %s\n"
+msgstr "%s: profil necunoscut: %s\n"
+
+msgid "%s: missing name\n"
+msgstr "%s: lipsește numele\n"
+
+msgid "%s: DIV must be greater than 0\n"
+msgstr "%s: DIV trebuie să fie mai mare decât 0\n"
+
+msgid "%s: failed to compute number for '%s'\n"
+msgstr "%s: nu s-a putut calcula numărul pentru „%s”\n"
+
+msgid "%s: write error\n"
+msgstr "%s: eroare de scriere\n"

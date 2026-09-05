@@ -1,0 +1,113 @@
+# Copyright (C) 2026 Lenik <naan@bodz.net>
+# SPDX-License-Identifier: AGPL-3.0-or-later
+msgid ""
+msgstr ""
+"Project-Id-Version: naan\n"
+"Report-Msgid-Bugs-To: naan@bodz.net\n"
+"POT-Creation-Date: 2026-09-06 07:28+0800\n"
+"PO-Revision-Date: 2026-09-06 07:28+0800\n"
+"Last-Translator: Lenik <naan@bodz.net>\n"
+"Language-Team: Tamil\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "License AGPL-3.0-or-later: GNU AGPL version 3 or later"
+msgstr "உரிமம் AGPL-3.0-or-later: GNU AGPL பதிப்பு 3 அல்லது பிந்தையது"
+
+msgid "Usage: %s [OPTION]... NAME...\n"
+msgstr "பயன்பாடு: %s [விருப்பம்]... பெயர்...\n"
+
+msgid "Compute a number from each name."
+msgstr "ஒவ்வொரு பெயரிலிருந்தும் ஒரு எண்ணைக் கணக்கிடும்."
+
+msgid "  -5, --md5           hash with MD5"
+msgstr "  -5, --md5           MD5 மூலம் ஹாஷ்"
+
+msgid "  -1, --sha1          hash with SHA-1"
+msgstr "  -1, --sha1          SHA-1 மூலம் ஹாஷ்"
+
+msgid "      --sha224        hash with SHA-224"
+msgstr "      --sha224        SHA-224 மூலம் ஹாஷ்"
+
+msgid "  -2, --sha256        hash with SHA-256 (default)"
+msgstr "  -2, --sha256        SHA-256 மூலம் ஹாஷ் (இயல்பு)"
+
+msgid "      --sha384        hash with SHA-384"
+msgstr "      --sha384        SHA-384 மூலம் ஹாஷ்"
+
+msgid "  -8, --sha512        hash with SHA-512"
+msgstr "  -8, --sha512        SHA-512 மூலம் ஹாஷ்"
+
+msgid "  -3, --sha3-256      hash with SHA3-256"
+msgstr "  -3, --sha3-256      SHA3-256 மூலம் ஹாஷ்"
+
+msgid "      --sha3-512      hash with SHA3-512"
+msgstr "      --sha3-512      SHA3-512 மூலம் ஹாஷ்"
+
+msgid "      --blake2s       hash with BLAKE2s"
+msgstr "      --blake2s       BLAKE2s மூலம் ஹாஷ்"
+
+msgid "      --blake2b       hash with BLAKE2b"
+msgstr "      --blake2b       BLAKE2b மூலம் ஹாஷ்"
+
+msgid "      --ripemd160     hash with RIPEMD-160"
+msgstr "      --ripemd160     RIPEMD-160 மூலம் ஹாஷ்"
+
+msgid "      --crc16         digest with CRC-16"
+msgstr "      --crc16         CRC-16 டைஜெஸ்ட்"
+
+msgid "  -c, --crc32         digest with CRC-32"
+msgstr "  -c, --crc32         CRC-32 டைஜெஸ்ட்"
+
+msgid "  -m, --mod DIV       modulus (default: 65536)"
+msgstr "  -m, --mod DIV       மட்டு (இயல்பு: 65536)"
+
+msgid "  -b, --bias BIAS     added after reduction (default: 0)"
+msgstr "  -b, --bias BIAS     சுருக்கத்திற்குப் பின் சேர்க்கப்படும் (இயல்பு: 0)"
+
+msgid "  -p, --profile NAME  range profile (default: w)"
+msgstr "  -p, --profile NAME  வரம்பு சுயவிவரம் (இயல்பு: w)"
+
+msgid "  -h, --help          display this help and exit"
+msgstr "  -h, --help          இந்த உதவியைக் காட்டி வெளியேறு"
+
+msgid "      --version       output version information and exit"
+msgstr "      --version       பதிப்பைக் காட்டி வெளியேறு"
+
+msgid "Each output line is:"
+msgstr "ஒவ்வொரு வெளியீட்டு வரியும்:"
+
+msgid "Profiles:"
+msgstr "சுயவிவரங்கள்:"
+
+msgid "default"
+msgstr "இயல்பு"
+
+msgid "DIV and BIAS accept decimal or 0x hex, with optional k/m/g suffix (1024)."
+msgstr "DIV மற்றும் BIAS தசமம் அல்லது 0x அறுபதின்மத்தை ஏற்கும்; விருப்ப k/m/g பின்னொட்டு (1024)."
+
+msgid "Try '%s --help' for more information.\n"
+msgstr "மேலும் தகவலுக்கு '%s --help' முயலவும்.\n"
+
+msgid "%s: invalid DIV: %s\n"
+msgstr "%s: தவறான DIV: %s\n"
+
+msgid "%s: invalid BIAS: %s\n"
+msgstr "%s: தவறான BIAS: %s\n"
+
+msgid "%s: unknown profile: %s\n"
+msgstr "%s: தெரியாத சுயவிவரம்: %s\n"
+
+msgid "%s: missing name\n"
+msgstr "%s: பெயர் இல்லை\n"
+
+msgid "%s: DIV must be greater than 0\n"
+msgstr "%s: DIV 0-ஐ விட அதிகமாக இருக்க வேண்டும்\n"
+
+msgid "%s: failed to compute number for '%s'\n"
+msgstr "%s: '%s' எண்ணைக் கணக்கிட முடியவில்லை\n"
+
+msgid "%s: write error\n"
+msgstr "%s: எழுதும் பிழை\n"

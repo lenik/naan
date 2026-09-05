@@ -1,0 +1,115 @@
+= naan(1)
+{project-author} <{project-email}>
+:doctype: manpage
+:manmanual: వాడుకరి ఆదేశాలు
+:mansource: naan
+:man-linkstyle: pass:[blue R < >]
+
+== పేరు
+
+naan - పేరు నుండి సంఖ్యను లెక్కించు
+
+== సారాంశం
+
+*naan* [_OPTION_]... _NAME_...
+
+== వివరణ
+
+*naan* (name as a number) ప్రతి _పేరును_ హాష్ చేసి ప్రతి ఆర్గ్యుమెంట్‌కు ఒక దశాంశ సంఖ్యను ము�కు ఒక దశాంశ సంఖ్యను ముద్రిస్తుంది.
+
+సంఖ్య:
+
+  (digest(NAME) mod DIV) + BIAS
+
+డైజెస్ట్ బిగ్-ఎండియన్ పూర్ణాంకంగా చదవబడుతుంది. డిఫాల్ట్ హాష్ SHA-256. డిఫాల్ట్ పరిధి ప్రొఫైల్ *w* (`DIV=65536`, `BIAS=0`).
+
+== ఎంపికలు
+
+*-5, --md5*::
+    MD5 వాడండి.
+
+*-1, --sha1*::
+    SHA-1 వాడండి.
+
+*--sha224*::
+    SHA-224 వాడండి.
+
+*-2, --sha256*::
+    SHA-256 వాడండి.
+
+*--sha384*::
+    SHA-384 వాడండి.
+
+*-8, --sha512*::
+    SHA-512 వాడండి.
+
+*-3, --sha3-256*::
+    SHA3-256 వాడండి.
+
+*--sha3-512*::
+    SHA3-512 వాడండి.
+
+*--blake2s*::
+    BLAKE2s వాడండి.
+
+*--blake2b*::
+    BLAKE2b వాడండి.
+
+*--ripemd160*::
+    RIPEMD-160 వాడండి.
+
+*--crc16*::
+    CRC-16/CCITT-FALSE (poly `0x1021`, init `0xFFFF`).
+
+*-c, --crc32*::
+    CRC-32/ISO-HDLC.
+
+*-m, --mod* _DIV_::
+    DIV.
+
+*-b, --bias* _BIAS_::
+    BIAS.
+
+*-p, --profile* _NAME_::
+    b, w, dw, wm.
+
+*-h, --help*::
+    --help
+
+*--version*::
+    --version
+
+== ప్రొఫైల్స్
+
+*b*::
+    `DIV=256` `BIAS=0`
+
+*w*::
+    `DIV=65536` `BIAS=0`
+
+*dw*::
+    `DIV=4G` `BIAS=0`
+
+*wm*::
+    `DIV=2000` `BIAS=2000`
+
+== ఉదా�ివరణ
+
+  $ naan hello
+  38948
+
+  $ naan --crc32 hello
+  42630
+
+== ఎంపికలు
+
+*0*::
+    0
+
+*1*::
+    1
+
+== ప్రొఫైల్స్
+
+Copyright (C) {project-year} {project-author} <{project-email}>.
+AGPL-3.0-or-later.

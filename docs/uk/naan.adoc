@@ -1,0 +1,115 @@
+= naan(1)
+{project-author} <{project-email}>
+:doctype: manpage
+:manmanual: Команди користувача
+:mansource: naan
+:man-linkstyle: pass:[blue R < >]
+
+== Назва
+
+naan - обчислити число з імені
+
+== Огляд
+
+*naan* [_OPTION_]... _NAME_...
+
+== Опис
+
+*naan* (name as a number) хешує кожне _ІМ'Я_ і друкує одне десяткове число на аргумент.
+
+Число:
+
+  (digest(NAME) mod DIV) + BIAS
+
+Дайджест читається як ціле big-endian.  Типовий хеш — SHA-256.  Типовий діапазон — профіль *w* (`DIV=65536`, `BIAS=0`).
+
+== Параметри
+
+*-5, --md5*::
+    Використовувати MD5.
+
+*-1, --sha1*::
+    Використовувати SHA-1.
+
+*--sha224*::
+    Використовувати SHA-224.
+
+*-2, --sha256*::
+    Використовувати SHA-256.
+
+*--sha384*::
+    Використовувати SHA-384.
+
+*-8, --sha512*::
+    Використовувати SHA-512.
+
+*-3, --sha3-256*::
+    Використовувати SHA3-256.
+
+*--sha3-512*::
+    Використовувати SHA3-512.
+
+*--blake2s*::
+    Використовувати BLAKE2s.
+
+*--blake2b*::
+    Використовувати BLAKE2b.
+
+*--ripemd160*::
+    Використовувати RIPEMD-160.
+
+*--crc16*::
+    CRC-16/CCITT-FALSE (poly `0x1021`, init `0xFFFF`).
+
+*-c, --crc32*::
+    CRC-32/ISO-HDLC.
+
+*-m, --mod* _DIV_::
+    DIV.
+
+*-b, --bias* _BIAS_::
+    BIAS.
+
+*-p, --profile* _NAME_::
+    b, w, dw, wm.
+
+*-h, --help*::
+    --help
+
+*--version*::
+    --version
+
+== Профілі
+
+*b*::
+    `DIV=256` `BIAS=0`
+
+*w*::
+    `DIV=65536` `BIAS=0`
+
+*dw*::
+    `DIV=4G` `BIAS=0`
+
+*wm*::
+    `DIV=2000` `BIAS=2000`
+
+== Приклади
+
+  $ naan hello
+  38948
+
+  $ naan --crc32 hello
+  42630
+
+== Код виходу
+
+*0*::
+    0
+
+*1*::
+    1
+
+== Авторське право
+
+Copyright (C) {project-year} {project-author} <{project-email}>.
+AGPL-3.0-or-later.

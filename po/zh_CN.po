@@ -1,0 +1,113 @@
+# Copyright (C) 2026 Lenik <naan@bodz.net>
+# SPDX-License-Identifier: AGPL-3.0-or-later
+msgid ""
+msgstr ""
+"Project-Id-Version: naan\n"
+"Report-Msgid-Bugs-To: naan@bodz.net\n"
+"POT-Creation-Date: 2026-09-06 07:28+0800\n"
+"PO-Revision-Date: 2026-09-06 07:28+0800\n"
+"Last-Translator: Lenik <naan@bodz.net>\n"
+"Language-Team: Chinese (simplified)\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "License AGPL-3.0-or-later: GNU AGPL version 3 or later"
+msgstr "许可证 AGPL-3.0-or-later：GNU AGPL 第 3 版或更高版本"
+
+msgid "Usage: %s [OPTION]... NAME...\n"
+msgstr "用法：%s [选项]... 名称...\n"
+
+msgid "Compute a number from each name."
+msgstr "由每个名称计算出一个数字。"
+
+msgid "  -5, --md5           hash with MD5"
+msgstr "  -5, --md5           使用 MD5 哈希"
+
+msgid "  -1, --sha1          hash with SHA-1"
+msgstr "  -1, --sha1          使用 SHA-1 哈希"
+
+msgid "      --sha224        hash with SHA-224"
+msgstr "      --sha224        使用 SHA-224 哈希"
+
+msgid "  -2, --sha256        hash with SHA-256 (default)"
+msgstr "  -2, --sha256        使用 SHA-256 哈希（默认）"
+
+msgid "      --sha384        hash with SHA-384"
+msgstr "      --sha384        使用 SHA-384 哈希"
+
+msgid "  -8, --sha512        hash with SHA-512"
+msgstr "  -8, --sha512        使用 SHA-512 哈希"
+
+msgid "  -3, --sha3-256      hash with SHA3-256"
+msgstr "  -3, --sha3-256      使用 SHA3-256 哈希"
+
+msgid "      --sha3-512      hash with SHA3-512"
+msgstr "      --sha3-512      使用 SHA3-512 哈希"
+
+msgid "      --blake2s       hash with BLAKE2s"
+msgstr "      --blake2s       使用 BLAKE2s 哈希"
+
+msgid "      --blake2b       hash with BLAKE2b"
+msgstr "      --blake2b       使用 BLAKE2b 哈希"
+
+msgid "      --ripemd160     hash with RIPEMD-160"
+msgstr "      --ripemd160     使用 RIPEMD-160 哈希"
+
+msgid "      --crc16         digest with CRC-16"
+msgstr "      --crc16         使用 CRC-16 摘要"
+
+msgid "  -c, --crc32         digest with CRC-32"
+msgstr "  -c, --crc32         使用 CRC-32 摘要"
+
+msgid "  -m, --mod DIV       modulus (default: 65536)"
+msgstr "  -m, --mod DIV       模数（默认：65536）"
+
+msgid "  -b, --bias BIAS     added after reduction (default: 0)"
+msgstr "  -b, --bias BIAS     约简后加上的偏置（默认：0）"
+
+msgid "  -p, --profile NAME  range profile (default: w)"
+msgstr "  -p, --profile NAME  范围预设（默认：w）"
+
+msgid "  -h, --help          display this help and exit"
+msgstr "  -h, --help          显示此帮助并退出"
+
+msgid "      --version       output version information and exit"
+msgstr "      --version       输出版本信息并退出"
+
+msgid "Each output line is:"
+msgstr "每行输出为："
+
+msgid "Profiles:"
+msgstr "预设："
+
+msgid "default"
+msgstr "默认"
+
+msgid "DIV and BIAS accept decimal or 0x hex, with optional k/m/g suffix (1024)."
+msgstr "DIV 和 BIAS 可为十进制或 0x 十六进制，并可带 k/m/g 后缀（1024）。"
+
+msgid "Try '%s --help' for more information.\n"
+msgstr "更多信息请尝试“%s --help”。\n"
+
+msgid "%s: invalid DIV: %s\n"
+msgstr "%s：无效的 DIV：%s\n"
+
+msgid "%s: invalid BIAS: %s\n"
+msgstr "%s：无效的 BIAS：%s\n"
+
+msgid "%s: unknown profile: %s\n"
+msgstr "%s：未知预设：%s\n"
+
+msgid "%s: missing name\n"
+msgstr "%s：缺少名称\n"
+
+msgid "%s: DIV must be greater than 0\n"
+msgstr "%s：DIV 必须大于 0\n"
+
+msgid "%s: failed to compute number for '%s'\n"
+msgstr "%s：无法为“%s”计算数字\n"
+
+msgid "%s: write error\n"
+msgstr "%s：写入错误\n"

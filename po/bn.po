@@ -1,0 +1,113 @@
+# Copyright (C) 2026 Lenik <naan@bodz.net>
+# SPDX-License-Identifier: AGPL-3.0-or-later
+msgid ""
+msgstr ""
+"Project-Id-Version: naan\n"
+"Report-Msgid-Bugs-To: naan@bodz.net\n"
+"POT-Creation-Date: 2026-09-06 07:28+0800\n"
+"PO-Revision-Date: 2026-09-06 07:28+0800\n"
+"Last-Translator: Lenik <naan@bodz.net>\n"
+"Language-Team: Bengali\n"
+"Language: bn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "License AGPL-3.0-or-later: GNU AGPL version 3 or later"
+msgstr "লাইসেন্স AGPL-3.0-or-later: GNU AGPL সংস্করণ 3 বা পরবর্তী"
+
+msgid "Usage: %s [OPTION]... NAME...\n"
+msgstr "ব্যবহার: %s [বিকল্প]... নাম...\n"
+
+msgid "Compute a number from each name."
+msgstr "প্রতিটি নাম থেকে একটি সংখ্যা গণনা করে।"
+
+msgid "  -5, --md5           hash with MD5"
+msgstr "  -5, --md5           MD5 দিয়ে হ্যাশ"
+
+msgid "  -1, --sha1          hash with SHA-1"
+msgstr "  -1, --sha1          SHA-1 দিয়ে হ্যাশ"
+
+msgid "      --sha224        hash with SHA-224"
+msgstr "      --sha224        SHA-224 দিয়ে হ্যাশ"
+
+msgid "  -2, --sha256        hash with SHA-256 (default)"
+msgstr "  -2, --sha256        SHA-256 দিয়ে হ্যাশ (ডিফল্ট)"
+
+msgid "      --sha384        hash with SHA-384"
+msgstr "      --sha384        SHA-384 দিয়ে হ্যাশ"
+
+msgid "  -8, --sha512        hash with SHA-512"
+msgstr "  -8, --sha512        SHA-512 দিয়ে হ্যাশ"
+
+msgid "  -3, --sha3-256      hash with SHA3-256"
+msgstr "  -3, --sha3-256      SHA3-256 দিয়ে হ্যাশ"
+
+msgid "      --sha3-512      hash with SHA3-512"
+msgstr "      --sha3-512      SHA3-512 দিয়ে হ্যাশ"
+
+msgid "      --blake2s       hash with BLAKE2s"
+msgstr "      --blake2s       BLAKE2s দিয়ে হ্যাশ"
+
+msgid "      --blake2b       hash with BLAKE2b"
+msgstr "      --blake2b       BLAKE2b দিয়ে হ্যাশ"
+
+msgid "      --ripemd160     hash with RIPEMD-160"
+msgstr "      --ripemd160     RIPEMD-160 দিয়ে হ্যাশ"
+
+msgid "      --crc16         digest with CRC-16"
+msgstr "      --crc16         CRC-16 ডাইজেস্ট"
+
+msgid "  -c, --crc32         digest with CRC-32"
+msgstr "  -c, --crc32         CRC-32 ডাইজেস্ট"
+
+msgid "  -m, --mod DIV       modulus (default: 65536)"
+msgstr "  -m, --mod DIV       মডুলাস (ডিফল্ট: 65536)"
+
+msgid "  -b, --bias BIAS     added after reduction (default: 0)"
+msgstr "  -b, --bias BIAS     হ্রাসের পরে যোগ (ডিফল্ট: 0)"
+
+msgid "  -p, --profile NAME  range profile (default: w)"
+msgstr "  -p, --profile NAME  সীমার প্রোফাইল (ডিফল্ট: w)"
+
+msgid "  -h, --help          display this help and exit"
+msgstr "  -h, --help          এই সাহায্য দেখিয়ে প্রস্থান"
+
+msgid "      --version       output version information and exit"
+msgstr "      --version       সংস্করণ দেখিয়ে প্রস্থান"
+
+msgid "Each output line is:"
+msgstr "প্রতিটি আউটপুট লাইন:"
+
+msgid "Profiles:"
+msgstr "প্রোফাইল:"
+
+msgid "default"
+msgstr "ডিফল্ট"
+
+msgid "DIV and BIAS accept decimal or 0x hex, with optional k/m/g suffix (1024)."
+msgstr "DIV ও BIAS দশমিক বা 0x hex গ্রহণ করে, ঐচ্ছিক k/m/g প্রত্যয়সহ (1024)।"
+
+msgid "Try '%s --help' for more information.\n"
+msgstr "আরও তথ্যের জন্য '%s --help' চেষ্টা করুন।\n"
+
+msgid "%s: invalid DIV: %s\n"
+msgstr "%s: অবৈধ DIV: %s\n"
+
+msgid "%s: invalid BIAS: %s\n"
+msgstr "%s: অবৈধ BIAS: %s\n"
+
+msgid "%s: unknown profile: %s\n"
+msgstr "%s: অজানা প্রোফাইল: %s\n"
+
+msgid "%s: missing name\n"
+msgstr "%s: নাম নেই\n"
+
+msgid "%s: DIV must be greater than 0\n"
+msgstr "%s: DIV অবশ্যই 0-এর বেশি হতে হবে\n"
+
+msgid "%s: failed to compute number for '%s'\n"
+msgstr "%s: '%s'-এর সংখ্যা গণনা ব্যর্থ\n"
+
+msgid "%s: write error\n"
+msgstr "%s: লেখার ত্রুটি\n"

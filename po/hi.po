@@ -1,0 +1,113 @@
+# Copyright (C) 2026 Lenik <naan@bodz.net>
+# SPDX-License-Identifier: AGPL-3.0-or-later
+msgid ""
+msgstr ""
+"Project-Id-Version: naan\n"
+"Report-Msgid-Bugs-To: naan@bodz.net\n"
+"POT-Creation-Date: 2026-09-06 07:28+0800\n"
+"PO-Revision-Date: 2026-09-06 07:28+0800\n"
+"Last-Translator: Lenik <naan@bodz.net>\n"
+"Language-Team: Hindi\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "License AGPL-3.0-or-later: GNU AGPL version 3 or later"
+msgstr "लाइसेंस AGPL-3.0-or-later: GNU AGPL संस्करण 3 या बाद का"
+
+msgid "Usage: %s [OPTION]... NAME...\n"
+msgstr "प्रयोग: %s [विकल्प]... नाम...\n"
+
+msgid "Compute a number from each name."
+msgstr "प्रत्येक नाम से एक संख्या निकालता है।"
+
+msgid "  -5, --md5           hash with MD5"
+msgstr "  -5, --md5           MD5 से हैश करें"
+
+msgid "  -1, --sha1          hash with SHA-1"
+msgstr "  -1, --sha1          SHA-1 से हैश करें"
+
+msgid "      --sha224        hash with SHA-224"
+msgstr "      --sha224        SHA-224 से हैश करें"
+
+msgid "  -2, --sha256        hash with SHA-256 (default)"
+msgstr "  -2, --sha256        SHA-256 से हैश करें (पूर्वनिर्धारित)"
+
+msgid "      --sha384        hash with SHA-384"
+msgstr "      --sha384        SHA-384 से हैश करें"
+
+msgid "  -8, --sha512        hash with SHA-512"
+msgstr "  -8, --sha512        SHA-512 से हैश करें"
+
+msgid "  -3, --sha3-256      hash with SHA3-256"
+msgstr "  -3, --sha3-256      SHA3-256 से हैश करें"
+
+msgid "      --sha3-512      hash with SHA3-512"
+msgstr "      --sha3-512      SHA3-512 से हैश करें"
+
+msgid "      --blake2s       hash with BLAKE2s"
+msgstr "      --blake2s       BLAKE2s से हैश करें"
+
+msgid "      --blake2b       hash with BLAKE2b"
+msgstr "      --blake2b       BLAKE2b से हैश करें"
+
+msgid "      --ripemd160     hash with RIPEMD-160"
+msgstr "      --ripemd160     RIPEMD-160 से हैश करें"
+
+msgid "      --crc16         digest with CRC-16"
+msgstr "      --crc16         CRC-16 डाइजेस्ट"
+
+msgid "  -c, --crc32         digest with CRC-32"
+msgstr "  -c, --crc32         CRC-32 डाइजेस्ट"
+
+msgid "  -m, --mod DIV       modulus (default: 65536)"
+msgstr "  -m, --mod DIV       मापांक (पूर्वनिर्धारित: 65536)"
+
+msgid "  -b, --bias BIAS     added after reduction (default: 0)"
+msgstr "  -b, --bias BIAS     अपचयन के बाद जोड़ा जाता है (पूर्वनिर्धारित: 0)"
+
+msgid "  -p, --profile NAME  range profile (default: w)"
+msgstr "  -p, --profile NAME  परिसर प्रोफ़ाइल (पूर्वनिर्धारित: w)"
+
+msgid "  -h, --help          display this help and exit"
+msgstr "  -h, --help          यह सहायता दिखाएँ और निकलें"
+
+msgid "      --version       output version information and exit"
+msgstr "      --version       संस्करण दिखाएँ और निकलें"
+
+msgid "Each output line is:"
+msgstr "प्रत्येक आउटपुट पंक्ति:"
+
+msgid "Profiles:"
+msgstr "प्रोफ़ाइल:"
+
+msgid "default"
+msgstr "पूर्वनिर्धारित"
+
+msgid "DIV and BIAS accept decimal or 0x hex, with optional k/m/g suffix (1024)."
+msgstr "DIV और BIAS दशमलव या 0x षोडश आधार स्वीकार करते हैं, वैकल्पिक k/m/g प्रत्यय (1024) के साथ।"
+
+msgid "Try '%s --help' for more information.\n"
+msgstr "अधिक जानकारी के लिए '%s --help' आज़माएँ।\n"
+
+msgid "%s: invalid DIV: %s\n"
+msgstr "%s: अमान्य DIV: %s\n"
+
+msgid "%s: invalid BIAS: %s\n"
+msgstr "%s: अमान्य BIAS: %s\n"
+
+msgid "%s: unknown profile: %s\n"
+msgstr "%s: अज्ञात प्रोफ़ाइल: %s\n"
+
+msgid "%s: missing name\n"
+msgstr "%s: नाम अनुपस्थित\n"
+
+msgid "%s: DIV must be greater than 0\n"
+msgstr "%s: DIV 0 से बड़ा होना चाहिए\n"
+
+msgid "%s: failed to compute number for '%s'\n"
+msgstr "%s: '%s' की संख्या नहीं निकल सकी\n"
+
+msgid "%s: write error\n"
+msgstr "%s: लिखने में त्रुटि\n"

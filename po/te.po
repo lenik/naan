@@ -1,0 +1,113 @@
+# Copyright (C) 2026 Lenik <naan@bodz.net>
+# SPDX-License-Identifier: AGPL-3.0-or-later
+msgid ""
+msgstr ""
+"Project-Id-Version: naan\n"
+"Report-Msgid-Bugs-To: naan@bodz.net\n"
+"POT-Creation-Date: 2026-09-06 07:28+0800\n"
+"PO-Revision-Date: 2026-09-06 07:28+0800\n"
+"Last-Translator: Lenik <naan@bodz.net>\n"
+"Language-Team: Telugu\n"
+"Language: te\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "License AGPL-3.0-or-later: GNU AGPL version 3 or later"
+msgstr "లైసెన్సు AGPL-3.0-or-later: GNU AGPL వెర్షన్ 3 లేదా తర్�ెర్షన్ 3 లేదా తర్వాత"
+
+msgid "Usage: %s [OPTION]... NAME...\n"
+msgstr "వాడుక: %s [ఎంపిక]... పేరు...\n"
+
+msgid "Compute a number from each name."
+msgstr "ప్రతి పేరు నుండి ఒక సంఖ్యను లెక్కిస్తుంది."
+
+msgid "  -5, --md5           hash with MD5"
+msgstr "  -5, --md5           MD5 తో హాష్"
+
+msgid "  -1, --sha1          hash with SHA-1"
+msgstr "  -1, --sha1          SHA-1 తో హాష్"
+
+msgid "      --sha224        hash with SHA-224"
+msgstr "      --sha224        SHA-224 తో హాష్"
+
+msgid "  -2, --sha256        hash with SHA-256 (default)"
+msgstr "  -2, --sha256        SHA-256 తో హాష్ (డిఫాల్ట్)"
+
+msgid "      --sha384        hash with SHA-384"
+msgstr "      --sha384        SHA-384 తో హాష్"
+
+msgid "  -8, --sha512        hash with SHA-512"
+msgstr "  -8, --sha512        SHA-512 తో హాష్"
+
+msgid "  -3, --sha3-256      hash with SHA3-256"
+msgstr "  -3, --sha3-256      SHA3-256 తో హాష్"
+
+msgid "      --sha3-512      hash with SHA3-512"
+msgstr "      --sha3-512      SHA3-512 తో హాష్"
+
+msgid "      --blake2s       hash with BLAKE2s"
+msgstr "      --blake2s       BLAKE2s తో హాష్"
+
+msgid "      --blake2b       hash with BLAKE2b"
+msgstr "      --blake2b       BLAKE2b తో హాష్"
+
+msgid "      --ripemd160     hash with RIPEMD-160"
+msgstr "      --ripemd160     RIPEMD-160 తో హాష్"
+
+msgid "      --crc16         digest with CRC-16"
+msgstr "      --crc16         CRC-16 డైజెస్ట్"
+
+msgid "  -c, --crc32         digest with CRC-32"
+msgstr "  -c, --crc32         CRC-32 డైజెస్ట్"
+
+msgid "  -m, --mod DIV       modulus (default: 65536)"
+msgstr "  -m, --mod DIV       మాడ్యులస్ (డిఫాల్ట్: 65536)"
+
+msgid "  -b, --bias BIAS     added after reduction (default: 0)"
+msgstr "  -b, --bias BIAS     తగ్గింపు తర్వాత జోడించబడుతుం�ర్వాత జోడించబడుతుంది (డిఫాల్ట్: 0)"
+
+msgid "  -p, --profile NAME  range profile (default: w)"
+msgstr "  -p, --profile NAME  పరిధి ప్రొఫైల్ (డిఫాల్ట్: w)"
+
+msgid "  -h, --help          display this help and exit"
+msgstr "  -h, --help          ఈ సహాయాన్ని చూపి నిష్క్రమించు"
+
+msgid "      --version       output version information and exit"
+msgstr "      --version       వెర్షన్ చూపి నిష్క్రమించు"
+
+msgid "Each output line is:"
+msgstr "ప్రతి అవుట్‌పుట్ పంక్తి:"
+
+msgid "Profiles:"
+msgstr "ప్రొఫైల్స్:"
+
+msgid "default"
+msgstr "డిఫాల్ట్"
+
+msgid "DIV and BIAS accept decimal or 0x hex, with optional k/m/g suffix (1024)."
+msgstr "DIV మరియు BIAS దశాంశం లేదా 0x షోడశాంశాన్ని అంగీకరిస్తాయి, ఐచ్ఛిక k/m/g ప్రత్యయంతో (1024)."
+
+msgid "Try '%s --help' for more information.\n"
+msgstr "మరింత సమాచారం కోసం '%s --help' ప్రయత్నించండి.\n"
+
+msgid "%s: invalid DIV: %s\n"
+msgstr "%s: చెల్లని DIV: %s\n"
+
+msgid "%s: invalid BIAS: %s\n"
+msgstr "%s: చెల్లని BIAS: %s\n"
+
+msgid "%s: unknown profile: %s\n"
+msgstr "%s: తెలియని ప్రొఫైల్: %s\n"
+
+msgid "%s: missing name\n"
+msgstr "%s: పేరు లేదు\n"
+
+msgid "%s: DIV must be greater than 0\n"
+msgstr "%s: DIV 0 కంటే ఎక్కువగా ఉండాలి\n"
+
+msgid "%s: failed to compute number for '%s'\n"
+msgstr "%s: '%s' సంఖ్యను లెక్కించలేకపోయాం\n"
+
+msgid "%s: write error\n"
+msgstr "%s: రాయడం లోపం\n"

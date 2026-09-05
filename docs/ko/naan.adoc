@@ -1,0 +1,115 @@
+= naan(1)
+{project-author} <{project-email}>
+:doctype: manpage
+:manmanual: 사용자 명령
+:mansource: naan
+:man-linkstyle: pass:[blue R < >]
+
+== 이름
+
+naan - 이름에서 숫자를 계산한다
+
+== 개요
+
+*naan* [_OPTION_]... _NAME_...
+
+== 설명
+
+*naan*(name as a number)은 각 _이름_을 해시하고 인수마다 십진수 하나를 출력합니다.
+
+숫자는 다음과 같습니다:
+
+  (digest(NAME) mod DIV) + BIAS
+
+다이제스트는 빅엔디안 정수로 해석합니다. 기본 해시는 SHA-256입니다. 기본 범위는 프로파일 *w*(`DIV=65536`, `BIAS=0`)입니다.
+
+== 옵션
+
+*-5, --md5*::
+    MD5를 사용합니다.
+
+*-1, --sha1*::
+    SHA-1를 사용합니다.
+
+*--sha224*::
+    SHA-224를 사용합니다.
+
+*-2, --sha256*::
+    SHA-256를 사용합니다.
+
+*--sha384*::
+    SHA-384를 사용합니다.
+
+*-8, --sha512*::
+    SHA-512를 사용합니다.
+
+*-3, --sha3-256*::
+    SHA3-256를 사용합니다.
+
+*--sha3-512*::
+    SHA3-512를 사용합니다.
+
+*--blake2s*::
+    BLAKE2s를 사용합니다.
+
+*--blake2b*::
+    BLAKE2b를 사용합니다.
+
+*--ripemd160*::
+    RIPEMD-160를 사용합니다.
+
+*--crc16*::
+    CRC-16/CCITT-FALSE (poly `0x1021`, init `0xFFFF`).
+
+*-c, --crc32*::
+    CRC-32/ISO-HDLC.
+
+*-m, --mod* _DIV_::
+    DIV.
+
+*-b, --bias* _BIAS_::
+    BIAS.
+
+*-p, --profile* _NAME_::
+    b, w, dw, wm.
+
+*-h, --help*::
+    --help
+
+*--version*::
+    --version
+
+== 프로파일
+
+*b*::
+    `DIV=256` `BIAS=0`
+
+*w*::
+    `DIV=65536` `BIAS=0`
+
+*dw*::
+    `DIV=4G` `BIAS=0`
+
+*wm*::
+    `DIV=2000` `BIAS=2000`
+
+== 예제
+
+  $ naan hello
+  38948
+
+  $ naan --crc32 hello
+  42630
+
+== 종료 상태
+
+*0*::
+    0
+
+*1*::
+    1
+
+== 저작권
+
+Copyright (C) {project-year} {project-author} <{project-email}>.
+AGPL-3.0-or-later.

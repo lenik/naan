@@ -1,0 +1,115 @@
+= naan(1)
+{project-author} <{project-email}>
+:doctype: manpage
+:manmanual: Mga utos ng gumagamit
+:mansource: naan
+:man-linkstyle: pass:[blue R < >]
+
+== Pangalan
+
+naan - kumuha ng numero mula sa pangalan
+
+== Buod
+
+*naan* [_OPTION_]... _NAME_...
+
+== Paglalarawan
+
+*naan* (name as a number) ay nagha-hash ng bawat _PANGALAN_ at nagpapalimbag ng isang desimal na numero sa bawat argumento.
+
+Ang numero ay:
+
+  (digest(NAME) mod DIV) + BIAS
+
+Ang digest ay binabasa bilang big-endian integer.  Ang default na hash ay SHA-256.  Ang default na sakop ay profile *w* (`DIV=65536`, `BIAS=0`).
+
+== Mga opsyon
+
+*-5, --md5*::
+    Gamitin ang MD5.
+
+*-1, --sha1*::
+    Gamitin ang SHA-1.
+
+*--sha224*::
+    Gamitin ang SHA-224.
+
+*-2, --sha256*::
+    Gamitin ang SHA-256.
+
+*--sha384*::
+    Gamitin ang SHA-384.
+
+*-8, --sha512*::
+    Gamitin ang SHA-512.
+
+*-3, --sha3-256*::
+    Gamitin ang SHA3-256.
+
+*--sha3-512*::
+    Gamitin ang SHA3-512.
+
+*--blake2s*::
+    Gamitin ang BLAKE2s.
+
+*--blake2b*::
+    Gamitin ang BLAKE2b.
+
+*--ripemd160*::
+    Gamitin ang RIPEMD-160.
+
+*--crc16*::
+    CRC-16/CCITT-FALSE (poly `0x1021`, init `0xFFFF`).
+
+*-c, --crc32*::
+    CRC-32/ISO-HDLC.
+
+*-m, --mod* _DIV_::
+    DIV.
+
+*-b, --bias* _BIAS_::
+    BIAS.
+
+*-p, --profile* _NAME_::
+    b, w, dw, wm.
+
+*-h, --help*::
+    --help
+
+*--version*::
+    --version
+
+== Mga profile
+
+*b*::
+    `DIV=256` `BIAS=0`
+
+*w*::
+    `DIV=65536` `BIAS=0`
+
+*dw*::
+    `DIV=4G` `BIAS=0`
+
+*wm*::
+    `DIV=2000` `BIAS=2000`
+
+== Mga halimbawa
+
+  $ naan hello
+  38948
+
+  $ naan --crc32 hello
+  42630
+
+== Katayuan ng paglabas
+
+*0*::
+    0
+
+*1*::
+    1
+
+== Copyright
+
+Copyright (C) {project-year} {project-author} <{project-email}>.
+AGPL-3.0-or-later.

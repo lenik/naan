@@ -1,0 +1,115 @@
+= naan(1)
+{project-author} <{project-email}>
+:doctype: manpage
+:manmanual: Commandes utilisateur
+:mansource: naan
+:man-linkstyle: pass:[blue R < >]
+
+== Nom
+
+naan - calculer un nombre à partir d'un nom
+
+== Synopsis
+
+*naan* [_OPTION_]... _NAME_...
+
+== Description
+
+*naan* (name as a number) hache chaque _NOM_ et affiche un nombre décimal par argument.
+
+Le nombre est :
+
+  (digest(NAME) mod DIV) + BIAS
+
+Le condensé est interprété comme un entier gros-boutiste.  Le hachage par défaut est SHA-256.  La plage par défaut est le profil *w* (`DIV=65536`, `BIAS=0`).
+
+== Options
+
+*-5, --md5*::
+    Utiliser MD5.
+
+*-1, --sha1*::
+    Utiliser SHA-1.
+
+*--sha224*::
+    Utiliser SHA-224.
+
+*-2, --sha256*::
+    Utiliser SHA-256.
+
+*--sha384*::
+    Utiliser SHA-384.
+
+*-8, --sha512*::
+    Utiliser SHA-512.
+
+*-3, --sha3-256*::
+    Utiliser SHA3-256.
+
+*--sha3-512*::
+    Utiliser SHA3-512.
+
+*--blake2s*::
+    Utiliser BLAKE2s.
+
+*--blake2b*::
+    Utiliser BLAKE2b.
+
+*--ripemd160*::
+    Utiliser RIPEMD-160.
+
+*--crc16*::
+    CRC-16/CCITT-FALSE (poly `0x1021`, init `0xFFFF`).
+
+*-c, --crc32*::
+    CRC-32/ISO-HDLC.
+
+*-m, --mod* _DIV_::
+    DIV.
+
+*-b, --bias* _BIAS_::
+    BIAS.
+
+*-p, --profile* _NAME_::
+    b, w, dw, wm.
+
+*-h, --help*::
+    --help
+
+*--version*::
+    --version
+
+== Profils
+
+*b*::
+    `DIV=256` `BIAS=0`
+
+*w*::
+    `DIV=65536` `BIAS=0`
+
+*dw*::
+    `DIV=4G` `BIAS=0`
+
+*wm*::
+    `DIV=2000` `BIAS=2000`
+
+== Exemples
+
+  $ naan hello
+  38948
+
+  $ naan --crc32 hello
+  42630
+
+== Code de sortie
+
+*0*::
+    0
+
+*1*::
+    1
+
+== Copyright
+
+Copyright (C) {project-year} {project-author} <{project-email}>.
+AGPL-3.0-or-later.

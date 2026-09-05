@@ -1,0 +1,115 @@
+= naan(1)
+{project-author} <{project-email}>
+:doctype: manpage
+:manmanual: คำสั่งผู้ใช้
+:mansource: naan
+:man-linkstyle: pass:[blue R < >]
+
+== ชื่อ
+
+naan - คำนวณตัวเลขจากชื่อ
+
+== สรุป
+
+*naan* [_OPTION_]... _NAME_...
+
+== คำอธิบาย
+
+*naan* (name as a number) แฮชแต่ละ _ชื่อ_ และพิมพ์เลขฐานสิบหนึ่งค่าต่ออาร์กิวเมนต์
+
+ตัวเลขคือ:
+
+  (digest(NAME) mod DIV) + BIAS
+
+ไดเจสต์ตีความเป็นจำนวนเต็มบิ๊กเอนเดียน ค่าแฮชเริ่มต้นคือ SHA-256 ช่วงเริ่มต้นคือโปรไฟล์ *w* (`DIV=65536`, `BIAS=0`)
+
+== ตัวเลือก
+
+*-5, --md5*::
+    ใช้ MD5
+
+*-1, --sha1*::
+    ใช้ SHA-1
+
+*--sha224*::
+    ใช้ SHA-224
+
+*-2, --sha256*::
+    ใช้ SHA-256
+
+*--sha384*::
+    ใช้ SHA-384
+
+*-8, --sha512*::
+    ใช้ SHA-512
+
+*-3, --sha3-256*::
+    ใช้ SHA3-256
+
+*--sha3-512*::
+    ใช้ SHA3-512
+
+*--blake2s*::
+    ใช้ BLAKE2s
+
+*--blake2b*::
+    ใช้ BLAKE2b
+
+*--ripemd160*::
+    ใช้ RIPEMD-160
+
+*--crc16*::
+    CRC-16/CCITT-FALSE (poly `0x1021`, init `0xFFFF`).
+
+*-c, --crc32*::
+    CRC-32/ISO-HDLC.
+
+*-m, --mod* _DIV_::
+    DIV.
+
+*-b, --bias* _BIAS_::
+    BIAS.
+
+*-p, --profile* _NAME_::
+    b, w, dw, wm.
+
+*-h, --help*::
+    --help
+
+*--version*::
+    --version
+
+== โปรไฟล์
+
+*b*::
+    `DIV=256` `BIAS=0`
+
+*w*::
+    `DIV=65536` `BIAS=0`
+
+*dw*::
+    `DIV=4G` `BIAS=0`
+
+*wm*::
+    `DIV=2000` `BIAS=2000`
+
+== ตัวอย่าง
+
+  $ naan hello
+  38948
+
+  $ naan --crc32 hello
+  42630
+
+== สถานะออก
+
+*0*::
+    0
+
+*1*::
+    1
+
+== ลิขสิทธิ์
+
+Copyright (C) {project-year} {project-author} <{project-email}>.
+AGPL-3.0-or-later.

@@ -1,0 +1,115 @@
+= naan(1)
+{project-author} <{project-email}>
+:doctype: manpage
+:manmanual: ユーザーコマンド
+:mansource: naan
+:man-linkstyle: pass:[blue R < >]
+
+== 名前
+
+naan - 名前から数値を求める
+
+== 書式
+
+*naan* [_OPTION_]... _NAME_...
+
+== 説明
+
+*naan*（name as a number）は各 _名前_ をハッシュし、引数ごとに十進数を 1 行出力します。
+
+数値は次のとおりです:
+
+  (digest(NAME) mod DIV) + BIAS
+
+ダイジェストはビッグエンディアン整数として解釈します。既定のハッシュは SHA-256 です。既定の範囲はプロファイル *w*（`DIV=65536`、`BIAS=0`）です。
+
+== オプション
+
+*-5, --md5*::
+    MD5 を使います。
+
+*-1, --sha1*::
+    SHA-1 を使います。
+
+*--sha224*::
+    SHA-224 を使います。
+
+*-2, --sha256*::
+    SHA-256 を使います。
+
+*--sha384*::
+    SHA-384 を使います。
+
+*-8, --sha512*::
+    SHA-512 を使います。
+
+*-3, --sha3-256*::
+    SHA3-256 を使います。
+
+*--sha3-512*::
+    SHA3-512 を使います。
+
+*--blake2s*::
+    BLAKE2s を使います。
+
+*--blake2b*::
+    BLAKE2b を使います。
+
+*--ripemd160*::
+    RIPEMD-160 を使います。
+
+*--crc16*::
+    CRC-16/CCITT-FALSE (poly `0x1021`, init `0xFFFF`).
+
+*-c, --crc32*::
+    CRC-32/ISO-HDLC.
+
+*-m, --mod* _DIV_::
+    DIV.
+
+*-b, --bias* _BIAS_::
+    BIAS.
+
+*-p, --profile* _NAME_::
+    b, w, dw, wm.
+
+*-h, --help*::
+    --help
+
+*--version*::
+    --version
+
+== プロファイル
+
+*b*::
+    `DIV=256` `BIAS=0`
+
+*w*::
+    `DIV=65536` `BIAS=0`
+
+*dw*::
+    `DIV=4G` `BIAS=0`
+
+*wm*::
+    `DIV=2000` `BIAS=2000`
+
+== 例
+
+  $ naan hello
+  38948
+
+  $ naan --crc32 hello
+  42630
+
+== 終了ステータス
+
+*0*::
+    0
+
+*1*::
+    1
+
+== 著作権
+
+Copyright (C) {project-year} {project-author} <{project-email}>.
+AGPL-3.0-or-later.

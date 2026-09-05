@@ -1,0 +1,159 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the naan package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: naan\n"
+"Report-Msgid-Bugs-To: naan@bodz.net\n"
+"POT-Creation-Date: 2026-09-06 07:36+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/naan.c:30
+msgid "License AGPL-3.0-or-later: GNU AGPL version 3 or later"
+msgstr ""
+
+#: src/naan.c:34
+#, c-format
+msgid "Usage: %s [OPTION]... NAME...\n"
+msgstr ""
+
+#: src/naan.c:35
+msgid "Compute a number from each name."
+msgstr ""
+
+#: src/naan.c:37
+msgid "  -5, --md5           hash with MD5"
+msgstr ""
+
+#: src/naan.c:38
+msgid "  -1, --sha1          hash with SHA-1"
+msgstr ""
+
+#: src/naan.c:39
+msgid "      --sha224        hash with SHA-224"
+msgstr ""
+
+#: src/naan.c:40
+msgid "  -2, --sha256        hash with SHA-256 (default)"
+msgstr ""
+
+#: src/naan.c:41
+msgid "      --sha384        hash with SHA-384"
+msgstr ""
+
+#: src/naan.c:42
+msgid "  -8, --sha512        hash with SHA-512"
+msgstr ""
+
+#: src/naan.c:43
+msgid "  -3, --sha3-256      hash with SHA3-256"
+msgstr ""
+
+#: src/naan.c:44
+msgid "      --sha3-512      hash with SHA3-512"
+msgstr ""
+
+#: src/naan.c:45
+msgid "      --blake2s       hash with BLAKE2s"
+msgstr ""
+
+#: src/naan.c:46
+msgid "      --blake2b       hash with BLAKE2b"
+msgstr ""
+
+#: src/naan.c:47
+msgid "      --ripemd160     hash with RIPEMD-160"
+msgstr ""
+
+#: src/naan.c:48
+msgid "      --crc16         digest with CRC-16"
+msgstr ""
+
+#: src/naan.c:49
+msgid "  -c, --crc32         digest with CRC-32"
+msgstr ""
+
+#: src/naan.c:50
+msgid "  -m, --mod DIV       modulus (default: 65536)"
+msgstr ""
+
+#: src/naan.c:51
+msgid "  -b, --bias BIAS     added after reduction (default: 0)"
+msgstr ""
+
+#: src/naan.c:52
+msgid "  -p, --profile NAME  range profile (default: w)"
+msgstr ""
+
+#: src/naan.c:53
+msgid "  -h, --help          display this help and exit"
+msgstr ""
+
+#: src/naan.c:54
+msgid "      --version       output version information and exit"
+msgstr ""
+
+#: src/naan.c:56
+msgid "Each output line is:"
+msgstr ""
+
+#: src/naan.c:59
+msgid "Profiles:"
+msgstr ""
+
+#: src/naan.c:61
+msgid "default"
+msgstr ""
+
+#: src/naan.c:65
+msgid "DIV and BIAS accept decimal or 0x hex, with optional k/m/g suffix (1024)."
+msgstr ""
+
+#: src/naan.c:146
+#, c-format
+msgid "%s: invalid DIV: %s\n"
+msgstr ""
+
+#: src/naan.c:152
+#, c-format
+msgid "%s: invalid BIAS: %s\n"
+msgstr ""
+
+#: src/naan.c:158
+#, c-format
+msgid "%s: unknown profile: %s\n"
+msgstr ""
+
+#: src/naan.c:169 src/naan.c:176
+#, c-format
+msgid "Try '%s --help' for more information.\n"
+msgstr ""
+
+#: src/naan.c:175
+#, c-format
+msgid "%s: missing name\n"
+msgstr ""
+
+#: src/naan.c:181
+#, c-format
+msgid "%s: DIV must be greater than 0\n"
+msgstr ""
+
+#: src/naan.c:190
+#, c-format
+msgid "%s: failed to compute number for '%s'\n"
+msgstr ""
+
+#: src/naan.c:195 src/naan.c:201
+#, c-format
+msgid "%s: write error\n"
+msgstr ""

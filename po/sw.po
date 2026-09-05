@@ -1,0 +1,113 @@
+# Copyright (C) 2026 Lenik <naan@bodz.net>
+# SPDX-License-Identifier: AGPL-3.0-or-later
+msgid ""
+msgstr ""
+"Project-Id-Version: naan\n"
+"Report-Msgid-Bugs-To: naan@bodz.net\n"
+"POT-Creation-Date: 2026-09-06 07:28+0800\n"
+"PO-Revision-Date: 2026-09-06 07:28+0800\n"
+"Last-Translator: Lenik <naan@bodz.net>\n"
+"Language-Team: Swahili\n"
+"Language: sw\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "License AGPL-3.0-or-later: GNU AGPL version 3 or later"
+msgstr "Leseni AGPL-3.0-or-later: GNU AGPL toleo la 3 au jipya zaidi"
+
+msgid "Usage: %s [OPTION]... NAME...\n"
+msgstr "Matumizi: %s [CHAGUO]... JINA...\n"
+
+msgid "Compute a number from each name."
+msgstr "Huhesabu namba kutoka kwa kila jina."
+
+msgid "  -5, --md5           hash with MD5"
+msgstr "  -5, --md5           hashi kwa MD5"
+
+msgid "  -1, --sha1          hash with SHA-1"
+msgstr "  -1, --sha1          hashi kwa SHA-1"
+
+msgid "      --sha224        hash with SHA-224"
+msgstr "      --sha224        hashi kwa SHA-224"
+
+msgid "  -2, --sha256        hash with SHA-256 (default)"
+msgstr "  -2, --sha256        hashi kwa SHA-256 (chaguo-msingi)"
+
+msgid "      --sha384        hash with SHA-384"
+msgstr "      --sha384        hashi kwa SHA-384"
+
+msgid "  -8, --sha512        hash with SHA-512"
+msgstr "  -8, --sha512        hashi kwa SHA-512"
+
+msgid "  -3, --sha3-256      hash with SHA3-256"
+msgstr "  -3, --sha3-256      hashi kwa SHA3-256"
+
+msgid "      --sha3-512      hash with SHA3-512"
+msgstr "      --sha3-512      hashi kwa SHA3-512"
+
+msgid "      --blake2s       hash with BLAKE2s"
+msgstr "      --blake2s       hashi kwa BLAKE2s"
+
+msgid "      --blake2b       hash with BLAKE2b"
+msgstr "      --blake2b       hashi kwa BLAKE2b"
+
+msgid "      --ripemd160     hash with RIPEMD-160"
+msgstr "      --ripemd160     hashi kwa RIPEMD-160"
+
+msgid "      --crc16         digest with CRC-16"
+msgstr "      --crc16         digest CRC-16"
+
+msgid "  -c, --crc32         digest with CRC-32"
+msgstr "  -c, --crc32         digest CRC-32"
+
+msgid "  -m, --mod DIV       modulus (default: 65536)"
+msgstr "  -m, --mod DIV       modulus (chaguo-msingi: 65536)"
+
+msgid "  -b, --bias BIAS     added after reduction (default: 0)"
+msgstr "  -b, --bias BIAS     huongezwa baada ya kupunguza (chaguo-msingi: 0)"
+
+msgid "  -p, --profile NAME  range profile (default: w)"
+msgstr "  -p, --profile NAME  wasifu wa masafa (chaguo-msingi: w)"
+
+msgid "  -h, --help          display this help and exit"
+msgstr "  -h, --help          onyesha msaada huu kisha toka"
+
+msgid "      --version       output version information and exit"
+msgstr "      --version       onyesha toleo kisha toka"
+
+msgid "Each output line is:"
+msgstr "Kila mstari wa pato ni:"
+
+msgid "Profiles:"
+msgstr "Wasifu:"
+
+msgid "default"
+msgstr "chaguo-msingi"
+
+msgid "DIV and BIAS accept decimal or 0x hex, with optional k/m/g suffix (1024)."
+msgstr "DIV na BIAS hukubali desimali au heksi 0x, na kiambishi k/m/g cha hiari (1024)."
+
+msgid "Try '%s --help' for more information.\n"
+msgstr "Jaribu '%s --help' kwa maelezo zaidi.\n"
+
+msgid "%s: invalid DIV: %s\n"
+msgstr "%s: DIV batili: %s\n"
+
+msgid "%s: invalid BIAS: %s\n"
+msgstr "%s: BIAS batili: %s\n"
+
+msgid "%s: unknown profile: %s\n"
+msgstr "%s: wasifu usiojulikana: %s\n"
+
+msgid "%s: missing name\n"
+msgstr "%s: jina halipo\n"
+
+msgid "%s: DIV must be greater than 0\n"
+msgstr "%s: DIV lazima iwe kubwa kuliko 0\n"
+
+msgid "%s: failed to compute number for '%s'\n"
+msgstr "%s: imeshindwa kuhesabu namba ya '%s'\n"
+
+msgid "%s: write error\n"
+msgstr "%s: hitilafu ya kuandika\n"

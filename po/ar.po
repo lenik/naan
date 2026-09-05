@@ -1,0 +1,113 @@
+# Copyright (C) 2026 Lenik <naan@bodz.net>
+# SPDX-License-Identifier: AGPL-3.0-or-later
+msgid ""
+msgstr ""
+"Project-Id-Version: naan\n"
+"Report-Msgid-Bugs-To: naan@bodz.net\n"
+"POT-Creation-Date: 2026-09-06 07:28+0800\n"
+"PO-Revision-Date: 2026-09-06 07:28+0800\n"
+"Last-Translator: Lenik <naan@bodz.net>\n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "License AGPL-3.0-or-later: GNU AGPL version 3 or later"
+msgstr "الرخصة AGPL-3.0-or-later: جنو أغبل الإصدار 3 أو أحدث"
+
+msgid "Usage: %s [OPTION]... NAME...\n"
+msgstr "الاستخدام: %s [خيار]... اسم...\n"
+
+msgid "Compute a number from each name."
+msgstr "يحسب رقمًا من كل اسم."
+
+msgid "  -5, --md5           hash with MD5"
+msgstr "  -5, --md5           تجزئة بـ MD5"
+
+msgid "  -1, --sha1          hash with SHA-1"
+msgstr "  -1, --sha1          تجزئة بـ SHA-1"
+
+msgid "      --sha224        hash with SHA-224"
+msgstr "      --sha224        تجزئة بـ SHA-224"
+
+msgid "  -2, --sha256        hash with SHA-256 (default)"
+msgstr "  -2, --sha256        تجزئة بـ SHA-256 (الافتراضي)"
+
+msgid "      --sha384        hash with SHA-384"
+msgstr "      --sha384        تجزئة بـ SHA-384"
+
+msgid "  -8, --sha512        hash with SHA-512"
+msgstr "  -8, --sha512        تجزئة بـ SHA-512"
+
+msgid "  -3, --sha3-256      hash with SHA3-256"
+msgstr "  -3, --sha3-256      تجزئة بـ SHA3-256"
+
+msgid "      --sha3-512      hash with SHA3-512"
+msgstr "      --sha3-512      تجزئة بـ SHA3-512"
+
+msgid "      --blake2s       hash with BLAKE2s"
+msgstr "      --blake2s       تجزئة بـ BLAKE2s"
+
+msgid "      --blake2b       hash with BLAKE2b"
+msgstr "      --blake2b       تجزئة بـ BLAKE2b"
+
+msgid "      --ripemd160     hash with RIPEMD-160"
+msgstr "      --ripemd160     تجزئة بـ RIPEMD-160"
+
+msgid "      --crc16         digest with CRC-16"
+msgstr "      --crc16         خلاصة CRC-16"
+
+msgid "  -c, --crc32         digest with CRC-32"
+msgstr "  -c, --crc32         خلاصة CRC-32"
+
+msgid "  -m, --mod DIV       modulus (default: 65536)"
+msgstr "  -m, --mod DIV       باقي القسمة (الافتراضي: 65536)"
+
+msgid "  -b, --bias BIAS     added after reduction (default: 0)"
+msgstr "  -b, --bias BIAS     يُضاف بعد الاختزال (الافتراضي: 0)"
+
+msgid "  -p, --profile NAME  range profile (default: w)"
+msgstr "  -p, --profile NAME  ملف نطاق (الافتراضي: w)"
+
+msgid "  -h, --help          display this help and exit"
+msgstr "  -h, --help          عرض هذه المساعدة والخروج"
+
+msgid "      --version       output version information and exit"
+msgstr "      --version       عرض معلومات الإصدار والخروج"
+
+msgid "Each output line is:"
+msgstr "كل سطر من المخرجات هو:"
+
+msgid "Profiles:"
+msgstr "الملفات:"
+
+msgid "default"
+msgstr "الافتراضي"
+
+msgid "DIV and BIAS accept decimal or 0x hex, with optional k/m/g suffix (1024)."
+msgstr "يقبل DIV وBIAS العدد العشري أو الست عشري 0x، مع لاحقة k/m/g اختيارية (1024)."
+
+msgid "Try '%s --help' for more information.\n"
+msgstr "جرّب «%s --help» لمزيد من المعلومات.\n"
+
+msgid "%s: invalid DIV: %s\n"
+msgstr "%s: DIV غير صالح: %s\n"
+
+msgid "%s: invalid BIAS: %s\n"
+msgstr "%s: BIAS غير صالح: %s\n"
+
+msgid "%s: unknown profile: %s\n"
+msgstr "%s: ملف غير معروف: %s\n"
+
+msgid "%s: missing name\n"
+msgstr "%s: الاسم مفقود\n"
+
+msgid "%s: DIV must be greater than 0\n"
+msgstr "%s: يجب أن يكون DIV أكبر من 0\n"
+
+msgid "%s: failed to compute number for '%s'\n"
+msgstr "%s: تعذّر حساب الرقم لـ «%s»\n"
+
+msgid "%s: write error\n"
+msgstr "%s: خطأ في الكتابة\n"

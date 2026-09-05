@@ -1,0 +1,113 @@
+# Copyright (C) 2026 Lenik <naan@bodz.net>
+# SPDX-License-Identifier: AGPL-3.0-or-later
+msgid ""
+msgstr ""
+"Project-Id-Version: naan\n"
+"Report-Msgid-Bugs-To: naan@bodz.net\n"
+"POT-Creation-Date: 2026-09-06 07:28+0800\n"
+"PO-Revision-Date: 2026-09-06 07:28+0800\n"
+"Last-Translator: Lenik <naan@bodz.net>\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "License AGPL-3.0-or-later: GNU AGPL version 3 or later"
+msgstr "ライセンス AGPL-3.0-or-later: GNU AGPL バージョン 3 以降"
+
+msgid "Usage: %s [OPTION]... NAME...\n"
+msgstr "用法: %s [オプション]... 名前...\n"
+
+msgid "Compute a number from each name."
+msgstr "各名前から数値を求めます。"
+
+msgid "  -5, --md5           hash with MD5"
+msgstr "  -5, --md5           MD5 でハッシュ"
+
+msgid "  -1, --sha1          hash with SHA-1"
+msgstr "  -1, --sha1          SHA-1 でハッシュ"
+
+msgid "      --sha224        hash with SHA-224"
+msgstr "      --sha224        SHA-224 でハッシュ"
+
+msgid "  -2, --sha256        hash with SHA-256 (default)"
+msgstr "  -2, --sha256        SHA-256 でハッシュ（既定）"
+
+msgid "      --sha384        hash with SHA-384"
+msgstr "      --sha384        SHA-384 でハッシュ"
+
+msgid "  -8, --sha512        hash with SHA-512"
+msgstr "  -8, --sha512        SHA-512 でハッシュ"
+
+msgid "  -3, --sha3-256      hash with SHA3-256"
+msgstr "  -3, --sha3-256      SHA3-256 でハッシュ"
+
+msgid "      --sha3-512      hash with SHA3-512"
+msgstr "      --sha3-512      SHA3-512 でハッシュ"
+
+msgid "      --blake2s       hash with BLAKE2s"
+msgstr "      --blake2s       BLAKE2s でハッシュ"
+
+msgid "      --blake2b       hash with BLAKE2b"
+msgstr "      --blake2b       BLAKE2b でハッシュ"
+
+msgid "      --ripemd160     hash with RIPEMD-160"
+msgstr "      --ripemd160     RIPEMD-160 でハッシュ"
+
+msgid "      --crc16         digest with CRC-16"
+msgstr "      --crc16         CRC-16 ダイジェスト"
+
+msgid "  -c, --crc32         digest with CRC-32"
+msgstr "  -c, --crc32         CRC-32 ダイジェスト"
+
+msgid "  -m, --mod DIV       modulus (default: 65536)"
+msgstr "  -m, --mod DIV       剰余（既定: 65536）"
+
+msgid "  -b, --bias BIAS     added after reduction (default: 0)"
+msgstr "  -b, --bias BIAS     剰余の後に加算（既定: 0）"
+
+msgid "  -p, --profile NAME  range profile (default: w)"
+msgstr "  -p, --profile NAME  範囲プロファイル（既定: w）"
+
+msgid "  -h, --help          display this help and exit"
+msgstr "  -h, --help          このヘルプを表示して終了"
+
+msgid "      --version       output version information and exit"
+msgstr "      --version       バージョンを表示して終了"
+
+msgid "Each output line is:"
+msgstr "各出力行は次のとおりです:"
+
+msgid "Profiles:"
+msgstr "プロファイル:"
+
+msgid "default"
+msgstr "既定"
+
+msgid "DIV and BIAS accept decimal or 0x hex, with optional k/m/g suffix (1024)."
+msgstr "DIV と BIAS は十進または 0x 十六進を受け付け、任意で k/m/g 接尾辞（1024）を付けられます。"
+
+msgid "Try '%s --help' for more information.\n"
+msgstr "詳細は「%s --help」を試してください。\n"
+
+msgid "%s: invalid DIV: %s\n"
+msgstr "%s: 無効な DIV: %s\n"
+
+msgid "%s: invalid BIAS: %s\n"
+msgstr "%s: 無効な BIAS: %s\n"
+
+msgid "%s: unknown profile: %s\n"
+msgstr "%s: 未知のプロファイル: %s\n"
+
+msgid "%s: missing name\n"
+msgstr "%s: 名前がありません\n"
+
+msgid "%s: DIV must be greater than 0\n"
+msgstr "%s: DIV は 0 より大きくなければなりません\n"
+
+msgid "%s: failed to compute number for '%s'\n"
+msgstr "%s: 「%s」の数値を計算できませんでした\n"
+
+msgid "%s: write error\n"
+msgstr "%s: 書き込みエラー\n"

@@ -1,0 +1,115 @@
+= naan(1)
+{project-author} <{project-email}>
+:doctype: manpage
+:manmanual: Пайдаланушы командалары
+:mansource: naan
+:man-linkstyle: pass:[blue R < >]
+
+== Атауы
+
+naan - атаудан сан есептеу
+
+== Шолу
+
+*naan* [_OPTION_]... _NAME_...
+
+== Сипаттама
+
+*naan* (name as a number) әр _АТАУДЫ_ хештейді және әр аргументке бір ондық сан шығарады.
+
+Сан:
+
+  (digest(NAME) mod DIV) + BIAS
+
+Дайджест big-endian бүтін сан ретінде оқылады.  Әдепкі хеш — SHA-256.  Әдепкі ауқым — *w* профилі (`DIV=65536`, `BIAS=0`).
+
+== Опциялар
+
+*-5, --md5*::
+    MD5 қолдану.
+
+*-1, --sha1*::
+    SHA-1 қолдану.
+
+*--sha224*::
+    SHA-224 қолдану.
+
+*-2, --sha256*::
+    SHA-256 қолдану.
+
+*--sha384*::
+    SHA-384 қолдану.
+
+*-8, --sha512*::
+    SHA-512 қолдану.
+
+*-3, --sha3-256*::
+    SHA3-256 қолдану.
+
+*--sha3-512*::
+    SHA3-512 қолдану.
+
+*--blake2s*::
+    BLAKE2s қолдану.
+
+*--blake2b*::
+    BLAKE2b қолдану.
+
+*--ripemd160*::
+    RIPEMD-160 қолдану.
+
+*--crc16*::
+    CRC-16/CCITT-FALSE (poly `0x1021`, init `0xFFFF`).
+
+*-c, --crc32*::
+    CRC-32/ISO-HDLC.
+
+*-m, --mod* _DIV_::
+    DIV.
+
+*-b, --bias* _BIAS_::
+    BIAS.
+
+*-p, --profile* _NAME_::
+    b, w, dw, wm.
+
+*-h, --help*::
+    --help
+
+*--version*::
+    --version
+
+== Профильдер
+
+*b*::
+    `DIV=256` `BIAS=0`
+
+*w*::
+    `DIV=65536` `BIAS=0`
+
+*dw*::
+    `DIV=4G` `BIAS=0`
+
+*wm*::
+    `DIV=2000` `BIAS=2000`
+
+== Мысалдар
+
+  $ naan hello
+  38948
+
+  $ naan --crc32 hello
+  42630
+
+== Шығу коды
+
+*0*::
+    0
+
+*1*::
+    1
+
+== Авторлық құқық
+
+Copyright (C) {project-year} {project-author} <{project-email}>.
+AGPL-3.0-or-later.

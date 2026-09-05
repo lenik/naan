@@ -1,0 +1,115 @@
+= naan(1)
+{project-author} <{project-email}>
+:doctype: manpage
+:manmanual: Perintah pengguna
+:mansource: naan
+:man-linkstyle: pass:[blue R < >]
+
+== Nama
+
+naan - hitung sebuah angka dari sebuah nama
+
+== Ringkasan
+
+*naan* [_OPTION_]... _NAME_...
+
+== Deskripsi
+
+*naan* (name as a number) meng-hash setiap _NAMA_ dan mencetak satu angka desimal per argumen.
+
+Angkanya adalah:
+
+  (digest(NAME) mod DIV) + BIAS
+
+Digest ditafsirkan sebagai bilangan bulat big-endian.  Hash baku adalah SHA-256.  Rentang baku adalah profil *w* (`DIV=65536`, `BIAS=0`).
+
+== Opsi
+
+*-5, --md5*::
+    Gunakan MD5.
+
+*-1, --sha1*::
+    Gunakan SHA-1.
+
+*--sha224*::
+    Gunakan SHA-224.
+
+*-2, --sha256*::
+    Gunakan SHA-256.
+
+*--sha384*::
+    Gunakan SHA-384.
+
+*-8, --sha512*::
+    Gunakan SHA-512.
+
+*-3, --sha3-256*::
+    Gunakan SHA3-256.
+
+*--sha3-512*::
+    Gunakan SHA3-512.
+
+*--blake2s*::
+    Gunakan BLAKE2s.
+
+*--blake2b*::
+    Gunakan BLAKE2b.
+
+*--ripemd160*::
+    Gunakan RIPEMD-160.
+
+*--crc16*::
+    CRC-16/CCITT-FALSE (poly `0x1021`, init `0xFFFF`).
+
+*-c, --crc32*::
+    CRC-32/ISO-HDLC.
+
+*-m, --mod* _DIV_::
+    DIV.
+
+*-b, --bias* _BIAS_::
+    BIAS.
+
+*-p, --profile* _NAME_::
+    b, w, dw, wm.
+
+*-h, --help*::
+    --help
+
+*--version*::
+    --version
+
+== Profil
+
+*b*::
+    `DIV=256` `BIAS=0`
+
+*w*::
+    `DIV=65536` `BIAS=0`
+
+*dw*::
+    `DIV=4G` `BIAS=0`
+
+*wm*::
+    `DIV=2000` `BIAS=2000`
+
+== Contoh
+
+  $ naan hello
+  38948
+
+  $ naan --crc32 hello
+  42630
+
+== Status keluar
+
+*0*::
+    0
+
+*1*::
+    1
+
+== Hak cipta
+
+Copyright (C) {project-year} {project-author} <{project-email}>.
+AGPL-3.0-or-later.

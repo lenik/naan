@@ -1,0 +1,115 @@
+= naan(1)
+{project-author} <{project-email}>
+:doctype: manpage
+:manmanual: Lệnh người dùng
+:mansource: naan
+:man-linkstyle: pass:[blue R < >]
+
+== Tên
+
+naan - tính một số từ một tên
+
+== Tóm tắt
+
+*naan* [_OPTION_]... _NAME_...
+
+== Mô tả
+
+*naan* (name as a number) băm mỗi _TÊN_ và in một số thập phân cho mỗi đối số.
+
+Số là:
+
+  (digest(NAME) mod DIV) + BIAS
+
+Digest được hiểu như số nguyên big-endian.  Hash mặc định là SHA-256.  Phạm vi mặc định là hồ sơ *w* (`DIV=65536`, `BIAS=0`).
+
+== Tùy chọn
+
+*-5, --md5*::
+    Dùng MD5.
+
+*-1, --sha1*::
+    Dùng SHA-1.
+
+*--sha224*::
+    Dùng SHA-224.
+
+*-2, --sha256*::
+    Dùng SHA-256.
+
+*--sha384*::
+    Dùng SHA-384.
+
+*-8, --sha512*::
+    Dùng SHA-512.
+
+*-3, --sha3-256*::
+    Dùng SHA3-256.
+
+*--sha3-512*::
+    Dùng SHA3-512.
+
+*--blake2s*::
+    Dùng BLAKE2s.
+
+*--blake2b*::
+    Dùng BLAKE2b.
+
+*--ripemd160*::
+    Dùng RIPEMD-160.
+
+*--crc16*::
+    CRC-16/CCITT-FALSE (poly `0x1021`, init `0xFFFF`).
+
+*-c, --crc32*::
+    CRC-32/ISO-HDLC.
+
+*-m, --mod* _DIV_::
+    DIV.
+
+*-b, --bias* _BIAS_::
+    BIAS.
+
+*-p, --profile* _NAME_::
+    b, w, dw, wm.
+
+*-h, --help*::
+    --help
+
+*--version*::
+    --version
+
+== Hồ sơ
+
+*b*::
+    `DIV=256` `BIAS=0`
+
+*w*::
+    `DIV=65536` `BIAS=0`
+
+*dw*::
+    `DIV=4G` `BIAS=0`
+
+*wm*::
+    `DIV=2000` `BIAS=2000`
+
+== Ví dụ
+
+  $ naan hello
+  38948
+
+  $ naan --crc32 hello
+  42630
+
+== Mã thoát
+
+*0*::
+    0
+
+*1*::
+    1
+
+== Bản quyền
+
+Copyright (C) {project-year} {project-author} <{project-email}>.
+AGPL-3.0-or-later.

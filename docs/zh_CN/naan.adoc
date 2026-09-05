@@ -1,0 +1,115 @@
+= naan(1)
+{project-author} <{project-email}>
+:doctype: manpage
+:manmanual: 用户命令
+:mansource: naan
+:man-linkstyle: pass:[blue R < >]
+
+== 名称
+
+naan - 由名称计算出一个数字
+
+== 概要
+
+*naan* [_OPTION_]... _NAME_...
+
+== 描述
+
+*naan*（name as a number）对每个 _名称_ 做哈希，并为每个参数输出一个十进制数字。
+
+数字为：
+
+  (digest(NAME) mod DIV) + BIAS
+
+摘要按大端整数解释。默认哈希为 SHA-256。默认范围是 profile *w*（`DIV=65536`，`BIAS=0`）。
+
+== 选项
+
+*-5, --md5*::
+    使用 MD5。
+
+*-1, --sha1*::
+    使用 SHA-1。
+
+*--sha224*::
+    使用 SHA-224。
+
+*-2, --sha256*::
+    使用 SHA-256。
+
+*--sha384*::
+    使用 SHA-384。
+
+*-8, --sha512*::
+    使用 SHA-512。
+
+*-3, --sha3-256*::
+    使用 SHA3-256。
+
+*--sha3-512*::
+    使用 SHA3-512。
+
+*--blake2s*::
+    使用 BLAKE2s。
+
+*--blake2b*::
+    使用 BLAKE2b。
+
+*--ripemd160*::
+    使用 RIPEMD-160。
+
+*--crc16*::
+    CRC-16/CCITT-FALSE (poly `0x1021`, init `0xFFFF`).
+
+*-c, --crc32*::
+    CRC-32/ISO-HDLC.
+
+*-m, --mod* _DIV_::
+    DIV.
+
+*-b, --bias* _BIAS_::
+    BIAS.
+
+*-p, --profile* _NAME_::
+    b, w, dw, wm.
+
+*-h, --help*::
+    --help
+
+*--version*::
+    --version
+
+== 预设
+
+*b*::
+    `DIV=256` `BIAS=0`
+
+*w*::
+    `DIV=65536` `BIAS=0`
+
+*dw*::
+    `DIV=4G` `BIAS=0`
+
+*wm*::
+    `DIV=2000` `BIAS=2000`
+
+== 示例
+
+  $ naan hello
+  38948
+
+  $ naan --crc32 hello
+  42630
+
+== 退出状态
+
+*0*::
+    0
+
+*1*::
+    1
+
+== 版权
+
+Copyright (C) {project-year} {project-author} <{project-email}>.
+AGPL-3.0-or-later.

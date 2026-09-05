@@ -1,0 +1,115 @@
+= naan(1)
+{project-author} <{project-email}>
+:doctype: manpage
+:manmanual: Εντολές χρήστη
+:mansource: naan
+:man-linkstyle: pass:[blue R < >]
+
+== Όνομα
+
+naan - υπολογισμός αριθμού από όνομα
+
+== Σύνοψη
+
+*naan* [_OPTION_]... _NAME_...
+
+== Περιγραφή
+
+*naan* (name as a number) κατακερματίζει κάθε _ΟΝΟΜΑ_ και εκτυπώνει έναν δεκαδικό αριθμό ανά όρισμα.
+
+Ο αριθμός είναι:
+
+  (digest(NAME) mod DIV) + BIAS
+
+Η σύνοψη ερμηνεύεται ως ακέραιος big-endian.  Ο προεπιλεγμένος κατακερματισμός είναι SHA-256.  Το προεπιλεγμένο εύρος είναι το προφίλ *w* (`DIV=65536`, `BIAS=0`).
+
+== Επιλογές
+
+*-5, --md5*::
+    Χρήση MD5.
+
+*-1, --sha1*::
+    Χρήση SHA-1.
+
+*--sha224*::
+    Χρήση SHA-224.
+
+*-2, --sha256*::
+    Χρήση SHA-256.
+
+*--sha384*::
+    Χρήση SHA-384.
+
+*-8, --sha512*::
+    Χρήση SHA-512.
+
+*-3, --sha3-256*::
+    Χρήση SHA3-256.
+
+*--sha3-512*::
+    Χρήση SHA3-512.
+
+*--blake2s*::
+    Χρήση BLAKE2s.
+
+*--blake2b*::
+    Χρήση BLAKE2b.
+
+*--ripemd160*::
+    Χρήση RIPEMD-160.
+
+*--crc16*::
+    CRC-16/CCITT-FALSE (poly `0x1021`, init `0xFFFF`).
+
+*-c, --crc32*::
+    CRC-32/ISO-HDLC.
+
+*-m, --mod* _DIV_::
+    DIV.
+
+*-b, --bias* _BIAS_::
+    BIAS.
+
+*-p, --profile* _NAME_::
+    b, w, dw, wm.
+
+*-h, --help*::
+    --help
+
+*--version*::
+    --version
+
+== Προφίλ
+
+*b*::
+    `DIV=256` `BIAS=0`
+
+*w*::
+    `DIV=65536` `BIAS=0`
+
+*dw*::
+    `DIV=4G` `BIAS=0`
+
+*wm*::
+    `DIV=2000` `BIAS=2000`
+
+== Παραδείγματα
+
+  $ naan hello
+  38948
+
+  $ naan --crc32 hello
+  42630
+
+== Κατάσταση εξόδου
+
+*0*::
+    0
+
+*1*::
+    1
+
+== Πνευματικά δικαιώματα
+
+Copyright (C) {project-year} {project-author} <{project-email}>.
+AGPL-3.0-or-later.

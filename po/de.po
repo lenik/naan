@@ -1,0 +1,113 @@
+# Copyright (C) 2026 Lenik <naan@bodz.net>
+# SPDX-License-Identifier: AGPL-3.0-or-later
+msgid ""
+msgstr ""
+"Project-Id-Version: naan\n"
+"Report-Msgid-Bugs-To: naan@bodz.net\n"
+"POT-Creation-Date: 2026-09-06 07:28+0800\n"
+"PO-Revision-Date: 2026-09-06 07:28+0800\n"
+"Last-Translator: Lenik <naan@bodz.net>\n"
+"Language-Team: German\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "License AGPL-3.0-or-later: GNU AGPL version 3 or later"
+msgstr "Lizenz AGPL-3.0-or-later: GNU AGPL Version 3 oder später"
+
+msgid "Usage: %s [OPTION]... NAME...\n"
+msgstr "Aufruf: %s [OPTION]... NAME...\n"
+
+msgid "Compute a number from each name."
+msgstr "Berechnet eine Zahl aus jedem Namen."
+
+msgid "  -5, --md5           hash with MD5"
+msgstr "  -5, --md5           mit MD5 hashen"
+
+msgid "  -1, --sha1          hash with SHA-1"
+msgstr "  -1, --sha1          mit SHA-1 hashen"
+
+msgid "      --sha224        hash with SHA-224"
+msgstr "      --sha224        mit SHA-224 hashen"
+
+msgid "  -2, --sha256        hash with SHA-256 (default)"
+msgstr "  -2, --sha256        mit SHA-256 hashen (Standard)"
+
+msgid "      --sha384        hash with SHA-384"
+msgstr "      --sha384        mit SHA-384 hashen"
+
+msgid "  -8, --sha512        hash with SHA-512"
+msgstr "  -8, --sha512        mit SHA-512 hashen"
+
+msgid "  -3, --sha3-256      hash with SHA3-256"
+msgstr "  -3, --sha3-256      mit SHA3-256 hashen"
+
+msgid "      --sha3-512      hash with SHA3-512"
+msgstr "      --sha3-512      mit SHA3-512 hashen"
+
+msgid "      --blake2s       hash with BLAKE2s"
+msgstr "      --blake2s       mit BLAKE2s hashen"
+
+msgid "      --blake2b       hash with BLAKE2b"
+msgstr "      --blake2b       mit BLAKE2b hashen"
+
+msgid "      --ripemd160     hash with RIPEMD-160"
+msgstr "      --ripemd160     mit RIPEMD-160 hashen"
+
+msgid "      --crc16         digest with CRC-16"
+msgstr "      --crc16         Digest mit CRC-16"
+
+msgid "  -c, --crc32         digest with CRC-32"
+msgstr "  -c, --crc32         Digest mit CRC-32"
+
+msgid "  -m, --mod DIV       modulus (default: 65536)"
+msgstr "  -m, --mod DIV       Modul (Standard: 65536)"
+
+msgid "  -b, --bias BIAS     added after reduction (default: 0)"
+msgstr "  -b, --bias BIAS     nach der Reduktion addiert (Standard: 0)"
+
+msgid "  -p, --profile NAME  range profile (default: w)"
+msgstr "  -p, --profile NAME  Bereichsprofil (Standard: w)"
+
+msgid "  -h, --help          display this help and exit"
+msgstr "  -h, --help          diese Hilfe anzeigen und beenden"
+
+msgid "      --version       output version information and exit"
+msgstr "      --version       Versionsinformation ausgeben und beenden"
+
+msgid "Each output line is:"
+msgstr "Jede Ausgabezeile ist:"
+
+msgid "Profiles:"
+msgstr "Profile:"
+
+msgid "default"
+msgstr "Standard"
+
+msgid "DIV and BIAS accept decimal or 0x hex, with optional k/m/g suffix (1024)."
+msgstr "DIV und BIAS akzeptieren Dezimal oder 0x-Hexadezimal, optional mit k/m/g-Suffix (1024)."
+
+msgid "Try '%s --help' for more information.\n"
+msgstr "Versuchen Sie „%s --help“ für weitere Informationen.\n"
+
+msgid "%s: invalid DIV: %s\n"
+msgstr "%s: ungültiges DIV: %s\n"
+
+msgid "%s: invalid BIAS: %s\n"
+msgstr "%s: ungültiges BIAS: %s\n"
+
+msgid "%s: unknown profile: %s\n"
+msgstr "%s: unbekanntes Profil: %s\n"
+
+msgid "%s: missing name\n"
+msgstr "%s: Name fehlt\n"
+
+msgid "%s: DIV must be greater than 0\n"
+msgstr "%s: DIV muss größer als 0 sein\n"
+
+msgid "%s: failed to compute number for '%s'\n"
+msgstr "%s: Zahl für „%s“ konnte nicht berechnet werden\n"
+
+msgid "%s: write error\n"
+msgstr "%s: Schreibfehler\n"

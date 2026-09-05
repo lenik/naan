@@ -1,0 +1,115 @@
+= naan(1)
+{project-author} <{project-email}>
+:doctype: manpage
+:manmanual: Comenzi utilizator
+:mansource: naan
+:man-linkstyle: pass:[blue R < >]
+
+== Nume
+
+naan - calculează un număr dintr-un nume
+
+== Rezumat
+
+*naan* [_OPTION_]... _NAME_...
+
+== Descriere
+
+*naan* (name as a number) calculează hash-ul fiecărui _NUME_ și tipărește un număr zecimal per argument.
+
+Numărul este:
+
+  (digest(NAME) mod DIV) + BIAS
+
+Digestul este interpretat ca întreg big-endian.  Hash-ul implicit este SHA-256.  Intervalul implicit este profilul *w* (`DIV=65536`, `BIAS=0`).
+
+== Opțiuni
+
+*-5, --md5*::
+    Folosește MD5.
+
+*-1, --sha1*::
+    Folosește SHA-1.
+
+*--sha224*::
+    Folosește SHA-224.
+
+*-2, --sha256*::
+    Folosește SHA-256.
+
+*--sha384*::
+    Folosește SHA-384.
+
+*-8, --sha512*::
+    Folosește SHA-512.
+
+*-3, --sha3-256*::
+    Folosește SHA3-256.
+
+*--sha3-512*::
+    Folosește SHA3-512.
+
+*--blake2s*::
+    Folosește BLAKE2s.
+
+*--blake2b*::
+    Folosește BLAKE2b.
+
+*--ripemd160*::
+    Folosește RIPEMD-160.
+
+*--crc16*::
+    CRC-16/CCITT-FALSE (poly `0x1021`, init `0xFFFF`).
+
+*-c, --crc32*::
+    CRC-32/ISO-HDLC.
+
+*-m, --mod* _DIV_::
+    DIV.
+
+*-b, --bias* _BIAS_::
+    BIAS.
+
+*-p, --profile* _NAME_::
+    b, w, dw, wm.
+
+*-h, --help*::
+    --help
+
+*--version*::
+    --version
+
+== Profiluri
+
+*b*::
+    `DIV=256` `BIAS=0`
+
+*w*::
+    `DIV=65536` `BIAS=0`
+
+*dw*::
+    `DIV=4G` `BIAS=0`
+
+*wm*::
+    `DIV=2000` `BIAS=2000`
+
+== Exemple
+
+  $ naan hello
+  38948
+
+  $ naan --crc32 hello
+  42630
+
+== Stare de ieșire
+
+*0*::
+    0
+
+*1*::
+    1
+
+== Drepturi de autor
+
+Copyright (C) {project-year} {project-author} <{project-email}>.
+AGPL-3.0-or-later.
