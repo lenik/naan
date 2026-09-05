@@ -21,7 +21,7 @@ Ang numero ay:
 
   (digest(NAME) mod DIV) + BIAS
 
-Ang digest ay binabasa bilang big-endian integer.  Ang default na hash ay SHA-256.  Ang default na sakop ay profile *w* (`DIV=65536`, `BIAS=0`).
+Ang digest ay binabasa bilang big-endian integer.  Ang default ay profile *w* (SHA-256, `DIV=65536`, `BIAS=0`).
 
 == Mga opsyon
 
@@ -82,16 +82,16 @@ Ang digest ay binabasa bilang big-endian integer.  Ang default na hash ay SHA-25
 == Mga profile
 
 *b*::
-    `DIV=256` `BIAS=0`
+    sha256 `DIV=256` `BIAS=0`
 
 *w*::
-    `DIV=65536` `BIAS=0`
+    sha256 `DIV=65536` `BIAS=0`
 
 *dw*::
-    `DIV=4G` `BIAS=0`
+    sha256 `DIV=4G` `BIAS=0`
 
 *wm*::
-    `DIV=2000` `BIAS=2000`
+    sha1 `DIV=2000` `BIAS=2000`
 
 == Mga halimbawa
 

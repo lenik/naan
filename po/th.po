@@ -67,8 +67,8 @@ msgstr "  -m, --mod DIV       มอดูลัส (ค่าเริ่มต
 msgid "  -b, --bias BIAS     added after reduction (default: 0)"
 msgstr "  -b, --bias BIAS     บวกหลังลดทอน (ค่าเริ่มต้น: 0)"
 
-msgid "  -p, --profile NAME  range profile (default: w)"
-msgstr "  -p, --profile NAME  โปรไฟล์ช่วง (ค่าเริ่มต้น: w)"
+msgid "  -p, --profile NAME  hash and range profile (default: w)"
+msgstr "  -p, --profile NAME  โปรไฟล์แฮชและช่วง (ค่าเริ่มต้น: w)"
 
 msgid "  -h, --help          display this help and exit"
 msgstr "  -h, --help          แสดงความช่วยเหลือนี้แล้วออก"

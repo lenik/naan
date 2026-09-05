@@ -23,8 +23,8 @@ BuildRequires:  asciidoctor
 
 %description
 naan hashes each name and prints one decimal number:
-(digest(NAME) mod DIV) + BIAS. SHA-256 is the default hash;
-profiles set common DIV/BIAS ranges (byte, word, dword, wm).
+(digest(NAME) mod DIV) + BIAS. Profiles set the hash and DIV/BIAS
+(b/w/dw use SHA-256; wm uses SHA-1 in 2000 through 3999).
 
 %prep
 %setup -q -n %{name}-%{srcversion}

@@ -22,8 +22,8 @@ The number is:
 
   (digest(NAME) mod DIV) + BIAS
 
-The digest is interpreted as a big-endian integer.  The default hash is
-SHA-256.  The default range is profile *w* (`DIV=65536`, `BIAS=0`).
+The digest is interpreted as a big-endian integer.  The default is
+profile *w* (SHA-256, `DIV=65536`, `BIAS=0`).
 
 == Options
 
@@ -76,8 +76,9 @@ SHA-256.  The default range is profile *w* (`DIV=65536`, `BIAS=0`).
     *--mod*.  `DIV` must be greater than 0.
 
 *-p, --profile* _NAME_::
-    Set `DIV` and `BIAS` from a predefined profile.  Later *--mod* or
-    *--bias* options override the profile values.
+    Set the hash, `DIV`, and `BIAS` from a predefined profile.  A later
+    hash, *--mod*, or *--bias* option overrides the matching profile
+    field.
 
 *-h, --help*::
     Print help and exit.
@@ -88,16 +89,16 @@ SHA-256.  The default range is profile *w* (`DIV=65536`, `BIAS=0`).
 == Profiles
 
 *b*::
-    `DIV=256` `BIAS=0` (byte).
+    SHA-256 `DIV=256` `BIAS=0` (byte).
 
 *w*::
-    `DIV=65536` `BIAS=0` (word).  This is the default.
+    SHA-256 `DIV=65536` `BIAS=0` (word).  This is the default.
 
 *dw*::
-    `DIV=4G` `BIAS=0` (double word).
+    SHA-256 `DIV=4G` `BIAS=0` (double word).
 
 *wm*::
-    `DIV=2000` `BIAS=2000` (2000 through 3999).
+    SHA-1 `DIV=2000` `BIAS=2000` (2000 through 3999).
 
 == Examples
 
@@ -106,15 +107,15 @@ Compute the default 16-bit number for a name:
   $ naan hello
   38948
 
-Use MD5 and the byte profile:
+Use MD5 with the byte range (hash after the profile so MD5 wins):
 
-  $ naan -5 -p b hello
+  $ naan -p b -5 hello
   146
 
-Keep numbers in 2000 through 3999:
+Keep numbers in 2000 through 3999 with SHA-1:
 
   $ naan -p wm hello
-  3620
+  3181
 
 == Exit status
 

@@ -67,8 +67,8 @@ msgstr "  -m, --mod DIV       modul (implicit: 65536)"
 msgid "  -b, --bias BIAS     added after reduction (default: 0)"
 msgstr "  -b, --bias BIAS     adăugat după reducere (implicit: 0)"
 
-msgid "  -p, --profile NAME  range profile (default: w)"
-msgstr "  -p, --profile NAME  profil de interval (implicit: w)"
+msgid "  -p, --profile NAME  hash and range profile (default: w)"
+msgstr "  -p, --profile NAME  profil de hash și interval (implicit: w)"
 
 msgid "  -h, --help          display this help and exit"
 msgstr "  -h, --help          afișează acest ajutor și ieși"

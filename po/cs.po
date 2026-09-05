@@ -67,8 +67,8 @@ msgstr "  -m, --mod DIV       modulus (výchozí: 65536)"
 msgid "  -b, --bias BIAS     added after reduction (default: 0)"
 msgstr "  -b, --bias BIAS     přidáno po redukci (výchozí: 0)"
 
-msgid "  -p, --profile NAME  range profile (default: w)"
-msgstr "  -p, --profile NAME  profil rozsahu (výchozí: w)"
+msgid "  -p, --profile NAME  hash and range profile (default: w)"
+msgstr "  -p, --profile NAME  profil hashe a rozsahu (výchozí: w)"
 
 msgid "  -h, --help          display this help and exit"
 msgstr "  -h, --help          zobrazit tuto nápovědu a skončit"

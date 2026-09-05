@@ -21,7 +21,7 @@ naan - 由名称计算出一个数字
 
   (digest(NAME) mod DIV) + BIAS
 
-摘要按大端整数解释。默认哈希为 SHA-256。默认范围是 profile *w*（`DIV=65536`，`BIAS=0`）。
+摘要按大端整数解释。默认是 profile *w*（SHA-256，`DIV=65536`，`BIAS=0`）。
 
 == 选项
 
@@ -82,16 +82,16 @@ naan - 由名称计算出一个数字
 == 预设
 
 *b*::
-    `DIV=256` `BIAS=0`
+    sha256 `DIV=256` `BIAS=0`
 
 *w*::
-    `DIV=65536` `BIAS=0`
+    sha256 `DIV=65536` `BIAS=0`
 
 *dw*::
-    `DIV=4G` `BIAS=0`
+    sha256 `DIV=4G` `BIAS=0`
 
 *wm*::
-    `DIV=2000` `BIAS=2000`
+    sha1 `DIV=2000` `BIAS=2000`
 
 == 示例
 

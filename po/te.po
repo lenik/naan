@@ -67,8 +67,8 @@ msgstr "  -m, --mod DIV       మాడ్యులస్ (డిఫాల్ట
 msgid "  -b, --bias BIAS     added after reduction (default: 0)"
 msgstr "  -b, --bias BIAS     తగ్గింపు తర్వాత జోడించబడుతుం�ర్వాత జోడించబడుతుంది (డిఫాల్ట్: 0)"
 
-msgid "  -p, --profile NAME  range profile (default: w)"
-msgstr "  -p, --profile NAME  పరిధి ప్రొఫైల్ (డిఫాల్ట్: w)"
+msgid "  -p, --profile NAME  hash and range profile (default: w)"
+msgstr "  -p, --profile NAME  హాష్ మరియు పరిధి ప్రొఫైల్ (అప్రమేయం: w)"
 
 msgid "  -h, --help          display this help and exit"
 msgstr "  -h, --help          ఈ సహాయాన్ని చూపి నిష్క్రమించు"

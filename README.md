@@ -12,8 +12,8 @@ Each argument prints one line:
 number = (digest(NAME) mod DIV) + BIAS
 ```
 
-The digest is treated as a big-endian integer.  Default hash is SHA-256.
-Default range is profile `w` (`DIV=65536`, `BIAS=0`).
+The digest is treated as a big-endian integer.  The default is profile
+`w` (SHA-256, `DIV=65536`, `BIAS=0`).
 
 ## Options
 
@@ -34,7 +34,7 @@ Default range is profile `w` (`DIV=65536`, `BIAS=0`).
 | `-c`, `--crc32` | CRC-32/ISO-HDLC |
 | `-m`, `--mod DIV` | modulus (default 65536) |
 | `-b`, `--bias BIAS` | added after reduction (default 0) |
-| `-p`, `--profile NAME` | preset `DIV` and `BIAS` |
+| `-p`, `--profile NAME` | preset hash, `DIV`, and `BIAS` |
 
 `DIV` and `BIAS` accept decimal or `0x` hex, with optional `k`/`m`/`g`
 (powers of 1024).
@@ -43,12 +43,12 @@ Help text and man pages are translated for L3 locales (Tier I–III).
 
 ## Profiles
 
-| Profile | DIV | BIAS |
-|---------|-----|------|
-| `b` | 256 | 0 |
-| `w` (default) | 65536 | 0 |
-| `dw` | 4G (4294967296) | 0 |
-| `wm` | 2000 | 2000 |
+| Profile | Hash | DIV | BIAS |
+|---------|------|-----|------|
+| `b` | SHA-256 | 256 | 0 |
+| `w` (default) | SHA-256 | 65536 | 0 |
+| `dw` | SHA-256 | 4G (4294967296) | 0 |
+| `wm` | SHA-1 | 2000 | 2000 |
 
 ## Examples
 

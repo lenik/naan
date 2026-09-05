@@ -61,27 +61,32 @@ int naan_parse_u64(const char *s, uint64_t *out) {
     return 0;
 }
 
-int naan_apply_profile(const char *name, uint64_t *div, uint64_t *bias) {
-    if (name == NULL || div == NULL || bias == NULL) {
+int naan_apply_profile(const char *name, naan_algo *algo, uint64_t *div,
+                       uint64_t *bias) {
+    if (name == NULL || algo == NULL || div == NULL || bias == NULL) {
         return -1;
     }
 
     if (strcmp(name, "b") == 0) {
+        *algo = NAAN_ALGO_SHA256;
         *div = 256;
         *bias = 0;
         return 0;
     }
     if (strcmp(name, "w") == 0) {
+        *algo = NAAN_ALGO_SHA256;
         *div = 65536;
         *bias = 0;
         return 0;
     }
     if (strcmp(name, "dw") == 0) {
+        *algo = NAAN_ALGO_SHA256;
         *div = 4294967296ULL; /* 4G */
         *bias = 0;
         return 0;
     }
     if (strcmp(name, "wm") == 0) {
+        *algo = NAAN_ALGO_SHA1;
         *div = 2000;
         *bias = 2000;
         return 0;

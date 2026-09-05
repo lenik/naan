@@ -67,8 +67,8 @@ msgstr "  -m, --mod DIV       модуль (әдепкі: 65536)"
 msgid "  -b, --bias BIAS     added after reduction (default: 0)"
 msgstr "  -b, --bias BIAS     қысқартудан кейін қосылады (әдепкі: 0)"
 
-msgid "  -p, --profile NAME  range profile (default: w)"
-msgstr "  -p, --profile NAME  ауқым профилі (әдепкі: w)"
+msgid "  -p, --profile NAME  hash and range profile (default: w)"
+msgstr "  -p, --profile NAME  хеш және аралық профилі (әдепкі: w)"
 
 msgid "  -h, --help          display this help and exit"
 msgstr "  -h, --help          осы анықтаманы көрсетіп шығу"

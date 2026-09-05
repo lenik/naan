@@ -12,8 +12,7 @@ naan [OPTION]... NAME...
 number = (digest(NAME) mod DIV) + BIAS
 ```
 
-摘要按大端整数解释。默认哈希为 SHA-256。
-默认范围是 profile `w`（`DIV=65536`，`BIAS=0`）。
+摘要按大端整数解释。默认是 profile `w`（SHA-256，`DIV=65536`，`BIAS=0`）。
 
 ## 选项
 
@@ -34,7 +33,7 @@ number = (digest(NAME) mod DIV) + BIAS
 | `-c`, `--crc32` | CRC-32/ISO-HDLC |
 | `-m`, `--mod DIV` | 模数（默认 65536） |
 | `-b`, `--bias BIAS` | 约简后加上的偏置（默认 0） |
-| `-p`, `--profile NAME` | 预设 `DIV` 与 `BIAS` |
+| `-p`, `--profile NAME` | 预设哈希、`DIV` 与 `BIAS` |
 
 `DIV` 和 `BIAS` 可以是十进制或 `0x` 十六进制，并可带 `k`/`m`/`g`
 后缀（1024 的幂）。
@@ -43,12 +42,12 @@ number = (digest(NAME) mod DIV) + BIAS
 
 ## 预置 profile
 
-| Profile | DIV | BIAS |
-|---------|-----|------|
-| `b` | 256 | 0 |
-| `w`（默认） | 65536 | 0 |
-| `dw` | 4G（4294967296） | 0 |
-| `wm` | 2000 | 2000 |
+| Profile | 哈希 | DIV | BIAS |
+|---------|------|-----|------|
+| `b` | SHA-256 | 256 | 0 |
+| `w`（默认） | SHA-256 | 65536 | 0 |
+| `dw` | SHA-256 | 4G（4294967296） | 0 |
+| `wm` | SHA-1 | 2000 | 2000 |
 
 ## 示例
 

@@ -67,8 +67,8 @@ msgstr "  -m, --mod DIV       باقي القسمة (الافتراضي: 65536)"
 msgid "  -b, --bias BIAS     added after reduction (default: 0)"
 msgstr "  -b, --bias BIAS     يُضاف بعد الاختزال (الافتراضي: 0)"
 
-msgid "  -p, --profile NAME  range profile (default: w)"
-msgstr "  -p, --profile NAME  ملف نطاق (الافتراضي: w)"
+msgid "  -p, --profile NAME  hash and range profile (default: w)"
+msgstr "  -p, --profile NAME  ملف تعريف التجزئة والنطاق (الافتراضي: w)"
 
 msgid "  -h, --help          display this help and exit"
 msgstr "  -h, --help          عرض هذه المساعدة والخروج"

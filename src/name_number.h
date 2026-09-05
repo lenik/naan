@@ -23,7 +23,8 @@ typedef enum {
 } naan_algo;
 
 int naan_parse_u64(const char *s, uint64_t *out);
-int naan_apply_profile(const char *name, uint64_t *div, uint64_t *bias);
+int naan_apply_profile(const char *name, naan_algo *algo, uint64_t *div,
+                       uint64_t *bias);
 int naan_digest(const void *data, size_t len, naan_algo algo,
                 unsigned char *out, unsigned int *out_len);
 uint64_t naan_reduce(const unsigned char *digest, unsigned int len, uint64_t mod);

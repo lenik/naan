@@ -67,8 +67,8 @@ msgstr "  -m, --mod DIV       मॉड्युलस (मुलभूत: 6553
 msgid "  -b, --bias BIAS     added after reduction (default: 0)"
 msgstr "  -b, --bias BIAS     घटानंतर जोडले जाते (मुलभूत: 0)"
 
-msgid "  -p, --profile NAME  range profile (default: w)"
-msgstr "  -p, --profile NAME  श्रेणी प्रोफाइल (मुलभूत: w)"
+msgid "  -p, --profile NAME  hash and range profile (default: w)"
+msgstr "  -p, --profile NAME  हॅश आणि श्रेणी प्रोफाइल (मुलभूत: w)"
 
 msgid "  -h, --help          display this help and exit"
 msgstr "  -h, --help          ही मदत दाखवा आणि बाहेर पडा"

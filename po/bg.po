@@ -67,8 +67,8 @@ msgstr "  -m, --mod DIV       модул (по подразбиране: 65536)"
 msgid "  -b, --bias BIAS     added after reduction (default: 0)"
 msgstr "  -b, --bias BIAS     добавя се след свеждане (по подразбиране: 0)"
 
-msgid "  -p, --profile NAME  range profile (default: w)"
-msgstr "  -p, --profile NAME  профил на обхват (по подразбиране: w)"
+msgid "  -p, --profile NAME  hash and range profile (default: w)"
+msgstr "  -p, --profile NAME  профил на хеш и диапазон (по подразбиране: w)"
 
 msgid "  -h, --help          display this help and exit"
 msgstr "  -h, --help          покажи тази помощ и изход"

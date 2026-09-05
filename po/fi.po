@@ -67,8 +67,8 @@ msgstr "  -m, --mod DIV       modulus (oletus: 65536)"
 msgid "  -b, --bias BIAS     added after reduction (default: 0)"
 msgstr "  -b, --bias BIAS     lisätään vähennyksen jälkeen (oletus: 0)"
 
-msgid "  -p, --profile NAME  range profile (default: w)"
-msgstr "  -p, --profile NAME  alueprofiili (oletus: w)"
+msgid "  -p, --profile NAME  hash and range profile (default: w)"
+msgstr "  -p, --profile NAME  tiiviste- ja alueprofiili (oletus: w)"
 
 msgid "  -h, --help          display this help and exit"
 msgstr "  -h, --help          näytä tämä ohje ja poistu"

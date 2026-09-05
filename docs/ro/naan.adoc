@@ -82,16 +82,16 @@ Digestul este interpretat ca întreg big-endian.  Hash-ul implicit este SHA-256.
 == Profiluri
 
 *b*::
-    `DIV=256` `BIAS=0`
+    sha256 `DIV=256` `BIAS=0`
 
 *w*::
-    `DIV=65536` `BIAS=0`
+    sha256 `DIV=65536` `BIAS=0`
 
 *dw*::
-    `DIV=4G` `BIAS=0`
+    sha256 `DIV=4G` `BIAS=0`
 
 *wm*::
-    `DIV=2000` `BIAS=2000`
+    sha1 `DIV=2000` `BIAS=2000`
 
 == Exemple
 

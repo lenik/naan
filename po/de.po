@@ -67,8 +67,8 @@ msgstr "  -m, --mod DIV       Modul (Standard: 65536)"
 msgid "  -b, --bias BIAS     added after reduction (default: 0)"
 msgstr "  -b, --bias BIAS     nach der Reduktion addiert (Standard: 0)"
 
-msgid "  -p, --profile NAME  range profile (default: w)"
-msgstr "  -p, --profile NAME  Bereichsprofil (Standard: w)"
+msgid "  -p, --profile NAME  hash and range profile (default: w)"
+msgstr "  -p, --profile NAME  Hash- und Bereichsprofil (Standard: w)"
 
 msgid "  -h, --help          display this help and exit"
 msgstr "  -h, --help          diese Hilfe anzeigen und beenden"

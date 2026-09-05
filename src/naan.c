@@ -49,7 +49,7 @@ static void print_help(const char *prog) {
     printf("%s\n", _("  -c, --crc32         digest with CRC-32"));
     printf("%s\n", _("  -m, --mod DIV       modulus (default: 65536)"));
     printf("%s\n", _("  -b, --bias BIAS     added after reduction (default: 0)"));
-    printf("%s\n", _("  -p, --profile NAME  range profile (default: w)"));
+    printf("%s\n", _("  -p, --profile NAME  hash and range profile (default: w)"));
     printf("%s\n", _("  -h, --help          display this help and exit"));
     printf("%s\n", _("      --version       output version information and exit"));
     printf("\n");
@@ -57,10 +57,10 @@ static void print_help(const char *prog) {
     printf("  (digest(NAME) mod DIV) + BIAS\n");
     printf("\n");
     printf("%s\n", _("Profiles:"));
-    printf("  b    DIV=256      BIAS=0\n");
-    printf("  w    DIV=65536    BIAS=0     (%s)\n", _("default"));
-    printf("  dw   DIV=4G       BIAS=0\n");
-    printf("  wm   DIV=2000     BIAS=2000\n");
+    printf("  b    sha256 DIV=256      BIAS=0\n");
+    printf("  w    sha256 DIV=65536    BIAS=0     (%s)\n", _("default"));
+    printf("  dw   sha256 DIV=4G       BIAS=0\n");
+    printf("  wm   sha1   DIV=2000     BIAS=2000\n");
     printf("\n");
     printf("%s\n", _("DIV and BIAS accept decimal or 0x hex, with optional k/m/g suffix (1024)."));
 }
@@ -154,7 +154,7 @@ int main(int argc, char **argv) {
             }
             break;
         case 'p':
-            if (naan_apply_profile(optarg, &div, &bias) != 0) {
+            if (naan_apply_profile(optarg, &algo, &div, &bias) != 0) {
                 fprintf(stderr, _("%s: unknown profile: %s\n"), prog, optarg);
                 return 1;
             }

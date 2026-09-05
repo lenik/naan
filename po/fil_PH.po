@@ -67,8 +67,8 @@ msgstr "  -m, --mod DIV       modulus (default: 65536)"
 msgid "  -b, --bias BIAS     added after reduction (default: 0)"
 msgstr "  -b, --bias BIAS     idinadagdag pagkatapos ng reduction (default: 0)"
 
-msgid "  -p, --profile NAME  range profile (default: w)"
-msgstr "  -p, --profile NAME  profile ng sakop (default: w)"
+msgid "  -p, --profile NAME  hash and range profile (default: w)"
+msgstr "  -p, --profile NAME  profile ng hash at sakop (default: w)"
 
 msgid "  -h, --help          display this help and exit"
 msgstr "  -h, --help          ipakita ang tulong na ito at umalis"

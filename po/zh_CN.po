@@ -67,8 +67,8 @@ msgstr "  -m, --mod DIV       模数（默认：65536）"
 msgid "  -b, --bias BIAS     added after reduction (default: 0)"
 msgstr "  -b, --bias BIAS     约简后加上的偏置（默认：0）"
 
-msgid "  -p, --profile NAME  range profile (default: w)"
-msgstr "  -p, --profile NAME  范围预设（默认：w）"
+msgid "  -p, --profile NAME  hash and range profile (default: w)"
+msgstr "  -p, --profile NAME  哈希与范围预设（默认：w）"
 
 msgid "  -h, --help          display this help and exit"
 msgstr "  -h, --help          显示此帮助并退出"

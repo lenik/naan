@@ -50,6 +50,7 @@ int main(void) {
     uint64_t v = 0;
     uint64_t div = 0;
     uint64_t bias = 0;
+    naan_algo algo = NAAN_ALGO_MD5;
 
     expect_ok("parse 256", naan_parse_u64("256", &v));
     expect_eq_u64("parse 256 value", v, 256);
@@ -64,24 +65,28 @@ int main(void) {
     expect_err("parse empty", naan_parse_u64("", &v));
     expect_err("parse junk", naan_parse_u64("12x", &v));
 
-    expect_ok("profile b", naan_apply_profile("b", &div, &bias));
+    expect_ok("profile b", naan_apply_profile("b", &algo, &div, &bias));
+    expect_eq_u64("profile b algo", (uint64_t)algo, NAAN_ALGO_SHA256);
     expect_eq_u64("profile b div", div, 256);
     expect_eq_u64("profile b bias", bias, 0);
-    expect_ok("profile w", naan_apply_profile("w", &div, &bias));
+    expect_ok("profile w", naan_apply_profile("w", &algo, &div, &bias));
+    expect_eq_u64("profile w algo", (uint64_t)algo, NAAN_ALGO_SHA256);
     expect_eq_u64("profile w div", div, 65536);
     expect_eq_u64("profile w bias", bias, 0);
-    expect_ok("profile dw", naan_apply_profile("dw", &div, &bias));
+    expect_ok("profile dw", naan_apply_profile("dw", &algo, &div, &bias));
+    expect_eq_u64("profile dw algo", (uint64_t)algo, NAAN_ALGO_SHA256);
     expect_eq_u64("profile dw div", div, 4294967296ULL);
     expect_eq_u64("profile dw bias", bias, 0);
-    expect_ok("profile wm", naan_apply_profile("wm", &div, &bias));
+    expect_ok("profile wm", naan_apply_profile("wm", &algo, &div, &bias));
+    expect_eq_u64("profile wm algo", (uint64_t)algo, NAAN_ALGO_SHA1);
     expect_eq_u64("profile wm div", div, 2000);
     expect_eq_u64("profile wm bias", bias, 2000);
-    expect_err("profile unknown", naan_apply_profile("xx", &div, &bias));
+    expect_err("profile unknown", naan_apply_profile("xx", &algo, &div, &bias));
 
     check_number("hello sha256 w", "hello", NAAN_ALGO_SHA256, 65536, 0, 38948);
     check_number("hello sha256 b", "hello", NAAN_ALGO_SHA256, 256, 0, 36);
     check_number("hello sha256 dw", "hello", NAAN_ALGO_SHA256, 4294967296ULL, 0, 2475399204ULL);
-    check_number("hello sha256 wm", "hello", NAAN_ALGO_SHA256, 2000, 2000, 3620);
+    check_number("hello sha1 wm", "hello", NAAN_ALGO_SHA1, 2000, 2000, 3181);
     check_number("hello md5 w", "hello", NAAN_ALGO_MD5, 65536, 0, 50578);
     check_number("hello sha1 w", "hello", NAAN_ALGO_SHA1, 65536, 0, 17229);
     check_number("world sha256 w", "world", NAAN_ALGO_SHA256, 65536, 0, 47271);

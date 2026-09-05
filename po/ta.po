@@ -67,8 +67,8 @@ msgstr "  -m, --mod DIV       மட்டு (இயல்பு: 65536)"
 msgid "  -b, --bias BIAS     added after reduction (default: 0)"
 msgstr "  -b, --bias BIAS     சுருக்கத்திற்குப் பின் சேர்க்கப்படும் (இயல்பு: 0)"
 
-msgid "  -p, --profile NAME  range profile (default: w)"
-msgstr "  -p, --profile NAME  வரம்பு சுயவிவரம் (இயல்பு: w)"
+msgid "  -p, --profile NAME  hash and range profile (default: w)"
+msgstr "  -p, --profile NAME  ஹாஷ் மற்றும் வரம்பு சுயவிவரம் (இயல்புநிலை: w)"
 
 msgid "  -h, --help          display this help and exit"
 msgstr "  -h, --help          இந்த உதவியைக் காட்டி வெளியேறு"

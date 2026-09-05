@@ -91,7 +91,7 @@ msgid "  -b, --bias BIAS     added after reduction (default: 0)"
 msgstr ""
 
 #: src/naan.c:52
-msgid "  -p, --profile NAME  range profile (default: w)"
+msgid "  -p, --profile NAME  hash and range profile (default: w)"
 msgstr ""
 
 #: src/naan.c:53
