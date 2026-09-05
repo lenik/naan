@@ -22,7 +22,9 @@ with a `.build-host` file (not `host.sh`).
 
 ### Local / cross
 
-- **mingw**: MinGW/MSYS, or `x86_64-w64-mingw32-gcc`
+- **mingw**: MinGW/MSYS, or `x86_64-w64-mingw32-gcc` plus a cross
+  `libcrypto` (OpenSSL). Debian does not package that library; the
+  Makefile skips the portable `.exe` when it is missing.
 - **innosetup** (Windows): `build.cmd` → `build.ps1` → `ISCC.exe`
 - **innosetup** (Unix cross): `wine` + `ISCC.exe` (`INNOSETUP_DIR`)
 - **wix** (Windows): `build.cmd` → `build.ps1` → WiX 4 (`wix`) or WiX 3 (`candle`/`light`)

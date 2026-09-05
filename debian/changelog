@@ -6,6 +6,7 @@ naan (0.1.0) unstable; urgency=medium
   * Add range profiles b, w (default), dw, and wm (2000 through 3999).
   * Translate help and man pages for L3 locales (Tier I–III primaries).
   * Build-depend on libssl-dev and gettext; ship locale catalogs.
+  * Skip the MinGW portable build when cross OpenSSL/libcrypto is absent.
 
  -- Lenik (谢继雷) <lenik@bodz.net>  Sun, 06 Sep 2026 07:37:05 +0800
 
