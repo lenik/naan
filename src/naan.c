@@ -60,7 +60,7 @@ static void print_help(const char *prog) {
     printf("  b    sha256 DIV=256      BIAS=0\n");
     printf("  w    sha256 DIV=65536    BIAS=0     (%s)\n", _("default"));
     printf("  dw   sha256 DIV=4G       BIAS=0\n");
-    printf("  wm   sha1   DIV=2000     BIAS=2000\n");
+    printf("  wm   sha1   DIV=2000     BIAS=0\n");
     printf("\n");
     printf("%s\n", _("DIV and BIAS accept decimal or 0x hex, with optional k/m/g suffix (1024)."));
 }

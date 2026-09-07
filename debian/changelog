@@ -1,3 +1,9 @@
+naan (1.0.1) unstable; urgency=medium
+
+  * Changed profile wm bias to 0.
+
+ -- Lenik (谢继雷) <lenik@bodz.net>  Mon, 07 Sep 2026 16:36:00 +0800
+
 naan (1.0.0) unstable; urgency=medium
 
   * First stable release.

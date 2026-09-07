@@ -88,7 +88,7 @@ int naan_apply_profile(const char *name, naan_algo *algo, uint64_t *div,
     if (strcmp(name, "wm") == 0) {
         *algo = NAAN_ALGO_SHA1;
         *div = 2000;
-        *bias = 2000;
+        *bias = 0;
         return 0;
     }
     return -1;
