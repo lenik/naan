@@ -1,3 +1,13 @@
+naan (1.0.3) unstable; urgency=medium
+
+  * Align packaging/Meson/man pages to current zephyr style (zfr ize).
+  * update debian/rules: override_dh_autoreconf
+  * update LICENSE: standard file
+  * update meson.build: remove duplicate individual man targets: naan
+  * update packaging/rpm/naan.spec: %files synced (meson installs)
+
+ -- Lenik (谢继雷) <lenik@bodz.net>  Wed, 09 Sep 2026 21:00:16 +0800
+
 naan (1.0.2) unstable; urgency=medium
 
   * Satisfy zfr lint -w for C bas conventions: init_i18n(LOCALEDIR),
