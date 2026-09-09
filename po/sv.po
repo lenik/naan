@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: naan\n"
 "Report-Msgid-Bugs-To: naan@bodz.net\n"
-"POT-Creation-Date: 2026-09-06 07:28+0800\n"
+"POT-Creation-Date: 2026-09-07 16:46+0800\n"
 "PO-Revision-Date: 2026-09-06 07:28+0800\n"
 "Last-Translator: Lenik <naan@bodz.net>\n"
 "Language-Team: Swedish\n"
@@ -13,101 +13,143 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: src/naan.c:32
 msgid "License AGPL-3.0-or-later: GNU AGPL version 3 or later"
 msgstr "Licens AGPL-3.0-or-later: GNU AGPL version 3 eller senare"
 
+#: src/naan.c:36
+#, c-format
 msgid "Usage: %s [OPTION]... NAME...\n"
 msgstr "Användning: %s [ALTERNATIV]... NAMN...\n"
 
+#: src/naan.c:37
 msgid "Compute a number from each name."
 msgstr "Beräknar ett tal från varje namn."
 
-msgid "  -5, --md5           hash with MD5"
-msgstr "  -5, --md5           hasha med MD5"
+#: src/naan.c:40
+msgid "hash with MD5\n"
+msgstr "hasha med MD5\n"
 
-msgid "  -1, --sha1          hash with SHA-1"
-msgstr "  -1, --sha1          hasha med SHA-1"
+#: src/naan.c:42
+msgid "hash with SHA-1\n"
+msgstr "hasha med SHA-1\n"
 
-msgid "      --sha224        hash with SHA-224"
-msgstr "      --sha224        hasha med SHA-224"
+#: src/naan.c:44
+msgid "hash with SHA-224\n"
+msgstr "hasha med SHA-224\n"
 
-msgid "  -2, --sha256        hash with SHA-256 (default)"
-msgstr "  -2, --sha256        hasha med SHA-256 (standard)"
+#: src/naan.c:46
+msgid "hash with SHA-256 (default)\n"
+msgstr "hasha med SHA-256 (standard)\n"
 
-msgid "      --sha384        hash with SHA-384"
-msgstr "      --sha384        hasha med SHA-384"
+#: src/naan.c:48
+msgid "hash with SHA-384\n"
+msgstr "hasha med SHA-384\n"
 
-msgid "  -8, --sha512        hash with SHA-512"
-msgstr "  -8, --sha512        hasha med SHA-512"
+#: src/naan.c:50
+msgid "hash with SHA-512\n"
+msgstr "hasha med SHA-512\n"
 
-msgid "  -3, --sha3-256      hash with SHA3-256"
-msgstr "  -3, --sha3-256      hasha med SHA3-256"
+#: src/naan.c:52
+msgid "hash with SHA3-256\n"
+msgstr "hasha med SHA3-256\n"
 
-msgid "      --sha3-512      hash with SHA3-512"
-msgstr "      --sha3-512      hasha med SHA3-512"
+#: src/naan.c:54
+msgid "hash with SHA3-512\n"
+msgstr "hasha med SHA3-512\n"
 
-msgid "      --blake2s       hash with BLAKE2s"
-msgstr "      --blake2s       hasha med BLAKE2s"
+#: src/naan.c:56
+msgid "hash with BLAKE2s\n"
+msgstr "hasha med BLAKE2s\n"
 
-msgid "      --blake2b       hash with BLAKE2b"
-msgstr "      --blake2b       hasha med BLAKE2b"
+#: src/naan.c:58
+msgid "hash with BLAKE2b\n"
+msgstr "hasha med BLAKE2b\n"
 
-msgid "      --ripemd160     hash with RIPEMD-160"
-msgstr "      --ripemd160     hasha med RIPEMD-160"
+#: src/naan.c:60
+msgid "hash with RIPEMD-160\n"
+msgstr "hasha med RIPEMD-160\n"
 
-msgid "      --crc16         digest with CRC-16"
-msgstr "      --crc16         digest med CRC-16"
+#: src/naan.c:62
+msgid "digest with CRC-16\n"
+msgstr "digest med CRC-16\n"
 
-msgid "  -c, --crc32         digest with CRC-32"
-msgstr "  -c, --crc32         digest med CRC-32"
+#: src/naan.c:64
+msgid "digest with CRC-32\n"
+msgstr "digest med CRC-32\n"
 
-msgid "  -m, --mod DIV       modulus (default: 65536)"
-msgstr "  -m, --mod DIV       modulus (standard: 65536)"
+#: src/naan.c:66
+msgid "modulus (default: 65536)\n"
+msgstr "modulus (standard: 65536)\n"
 
-msgid "  -b, --bias BIAS     added after reduction (default: 0)"
-msgstr "  -b, --bias BIAS     läggs till efter reduktion (standard: 0)"
+#: src/naan.c:68
+msgid "added after reduction (default: 0)\n"
+msgstr "läggs till efter reduktion (standard: 0)\n"
 
-msgid "  -p, --profile NAME  hash and range profile (default: w)"
-msgstr "  -p, --profile NAME  hash- och intervallprofil (standard: w)"
+#: src/naan.c:70
+msgid "hash and range profile (default: w)\n"
+msgstr "hash- och intervallprofil (standard: w)\n"
 
-msgid "  -h, --help          display this help and exit"
-msgstr "  -h, --help          visa denna hjälp och avsluta"
+#: src/naan.c:72
+msgid "display this help and exit\n"
+msgstr "visa denna hjälp och avsluta\n"
 
-msgid "      --version       output version information and exit"
-msgstr "      --version       visa versionsinformation och avsluta"
+#: src/naan.c:74
+msgid "output version information and exit\n"
+msgstr "visa versionsinformation och avsluta\n"
 
+#: src/naan.c:76
 msgid "Each output line is:"
 msgstr "Varje utmatningsrad är:"
 
+#: src/naan.c:79
 msgid "Profiles:"
 msgstr "Profiler:"
 
+#: src/naan.c:81
 msgid "default"
 msgstr "standard"
 
+#: src/naan.c:85
 msgid "DIV and BIAS accept decimal or 0x hex, with optional k/m/g suffix (1024)."
 msgstr "DIV och BIAS accepterar decimalt eller 0x-hexadecimalt, med valfri k/m/g-suffix (1024)."
 
-msgid "Try '%s --help' for more information.\n"
-msgstr "Prova \"%s --help\" för mer information.\n"
-
+#: src/naan.c:167
+#, c-format
 msgid "%s: invalid DIV: %s\n"
 msgstr "%s: ogiltig DIV: %s\n"
 
+#: src/naan.c:173
+#, c-format
 msgid "%s: invalid BIAS: %s\n"
 msgstr "%s: ogiltig BIAS: %s\n"
 
+#: src/naan.c:179
+#, c-format
 msgid "%s: unknown profile: %s\n"
 msgstr "%s: okänd profil: %s\n"
 
+#: src/naan.c:190 src/naan.c:197
+#, c-format
+msgid "Try '%s --help' for more information.\n"
+msgstr "Prova \"%s --help\" för mer information.\n"
+
+#: src/naan.c:196
+#, c-format
 msgid "%s: missing name\n"
 msgstr "%s: namn saknas\n"
 
+#: src/naan.c:202
+#, c-format
 msgid "%s: DIV must be greater than 0\n"
 msgstr "%s: DIV måste vara större än 0\n"
 
+#: src/naan.c:211
+#, c-format
 msgid "%s: failed to compute number for '%s'\n"
 msgstr "%s: kunde inte beräkna tal för \"%s\"\n"
 
+#: src/naan.c:216 src/naan.c:222
+#, c-format
 msgid "%s: write error\n"
 msgstr "%s: skrivfel\n"

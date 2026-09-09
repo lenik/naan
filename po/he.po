@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: naan\n"
 "Report-Msgid-Bugs-To: naan@bodz.net\n"
-"POT-Creation-Date: 2026-09-06 07:28+0800\n"
+"POT-Creation-Date: 2026-09-07 16:46+0800\n"
 "PO-Revision-Date: 2026-09-06 07:28+0800\n"
 "Last-Translator: Lenik <naan@bodz.net>\n"
 "Language-Team: Hebrew\n"
@@ -13,101 +13,143 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: src/naan.c:32
 msgid "License AGPL-3.0-or-later: GNU AGPL version 3 or later"
 msgstr "רישיון AGPL-3.0-or-later: GNU AGPL גרסה 3 ואילך"
 
+#: src/naan.c:36
+#, c-format
 msgid "Usage: %s [OPTION]... NAME...\n"
 msgstr "שימוש: %s [אפשרות]... שם...\n"
 
+#: src/naan.c:37
 msgid "Compute a number from each name."
 msgstr "מחשב מספר מכל שם."
 
-msgid "  -5, --md5           hash with MD5"
-msgstr "  -5, --md5           גיבוב עם MD5"
+#: src/naan.c:40
+msgid "hash with MD5\n"
+msgstr "גיבוב עם MD5\n"
 
-msgid "  -1, --sha1          hash with SHA-1"
-msgstr "  -1, --sha1          גיבוב עם SHA-1"
+#: src/naan.c:42
+msgid "hash with SHA-1\n"
+msgstr "גיבוב עם SHA-1\n"
 
-msgid "      --sha224        hash with SHA-224"
-msgstr "      --sha224        גיבוב עם SHA-224"
+#: src/naan.c:44
+msgid "hash with SHA-224\n"
+msgstr "גיבוב עם SHA-224\n"
 
-msgid "  -2, --sha256        hash with SHA-256 (default)"
-msgstr "  -2, --sha256        גיבוב עם SHA-256 (ברירת מחדל)"
+#: src/naan.c:46
+msgid "hash with SHA-256 (default)\n"
+msgstr "גיבוב עם SHA-256 (ברירת מחדל)\n"
 
-msgid "      --sha384        hash with SHA-384"
-msgstr "      --sha384        גיבוב עם SHA-384"
+#: src/naan.c:48
+msgid "hash with SHA-384\n"
+msgstr "גיבוב עם SHA-384\n"
 
-msgid "  -8, --sha512        hash with SHA-512"
-msgstr "  -8, --sha512        גיבוב עם SHA-512"
+#: src/naan.c:50
+msgid "hash with SHA-512\n"
+msgstr "גיבוב עם SHA-512\n"
 
-msgid "  -3, --sha3-256      hash with SHA3-256"
-msgstr "  -3, --sha3-256      גיבוב עם SHA3-256"
+#: src/naan.c:52
+msgid "hash with SHA3-256\n"
+msgstr "גיבוב עם SHA3-256\n"
 
-msgid "      --sha3-512      hash with SHA3-512"
-msgstr "      --sha3-512      גיבוב עם SHA3-512"
+#: src/naan.c:54
+msgid "hash with SHA3-512\n"
+msgstr "גיבוב עם SHA3-512\n"
 
-msgid "      --blake2s       hash with BLAKE2s"
-msgstr "      --blake2s       גיבוב עם BLAKE2s"
+#: src/naan.c:56
+msgid "hash with BLAKE2s\n"
+msgstr "גיבוב עם BLAKE2s\n"
 
-msgid "      --blake2b       hash with BLAKE2b"
-msgstr "      --blake2b       גיבוב עם BLAKE2b"
+#: src/naan.c:58
+msgid "hash with BLAKE2b\n"
+msgstr "גיבוב עם BLAKE2b\n"
 
-msgid "      --ripemd160     hash with RIPEMD-160"
-msgstr "      --ripemd160     גיבוב עם RIPEMD-160"
+#: src/naan.c:60
+msgid "hash with RIPEMD-160\n"
+msgstr "גיבוב עם RIPEMD-160\n"
 
-msgid "      --crc16         digest with CRC-16"
-msgstr "      --crc16         תמצית CRC-16"
+#: src/naan.c:62
+msgid "digest with CRC-16\n"
+msgstr "תמצית CRC-16\n"
 
-msgid "  -c, --crc32         digest with CRC-32"
-msgstr "  -c, --crc32         תמצית CRC-32"
+#: src/naan.c:64
+msgid "digest with CRC-32\n"
+msgstr "תמצית CRC-32\n"
 
-msgid "  -m, --mod DIV       modulus (default: 65536)"
-msgstr "  -m, --mod DIV       מודולוס (ברירת מחדל: 65536)"
+#: src/naan.c:66
+msgid "modulus (default: 65536)\n"
+msgstr "מודולוס (ברירת מחדל: 65536)\n"
 
-msgid "  -b, --bias BIAS     added after reduction (default: 0)"
-msgstr "  -b, --bias BIAS     מתווסף אחרי הצמצום (ברירת מחדל: 0)"
+#: src/naan.c:68
+msgid "added after reduction (default: 0)\n"
+msgstr "מתווסף אחרי הצמצום (ברירת מחדל: 0)\n"
 
-msgid "  -p, --profile NAME  hash and range profile (default: w)"
-msgstr "  -p, --profile NAME  פרופיל גיבוב וטווח (ברירת מחדל: w)"
+#: src/naan.c:70
+msgid "hash and range profile (default: w)\n"
+msgstr "פרופיל גיבוב וטווח (ברירת מחדל: w)\n"
 
-msgid "  -h, --help          display this help and exit"
-msgstr "  -h, --help          הצג עזרה זו וצא"
+#: src/naan.c:72
+msgid "display this help and exit\n"
+msgstr "הצג עזרה זו וצא\n"
 
-msgid "      --version       output version information and exit"
-msgstr "      --version       הצג גרסה וצא"
+#: src/naan.c:74
+msgid "output version information and exit\n"
+msgstr "הצג גרסה וצא\n"
 
+#: src/naan.c:76
 msgid "Each output line is:"
 msgstr "כל שורת פלט היא:"
 
+#: src/naan.c:79
 msgid "Profiles:"
 msgstr "פרופילים:"
 
+#: src/naan.c:81
 msgid "default"
 msgstr "ברירת מחדל"
 
+#: src/naan.c:85
 msgid "DIV and BIAS accept decimal or 0x hex, with optional k/m/g suffix (1024)."
 msgstr "DIV ו-BIAS מקבלים עשרוני או hex עם 0x, עם סיומת k/m/g רשות (1024)."
 
-msgid "Try '%s --help' for more information.\n"
-msgstr "נסו '%s --help' למידע נוסף.\n"
-
+#: src/naan.c:167
+#, c-format
 msgid "%s: invalid DIV: %s\n"
 msgstr "%s: DIV לא תקין: %s\n"
 
+#: src/naan.c:173
+#, c-format
 msgid "%s: invalid BIAS: %s\n"
 msgstr "%s: BIAS לא תקין: %s\n"
 
+#: src/naan.c:179
+#, c-format
 msgid "%s: unknown profile: %s\n"
 msgstr "%s: פרופיל לא ידוע: %s\n"
 
+#: src/naan.c:190 src/naan.c:197
+#, c-format
+msgid "Try '%s --help' for more information.\n"
+msgstr "נסו '%s --help' למידע נוסף.\n"
+
+#: src/naan.c:196
+#, c-format
 msgid "%s: missing name\n"
 msgstr "%s: חסר שם\n"
 
+#: src/naan.c:202
+#, c-format
 msgid "%s: DIV must be greater than 0\n"
 msgstr "%s: DIV חייב להיות גדול מ-0\n"
 
+#: src/naan.c:211
+#, c-format
 msgid "%s: failed to compute number for '%s'\n"
 msgstr "%s: חישוב המספר עבור '%s' נכשל\n"
 
+#: src/naan.c:216 src/naan.c:222
+#, c-format
 msgid "%s: write error\n"
 msgstr "%s: שגיאת כתיבה\n"

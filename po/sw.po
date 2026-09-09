@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: naan\n"
 "Report-Msgid-Bugs-To: naan@bodz.net\n"
-"POT-Creation-Date: 2026-09-06 07:28+0800\n"
+"POT-Creation-Date: 2026-09-07 16:46+0800\n"
 "PO-Revision-Date: 2026-09-06 07:28+0800\n"
 "Last-Translator: Lenik <naan@bodz.net>\n"
 "Language-Team: Swahili\n"
@@ -13,101 +13,143 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: src/naan.c:32
 msgid "License AGPL-3.0-or-later: GNU AGPL version 3 or later"
 msgstr "Leseni AGPL-3.0-or-later: GNU AGPL toleo la 3 au jipya zaidi"
 
+#: src/naan.c:36
+#, c-format
 msgid "Usage: %s [OPTION]... NAME...\n"
 msgstr "Matumizi: %s [CHAGUO]... JINA...\n"
 
+#: src/naan.c:37
 msgid "Compute a number from each name."
 msgstr "Huhesabu namba kutoka kwa kila jina."
 
-msgid "  -5, --md5           hash with MD5"
-msgstr "  -5, --md5           hashi kwa MD5"
+#: src/naan.c:40
+msgid "hash with MD5\n"
+msgstr "hashi kwa MD5\n"
 
-msgid "  -1, --sha1          hash with SHA-1"
-msgstr "  -1, --sha1          hashi kwa SHA-1"
+#: src/naan.c:42
+msgid "hash with SHA-1\n"
+msgstr "hashi kwa SHA-1\n"
 
-msgid "      --sha224        hash with SHA-224"
-msgstr "      --sha224        hashi kwa SHA-224"
+#: src/naan.c:44
+msgid "hash with SHA-224\n"
+msgstr "hashi kwa SHA-224\n"
 
-msgid "  -2, --sha256        hash with SHA-256 (default)"
-msgstr "  -2, --sha256        hashi kwa SHA-256 (chaguo-msingi)"
+#: src/naan.c:46
+msgid "hash with SHA-256 (default)\n"
+msgstr "hashi kwa SHA-256 (chaguo-msingi)\n"
 
-msgid "      --sha384        hash with SHA-384"
-msgstr "      --sha384        hashi kwa SHA-384"
+#: src/naan.c:48
+msgid "hash with SHA-384\n"
+msgstr "hashi kwa SHA-384\n"
 
-msgid "  -8, --sha512        hash with SHA-512"
-msgstr "  -8, --sha512        hashi kwa SHA-512"
+#: src/naan.c:50
+msgid "hash with SHA-512\n"
+msgstr "hashi kwa SHA-512\n"
 
-msgid "  -3, --sha3-256      hash with SHA3-256"
-msgstr "  -3, --sha3-256      hashi kwa SHA3-256"
+#: src/naan.c:52
+msgid "hash with SHA3-256\n"
+msgstr "hashi kwa SHA3-256\n"
 
-msgid "      --sha3-512      hash with SHA3-512"
-msgstr "      --sha3-512      hashi kwa SHA3-512"
+#: src/naan.c:54
+msgid "hash with SHA3-512\n"
+msgstr "hashi kwa SHA3-512\n"
 
-msgid "      --blake2s       hash with BLAKE2s"
-msgstr "      --blake2s       hashi kwa BLAKE2s"
+#: src/naan.c:56
+msgid "hash with BLAKE2s\n"
+msgstr "hashi kwa BLAKE2s\n"
 
-msgid "      --blake2b       hash with BLAKE2b"
-msgstr "      --blake2b       hashi kwa BLAKE2b"
+#: src/naan.c:58
+msgid "hash with BLAKE2b\n"
+msgstr "hashi kwa BLAKE2b\n"
 
-msgid "      --ripemd160     hash with RIPEMD-160"
-msgstr "      --ripemd160     hashi kwa RIPEMD-160"
+#: src/naan.c:60
+msgid "hash with RIPEMD-160\n"
+msgstr "hashi kwa RIPEMD-160\n"
 
-msgid "      --crc16         digest with CRC-16"
-msgstr "      --crc16         digest CRC-16"
+#: src/naan.c:62
+msgid "digest with CRC-16\n"
+msgstr "digest CRC-16\n"
 
-msgid "  -c, --crc32         digest with CRC-32"
-msgstr "  -c, --crc32         digest CRC-32"
+#: src/naan.c:64
+msgid "digest with CRC-32\n"
+msgstr "digest CRC-32\n"
 
-msgid "  -m, --mod DIV       modulus (default: 65536)"
-msgstr "  -m, --mod DIV       modulus (chaguo-msingi: 65536)"
+#: src/naan.c:66
+msgid "modulus (default: 65536)\n"
+msgstr "modulus (chaguo-msingi: 65536)\n"
 
-msgid "  -b, --bias BIAS     added after reduction (default: 0)"
-msgstr "  -b, --bias BIAS     huongezwa baada ya kupunguza (chaguo-msingi: 0)"
+#: src/naan.c:68
+msgid "added after reduction (default: 0)\n"
+msgstr "huongezwa baada ya kupunguza (chaguo-msingi: 0)\n"
 
-msgid "  -p, --profile NAME  hash and range profile (default: w)"
-msgstr "  -p, --profile NAME  wasifu wa hash na masafa (chaguo-msingi: w)"
+#: src/naan.c:70
+msgid "hash and range profile (default: w)\n"
+msgstr "wasifu wa hash na masafa (chaguo-msingi: w)\n"
 
-msgid "  -h, --help          display this help and exit"
-msgstr "  -h, --help          onyesha msaada huu kisha toka"
+#: src/naan.c:72
+msgid "display this help and exit\n"
+msgstr "onyesha msaada huu kisha toka\n"
 
-msgid "      --version       output version information and exit"
-msgstr "      --version       onyesha toleo kisha toka"
+#: src/naan.c:74
+msgid "output version information and exit\n"
+msgstr "onyesha toleo kisha toka\n"
 
+#: src/naan.c:76
 msgid "Each output line is:"
 msgstr "Kila mstari wa pato ni:"
 
+#: src/naan.c:79
 msgid "Profiles:"
 msgstr "Wasifu:"
 
+#: src/naan.c:81
 msgid "default"
 msgstr "chaguo-msingi"
 
+#: src/naan.c:85
 msgid "DIV and BIAS accept decimal or 0x hex, with optional k/m/g suffix (1024)."
 msgstr "DIV na BIAS hukubali desimali au heksi 0x, na kiambishi k/m/g cha hiari (1024)."
 
-msgid "Try '%s --help' for more information.\n"
-msgstr "Jaribu '%s --help' kwa maelezo zaidi.\n"
-
+#: src/naan.c:167
+#, c-format
 msgid "%s: invalid DIV: %s\n"
 msgstr "%s: DIV batili: %s\n"
 
+#: src/naan.c:173
+#, c-format
 msgid "%s: invalid BIAS: %s\n"
 msgstr "%s: BIAS batili: %s\n"
 
+#: src/naan.c:179
+#, c-format
 msgid "%s: unknown profile: %s\n"
 msgstr "%s: wasifu usiojulikana: %s\n"
 
+#: src/naan.c:190 src/naan.c:197
+#, c-format
+msgid "Try '%s --help' for more information.\n"
+msgstr "Jaribu '%s --help' kwa maelezo zaidi.\n"
+
+#: src/naan.c:196
+#, c-format
 msgid "%s: missing name\n"
 msgstr "%s: jina halipo\n"
 
+#: src/naan.c:202
+#, c-format
 msgid "%s: DIV must be greater than 0\n"
 msgstr "%s: DIV lazima iwe kubwa kuliko 0\n"
 
+#: src/naan.c:211
+#, c-format
 msgid "%s: failed to compute number for '%s'\n"
 msgstr "%s: imeshindwa kuhesabu namba ya '%s'\n"
 
+#: src/naan.c:216 src/naan.c:222
+#, c-format
 msgid "%s: write error\n"
 msgstr "%s: hitilafu ya kuandika\n"

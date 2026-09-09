@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: naan\n"
 "Report-Msgid-Bugs-To: naan@bodz.net\n"
-"POT-Creation-Date: 2026-09-06 07:28+0800\n"
+"POT-Creation-Date: 2026-09-07 16:46+0800\n"
 "PO-Revision-Date: 2026-09-06 07:28+0800\n"
 "Last-Translator: Lenik <naan@bodz.net>\n"
 "Language-Team: Finnish\n"
@@ -13,101 +13,143 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: src/naan.c:32
 msgid "License AGPL-3.0-or-later: GNU AGPL version 3 or later"
 msgstr "Lisenssi AGPL-3.0-or-later: GNU AGPL versio 3 tai uudempi"
 
+#: src/naan.c:36
+#, c-format
 msgid "Usage: %s [OPTION]... NAME...\n"
 msgstr "Käyttö: %s [VALITSIN]... NIMI...\n"
 
+#: src/naan.c:37
 msgid "Compute a number from each name."
 msgstr "Laskee luvun jokaisesta nimestä."
 
-msgid "  -5, --md5           hash with MD5"
-msgstr "  -5, --md5           tiivistä MD5:lla"
+#: src/naan.c:40
+msgid "hash with MD5\n"
+msgstr "tiivistä MD5:lla\n"
 
-msgid "  -1, --sha1          hash with SHA-1"
-msgstr "  -1, --sha1          tiivistä SHA-1:lla"
+#: src/naan.c:42
+msgid "hash with SHA-1\n"
+msgstr "tiivistä SHA-1:lla\n"
 
-msgid "      --sha224        hash with SHA-224"
-msgstr "      --sha224        tiivistä SHA-224:lla"
+#: src/naan.c:44
+msgid "hash with SHA-224\n"
+msgstr "tiivistä SHA-224:lla\n"
 
-msgid "  -2, --sha256        hash with SHA-256 (default)"
-msgstr "  -2, --sha256        tiivistä SHA-256:lla (oletus)"
+#: src/naan.c:46
+msgid "hash with SHA-256 (default)\n"
+msgstr "tiivistä SHA-256:lla (oletus)\n"
 
-msgid "      --sha384        hash with SHA-384"
-msgstr "      --sha384        tiivistä SHA-384:lla"
+#: src/naan.c:48
+msgid "hash with SHA-384\n"
+msgstr "tiivistä SHA-384:lla\n"
 
-msgid "  -8, --sha512        hash with SHA-512"
-msgstr "  -8, --sha512        tiivistä SHA-512:lla"
+#: src/naan.c:50
+msgid "hash with SHA-512\n"
+msgstr "tiivistä SHA-512:lla\n"
 
-msgid "  -3, --sha3-256      hash with SHA3-256"
-msgstr "  -3, --sha3-256      tiivistä SHA3-256:lla"
+#: src/naan.c:52
+msgid "hash with SHA3-256\n"
+msgstr "tiivistä SHA3-256:lla\n"
 
-msgid "      --sha3-512      hash with SHA3-512"
-msgstr "      --sha3-512      tiivistä SHA3-512:lla"
+#: src/naan.c:54
+msgid "hash with SHA3-512\n"
+msgstr "tiivistä SHA3-512:lla\n"
 
-msgid "      --blake2s       hash with BLAKE2s"
-msgstr "      --blake2s       tiivistä BLAKE2s:lla"
+#: src/naan.c:56
+msgid "hash with BLAKE2s\n"
+msgstr "tiivistä BLAKE2s:lla\n"
 
-msgid "      --blake2b       hash with BLAKE2b"
-msgstr "      --blake2b       tiivistä BLAKE2b:lla"
+#: src/naan.c:58
+msgid "hash with BLAKE2b\n"
+msgstr "tiivistä BLAKE2b:lla\n"
 
-msgid "      --ripemd160     hash with RIPEMD-160"
-msgstr "      --ripemd160     tiivistä RIPEMD-160:lla"
+#: src/naan.c:60
+msgid "hash with RIPEMD-160\n"
+msgstr "tiivistä RIPEMD-160:lla\n"
 
-msgid "      --crc16         digest with CRC-16"
-msgstr "      --crc16         tiiviste CRC-16"
+#: src/naan.c:62
+msgid "digest with CRC-16\n"
+msgstr "tiiviste CRC-16\n"
 
-msgid "  -c, --crc32         digest with CRC-32"
-msgstr "  -c, --crc32         tiiviste CRC-32"
+#: src/naan.c:64
+msgid "digest with CRC-32\n"
+msgstr "tiiviste CRC-32\n"
 
-msgid "  -m, --mod DIV       modulus (default: 65536)"
-msgstr "  -m, --mod DIV       modulus (oletus: 65536)"
+#: src/naan.c:66
+msgid "modulus (default: 65536)\n"
+msgstr "modulus (oletus: 65536)\n"
 
-msgid "  -b, --bias BIAS     added after reduction (default: 0)"
-msgstr "  -b, --bias BIAS     lisätään vähennyksen jälkeen (oletus: 0)"
+#: src/naan.c:68
+msgid "added after reduction (default: 0)\n"
+msgstr "lisätään vähennyksen jälkeen (oletus: 0)\n"
 
-msgid "  -p, --profile NAME  hash and range profile (default: w)"
-msgstr "  -p, --profile NAME  tiiviste- ja alueprofiili (oletus: w)"
+#: src/naan.c:70
+msgid "hash and range profile (default: w)\n"
+msgstr "tiiviste- ja alueprofiili (oletus: w)\n"
 
-msgid "  -h, --help          display this help and exit"
-msgstr "  -h, --help          näytä tämä ohje ja poistu"
+#: src/naan.c:72
+msgid "display this help and exit\n"
+msgstr "näytä tämä ohje ja poistu\n"
 
-msgid "      --version       output version information and exit"
-msgstr "      --version       näytä versiontiedot ja poistu"
+#: src/naan.c:74
+msgid "output version information and exit\n"
+msgstr "näytä versiontiedot ja poistu\n"
 
+#: src/naan.c:76
 msgid "Each output line is:"
 msgstr "Jokainen tulostusrivi on:"
 
+#: src/naan.c:79
 msgid "Profiles:"
 msgstr "Profiilit:"
 
+#: src/naan.c:81
 msgid "default"
 msgstr "oletus"
 
+#: src/naan.c:85
 msgid "DIV and BIAS accept decimal or 0x hex, with optional k/m/g suffix (1024)."
 msgstr "DIV ja BIAS hyväksyvät kymmen- tai 0x-16-järjestelmän, valinnaisesti k/m/g-jälkiliitteellä (1024)."
 
-msgid "Try '%s --help' for more information.\n"
-msgstr "Lisätietoja: %s --help\n"
-
+#: src/naan.c:167
+#, c-format
 msgid "%s: invalid DIV: %s\n"
 msgstr "%s: virheellinen DIV: %s\n"
 
+#: src/naan.c:173
+#, c-format
 msgid "%s: invalid BIAS: %s\n"
 msgstr "%s: virheellinen BIAS: %s\n"
 
+#: src/naan.c:179
+#, c-format
 msgid "%s: unknown profile: %s\n"
 msgstr "%s: tuntematon profiili: %s\n"
 
+#: src/naan.c:190 src/naan.c:197
+#, c-format
+msgid "Try '%s --help' for more information.\n"
+msgstr "Lisätietoja: %s --help\n"
+
+#: src/naan.c:196
+#, c-format
 msgid "%s: missing name\n"
 msgstr "%s: nimi puuttuu\n"
 
+#: src/naan.c:202
+#, c-format
 msgid "%s: DIV must be greater than 0\n"
 msgstr "%s: DIV:n on oltava suurempi kuin 0\n"
 
+#: src/naan.c:211
+#, c-format
 msgid "%s: failed to compute number for '%s'\n"
 msgstr "%s: luvun laskeminen epäonnistui kohteelle '%s'\n"
 
+#: src/naan.c:216 src/naan.c:222
+#, c-format
 msgid "%s: write error\n"
 msgstr "%s: kirjoitusvirhe\n"

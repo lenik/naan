@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: naan\n"
 "Report-Msgid-Bugs-To: naan@bodz.net\n"
-"POT-Creation-Date: 2026-09-06 07:28+0800\n"
+"POT-Creation-Date: 2026-09-07 16:46+0800\n"
 "PO-Revision-Date: 2026-09-06 07:28+0800\n"
 "Last-Translator: Lenik <naan@bodz.net>\n"
 "Language-Team: Telugu\n"
@@ -13,101 +13,143 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: src/naan.c:32
 msgid "License AGPL-3.0-or-later: GNU AGPL version 3 or later"
 msgstr "లైసెన్సు AGPL-3.0-or-later: GNU AGPL వెర్షన్ 3 లేదా తర్�ెర్షన్ 3 లేదా తర్వాత"
 
+#: src/naan.c:36
+#, c-format
 msgid "Usage: %s [OPTION]... NAME...\n"
 msgstr "వాడుక: %s [ఎంపిక]... పేరు...\n"
 
+#: src/naan.c:37
 msgid "Compute a number from each name."
 msgstr "ప్రతి పేరు నుండి ఒక సంఖ్యను లెక్కిస్తుంది."
 
-msgid "  -5, --md5           hash with MD5"
-msgstr "  -5, --md5           MD5 తో హాష్"
+#: src/naan.c:40
+msgid "hash with MD5\n"
+msgstr "MD5 తో హాష్\n"
 
-msgid "  -1, --sha1          hash with SHA-1"
-msgstr "  -1, --sha1          SHA-1 తో హాష్"
+#: src/naan.c:42
+msgid "hash with SHA-1\n"
+msgstr "SHA-1 తో హాష్\n"
 
-msgid "      --sha224        hash with SHA-224"
-msgstr "      --sha224        SHA-224 తో హాష్"
+#: src/naan.c:44
+msgid "hash with SHA-224\n"
+msgstr "SHA-224 తో హాష్\n"
 
-msgid "  -2, --sha256        hash with SHA-256 (default)"
-msgstr "  -2, --sha256        SHA-256 తో హాష్ (డిఫాల్ట్)"
+#: src/naan.c:46
+msgid "hash with SHA-256 (default)\n"
+msgstr "SHA-256 తో హాష్ (డిఫాల్ట్)\n"
 
-msgid "      --sha384        hash with SHA-384"
-msgstr "      --sha384        SHA-384 తో హాష్"
+#: src/naan.c:48
+msgid "hash with SHA-384\n"
+msgstr "SHA-384 తో హాష్\n"
 
-msgid "  -8, --sha512        hash with SHA-512"
-msgstr "  -8, --sha512        SHA-512 తో హాష్"
+#: src/naan.c:50
+msgid "hash with SHA-512\n"
+msgstr "SHA-512 తో హాష్\n"
 
-msgid "  -3, --sha3-256      hash with SHA3-256"
-msgstr "  -3, --sha3-256      SHA3-256 తో హాష్"
+#: src/naan.c:52
+msgid "hash with SHA3-256\n"
+msgstr "SHA3-256 తో హాష్\n"
 
-msgid "      --sha3-512      hash with SHA3-512"
-msgstr "      --sha3-512      SHA3-512 తో హాష్"
+#: src/naan.c:54
+msgid "hash with SHA3-512\n"
+msgstr "SHA3-512 తో హాష్\n"
 
-msgid "      --blake2s       hash with BLAKE2s"
-msgstr "      --blake2s       BLAKE2s తో హాష్"
+#: src/naan.c:56
+msgid "hash with BLAKE2s\n"
+msgstr "BLAKE2s తో హాష్\n"
 
-msgid "      --blake2b       hash with BLAKE2b"
-msgstr "      --blake2b       BLAKE2b తో హాష్"
+#: src/naan.c:58
+msgid "hash with BLAKE2b\n"
+msgstr "BLAKE2b తో హాష్\n"
 
-msgid "      --ripemd160     hash with RIPEMD-160"
-msgstr "      --ripemd160     RIPEMD-160 తో హాష్"
+#: src/naan.c:60
+msgid "hash with RIPEMD-160\n"
+msgstr "RIPEMD-160 తో హాష్\n"
 
-msgid "      --crc16         digest with CRC-16"
-msgstr "      --crc16         CRC-16 డైజెస్ట్"
+#: src/naan.c:62
+msgid "digest with CRC-16\n"
+msgstr "CRC-16 డైజెస్ట్\n"
 
-msgid "  -c, --crc32         digest with CRC-32"
-msgstr "  -c, --crc32         CRC-32 డైజెస్ట్"
+#: src/naan.c:64
+msgid "digest with CRC-32\n"
+msgstr "CRC-32 డైజెస్ట్\n"
 
-msgid "  -m, --mod DIV       modulus (default: 65536)"
-msgstr "  -m, --mod DIV       మాడ్యులస్ (డిఫాల్ట్: 65536)"
+#: src/naan.c:66
+msgid "modulus (default: 65536)\n"
+msgstr "మాడ్యులస్ (డిఫాల్ట్: 65536)\n"
 
-msgid "  -b, --bias BIAS     added after reduction (default: 0)"
-msgstr "  -b, --bias BIAS     తగ్గింపు తర్వాత జోడించబడుతుం�ర్వాత జోడించబడుతుంది (డిఫాల్ట్: 0)"
+#: src/naan.c:68
+msgid "added after reduction (default: 0)\n"
+msgstr "తగ్గింపు తర్వాత జోడించబడుతుం�ర్వాత జోడించబడుతుంది (డిఫాల్ట్: 0)\n"
 
-msgid "  -p, --profile NAME  hash and range profile (default: w)"
-msgstr "  -p, --profile NAME  హాష్ మరియు పరిధి ప్రొఫైల్ (అప్రమేయం: w)"
+#: src/naan.c:70
+msgid "hash and range profile (default: w)\n"
+msgstr "హాష్ మరియు పరిధి ప్రొఫైల్ (అప్రమేయం: w)\n"
 
-msgid "  -h, --help          display this help and exit"
-msgstr "  -h, --help          ఈ సహాయాన్ని చూపి నిష్క్రమించు"
+#: src/naan.c:72
+msgid "display this help and exit\n"
+msgstr "ఈ సహాయాన్ని చూపి నిష్క్రమించు\n"
 
-msgid "      --version       output version information and exit"
-msgstr "      --version       వెర్షన్ చూపి నిష్క్రమించు"
+#: src/naan.c:74
+msgid "output version information and exit\n"
+msgstr "వెర్షన్ చూపి నిష్క్రమించు\n"
 
+#: src/naan.c:76
 msgid "Each output line is:"
 msgstr "ప్రతి అవుట్‌పుట్ పంక్తి:"
 
+#: src/naan.c:79
 msgid "Profiles:"
 msgstr "ప్రొఫైల్స్:"
 
+#: src/naan.c:81
 msgid "default"
 msgstr "డిఫాల్ట్"
 
+#: src/naan.c:85
 msgid "DIV and BIAS accept decimal or 0x hex, with optional k/m/g suffix (1024)."
 msgstr "DIV మరియు BIAS దశాంశం లేదా 0x షోడశాంశాన్ని అంగీకరిస్తాయి, ఐచ్ఛిక k/m/g ప్రత్యయంతో (1024)."
 
-msgid "Try '%s --help' for more information.\n"
-msgstr "మరింత సమాచారం కోసం '%s --help' ప్రయత్నించండి.\n"
-
+#: src/naan.c:167
+#, c-format
 msgid "%s: invalid DIV: %s\n"
 msgstr "%s: చెల్లని DIV: %s\n"
 
+#: src/naan.c:173
+#, c-format
 msgid "%s: invalid BIAS: %s\n"
 msgstr "%s: చెల్లని BIAS: %s\n"
 
+#: src/naan.c:179
+#, c-format
 msgid "%s: unknown profile: %s\n"
 msgstr "%s: తెలియని ప్రొఫైల్: %s\n"
 
+#: src/naan.c:190 src/naan.c:197
+#, c-format
+msgid "Try '%s --help' for more information.\n"
+msgstr "మరింత సమాచారం కోసం '%s --help' ప్రయత్నించండి.\n"
+
+#: src/naan.c:196
+#, c-format
 msgid "%s: missing name\n"
 msgstr "%s: పేరు లేదు\n"
 
+#: src/naan.c:202
+#, c-format
 msgid "%s: DIV must be greater than 0\n"
 msgstr "%s: DIV 0 కంటే ఎక్కువగా ఉండాలి\n"
 
+#: src/naan.c:211
+#, c-format
 msgid "%s: failed to compute number for '%s'\n"
 msgstr "%s: '%s' సంఖ్యను లెక్కించలేకపోయాం\n"
 
+#: src/naan.c:216 src/naan.c:222
+#, c-format
 msgid "%s: write error\n"
 msgstr "%s: రాయడం లోపం\n"

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: naan\n"
 "Report-Msgid-Bugs-To: naan@bodz.net\n"
-"POT-Creation-Date: 2026-09-06 07:28+0800\n"
+"POT-Creation-Date: 2026-09-07 16:46+0800\n"
 "PO-Revision-Date: 2026-09-06 07:28+0800\n"
 "Last-Translator: Lenik <naan@bodz.net>\n"
 "Language-Team: Turkish\n"
@@ -13,101 +13,143 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: src/naan.c:32
 msgid "License AGPL-3.0-or-later: GNU AGPL version 3 or later"
 msgstr "Lisans AGPL-3.0-or-later: GNU AGPL sürüm 3 veya sonrası"
 
+#: src/naan.c:36
+#, c-format
 msgid "Usage: %s [OPTION]... NAME...\n"
 msgstr "Kullanım: %s [SEÇENEK]... AD...\n"
 
+#: src/naan.c:37
 msgid "Compute a number from each name."
 msgstr "Her addan bir sayı hesaplar."
 
-msgid "  -5, --md5           hash with MD5"
-msgstr "  -5, --md5           MD5 ile özetle"
+#: src/naan.c:40
+msgid "hash with MD5\n"
+msgstr "MD5 ile özetle\n"
 
-msgid "  -1, --sha1          hash with SHA-1"
-msgstr "  -1, --sha1          SHA-1 ile özetle"
+#: src/naan.c:42
+msgid "hash with SHA-1\n"
+msgstr "SHA-1 ile özetle\n"
 
-msgid "      --sha224        hash with SHA-224"
-msgstr "      --sha224        SHA-224 ile özetle"
+#: src/naan.c:44
+msgid "hash with SHA-224\n"
+msgstr "SHA-224 ile özetle\n"
 
-msgid "  -2, --sha256        hash with SHA-256 (default)"
-msgstr "  -2, --sha256        SHA-256 ile özetle (varsayılan)"
+#: src/naan.c:46
+msgid "hash with SHA-256 (default)\n"
+msgstr "SHA-256 ile özetle (varsayılan)\n"
 
-msgid "      --sha384        hash with SHA-384"
-msgstr "      --sha384        SHA-384 ile özetle"
+#: src/naan.c:48
+msgid "hash with SHA-384\n"
+msgstr "SHA-384 ile özetle\n"
 
-msgid "  -8, --sha512        hash with SHA-512"
-msgstr "  -8, --sha512        SHA-512 ile özetle"
+#: src/naan.c:50
+msgid "hash with SHA-512\n"
+msgstr "SHA-512 ile özetle\n"
 
-msgid "  -3, --sha3-256      hash with SHA3-256"
-msgstr "  -3, --sha3-256      SHA3-256 ile özetle"
+#: src/naan.c:52
+msgid "hash with SHA3-256\n"
+msgstr "SHA3-256 ile özetle\n"
 
-msgid "      --sha3-512      hash with SHA3-512"
-msgstr "      --sha3-512      SHA3-512 ile özetle"
+#: src/naan.c:54
+msgid "hash with SHA3-512\n"
+msgstr "SHA3-512 ile özetle\n"
 
-msgid "      --blake2s       hash with BLAKE2s"
-msgstr "      --blake2s       BLAKE2s ile özetle"
+#: src/naan.c:56
+msgid "hash with BLAKE2s\n"
+msgstr "BLAKE2s ile özetle\n"
 
-msgid "      --blake2b       hash with BLAKE2b"
-msgstr "      --blake2b       BLAKE2b ile özetle"
+#: src/naan.c:58
+msgid "hash with BLAKE2b\n"
+msgstr "BLAKE2b ile özetle\n"
 
-msgid "      --ripemd160     hash with RIPEMD-160"
-msgstr "      --ripemd160     RIPEMD-160 ile özetle"
+#: src/naan.c:60
+msgid "hash with RIPEMD-160\n"
+msgstr "RIPEMD-160 ile özetle\n"
 
-msgid "      --crc16         digest with CRC-16"
-msgstr "      --crc16         CRC-16 özeti"
+#: src/naan.c:62
+msgid "digest with CRC-16\n"
+msgstr "CRC-16 özeti\n"
 
-msgid "  -c, --crc32         digest with CRC-32"
-msgstr "  -c, --crc32         CRC-32 özeti"
+#: src/naan.c:64
+msgid "digest with CRC-32\n"
+msgstr "CRC-32 özeti\n"
 
-msgid "  -m, --mod DIV       modulus (default: 65536)"
-msgstr "  -m, --mod DIV       modulus (varsayılan: 65536)"
+#: src/naan.c:66
+msgid "modulus (default: 65536)\n"
+msgstr "modulus (varsayılan: 65536)\n"
 
-msgid "  -b, --bias BIAS     added after reduction (default: 0)"
-msgstr "  -b, --bias BIAS     indirgemeden sonra eklenir (varsayılan: 0)"
+#: src/naan.c:68
+msgid "added after reduction (default: 0)\n"
+msgstr "indirgemeden sonra eklenir (varsayılan: 0)\n"
 
-msgid "  -p, --profile NAME  hash and range profile (default: w)"
-msgstr "  -p, --profile NAME  özet ve aralık profili (varsayılan: w)"
+#: src/naan.c:70
+msgid "hash and range profile (default: w)\n"
+msgstr "özet ve aralık profili (varsayılan: w)\n"
 
-msgid "  -h, --help          display this help and exit"
-msgstr "  -h, --help          bu yardımı göster ve çık"
+#: src/naan.c:72
+msgid "display this help and exit\n"
+msgstr "bu yardımı göster ve çık\n"
 
-msgid "      --version       output version information and exit"
-msgstr "      --version       sürümü göster ve çık"
+#: src/naan.c:74
+msgid "output version information and exit\n"
+msgstr "sürümü göster ve çık\n"
 
+#: src/naan.c:76
 msgid "Each output line is:"
 msgstr "Her çıktı satırı:"
 
+#: src/naan.c:79
 msgid "Profiles:"
 msgstr "Profiller:"
 
+#: src/naan.c:81
 msgid "default"
 msgstr "varsayılan"
 
+#: src/naan.c:85
 msgid "DIV and BIAS accept decimal or 0x hex, with optional k/m/g suffix (1024)."
 msgstr "DIV ve BIAS ondalık veya 0x onaltılık kabul eder; isteğe bağlı k/m/g soneki (1024)."
 
-msgid "Try '%s --help' for more information.\n"
-msgstr "Daha fazla bilgi için '%s --help' deneyin.\n"
-
+#: src/naan.c:167
+#, c-format
 msgid "%s: invalid DIV: %s\n"
 msgstr "%s: geçersiz DIV: %s\n"
 
+#: src/naan.c:173
+#, c-format
 msgid "%s: invalid BIAS: %s\n"
 msgstr "%s: geçersiz BIAS: %s\n"
 
+#: src/naan.c:179
+#, c-format
 msgid "%s: unknown profile: %s\n"
 msgstr "%s: bilinmeyen profil: %s\n"
 
+#: src/naan.c:190 src/naan.c:197
+#, c-format
+msgid "Try '%s --help' for more information.\n"
+msgstr "Daha fazla bilgi için '%s --help' deneyin.\n"
+
+#: src/naan.c:196
+#, c-format
 msgid "%s: missing name\n"
 msgstr "%s: ad eksik\n"
 
+#: src/naan.c:202
+#, c-format
 msgid "%s: DIV must be greater than 0\n"
 msgstr "%s: DIV 0'dan büyük olmalıdır\n"
 
+#: src/naan.c:211
+#, c-format
 msgid "%s: failed to compute number for '%s'\n"
 msgstr "%s: '%s' için sayı hesaplanamadı\n"
 
+#: src/naan.c:216 src/naan.c:222
+#, c-format
 msgid "%s: write error\n"
 msgstr "%s: yazma hatası\n"

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: naan\n"
 "Report-Msgid-Bugs-To: naan@bodz.net\n"
-"POT-Creation-Date: 2026-09-06 07:28+0800\n"
+"POT-Creation-Date: 2026-09-07 16:46+0800\n"
 "PO-Revision-Date: 2026-09-06 07:28+0800\n"
 "Last-Translator: Lenik <naan@bodz.net>\n"
 "Language-Team: Hungarian\n"
@@ -13,101 +13,143 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: src/naan.c:32
 msgid "License AGPL-3.0-or-later: GNU AGPL version 3 or later"
 msgstr "Licenc AGPL-3.0-or-later: GNU AGPL 3. vagy újabb verzió"
 
+#: src/naan.c:36
+#, c-format
 msgid "Usage: %s [OPTION]... NAME...\n"
 msgstr "Használat: %s [KAPCSOLÓ]... NÉV...\n"
 
+#: src/naan.c:37
 msgid "Compute a number from each name."
 msgstr "Számot számít minden névből."
 
-msgid "  -5, --md5           hash with MD5"
-msgstr "  -5, --md5           hash MD5 algoritmussal"
+#: src/naan.c:40
+msgid "hash with MD5\n"
+msgstr "hash MD5 algoritmussal\n"
 
-msgid "  -1, --sha1          hash with SHA-1"
-msgstr "  -1, --sha1          hash SHA-1 algoritmussal"
+#: src/naan.c:42
+msgid "hash with SHA-1\n"
+msgstr "hash SHA-1 algoritmussal\n"
 
-msgid "      --sha224        hash with SHA-224"
-msgstr "      --sha224        hash SHA-224 algoritmussal"
+#: src/naan.c:44
+msgid "hash with SHA-224\n"
+msgstr "hash SHA-224 algoritmussal\n"
 
-msgid "  -2, --sha256        hash with SHA-256 (default)"
-msgstr "  -2, --sha256        hash SHA-256 algoritmussal (alapértelmezett)"
+#: src/naan.c:46
+msgid "hash with SHA-256 (default)\n"
+msgstr "hash SHA-256 algoritmussal (alapértelmezett)\n"
 
-msgid "      --sha384        hash with SHA-384"
-msgstr "      --sha384        hash SHA-384 algoritmussal"
+#: src/naan.c:48
+msgid "hash with SHA-384\n"
+msgstr "hash SHA-384 algoritmussal\n"
 
-msgid "  -8, --sha512        hash with SHA-512"
-msgstr "  -8, --sha512        hash SHA-512 algoritmussal"
+#: src/naan.c:50
+msgid "hash with SHA-512\n"
+msgstr "hash SHA-512 algoritmussal\n"
 
-msgid "  -3, --sha3-256      hash with SHA3-256"
-msgstr "  -3, --sha3-256      hash SHA3-256 algoritmussal"
+#: src/naan.c:52
+msgid "hash with SHA3-256\n"
+msgstr "hash SHA3-256 algoritmussal\n"
 
-msgid "      --sha3-512      hash with SHA3-512"
-msgstr "      --sha3-512      hash SHA3-512 algoritmussal"
+#: src/naan.c:54
+msgid "hash with SHA3-512\n"
+msgstr "hash SHA3-512 algoritmussal\n"
 
-msgid "      --blake2s       hash with BLAKE2s"
-msgstr "      --blake2s       hash BLAKE2s algoritmussal"
+#: src/naan.c:56
+msgid "hash with BLAKE2s\n"
+msgstr "hash BLAKE2s algoritmussal\n"
 
-msgid "      --blake2b       hash with BLAKE2b"
-msgstr "      --blake2b       hash BLAKE2b algoritmussal"
+#: src/naan.c:58
+msgid "hash with BLAKE2b\n"
+msgstr "hash BLAKE2b algoritmussal\n"
 
-msgid "      --ripemd160     hash with RIPEMD-160"
-msgstr "      --ripemd160     hash RIPEMD-160 algoritmussal"
+#: src/naan.c:60
+msgid "hash with RIPEMD-160\n"
+msgstr "hash RIPEMD-160 algoritmussal\n"
 
-msgid "      --crc16         digest with CRC-16"
-msgstr "      --crc16         CRC-16 kivonat"
+#: src/naan.c:62
+msgid "digest with CRC-16\n"
+msgstr "CRC-16 kivonat\n"
 
-msgid "  -c, --crc32         digest with CRC-32"
-msgstr "  -c, --crc32         CRC-32 kivonat"
+#: src/naan.c:64
+msgid "digest with CRC-32\n"
+msgstr "CRC-32 kivonat\n"
 
-msgid "  -m, --mod DIV       modulus (default: 65536)"
-msgstr "  -m, --mod DIV       modulus (alapértelmezett: 65536)"
+#: src/naan.c:66
+msgid "modulus (default: 65536)\n"
+msgstr "modulus (alapértelmezett: 65536)\n"
 
-msgid "  -b, --bias BIAS     added after reduction (default: 0)"
-msgstr "  -b, --bias BIAS     hozzáadva a redukció után (alapértelmezett: 0)"
+#: src/naan.c:68
+msgid "added after reduction (default: 0)\n"
+msgstr "hozzáadva a redukció után (alapértelmezett: 0)\n"
 
-msgid "  -p, --profile NAME  hash and range profile (default: w)"
-msgstr "  -p, --profile NAME  hash- és tartományprofil (alapértelmezett: w)"
+#: src/naan.c:70
+msgid "hash and range profile (default: w)\n"
+msgstr "hash- és tartományprofil (alapértelmezett: w)\n"
 
-msgid "  -h, --help          display this help and exit"
-msgstr "  -h, --help          súgó megjelenítése és kilépés"
+#: src/naan.c:72
+msgid "display this help and exit\n"
+msgstr "súgó megjelenítése és kilépés\n"
 
-msgid "      --version       output version information and exit"
-msgstr "      --version       verzió kiírása és kilépés"
+#: src/naan.c:74
+msgid "output version information and exit\n"
+msgstr "verzió kiírása és kilépés\n"
 
+#: src/naan.c:76
 msgid "Each output line is:"
 msgstr "Minden kimeneti sor:"
 
+#: src/naan.c:79
 msgid "Profiles:"
 msgstr "Profilok:"
 
+#: src/naan.c:81
 msgid "default"
 msgstr "alapértelmezett"
 
+#: src/naan.c:85
 msgid "DIV and BIAS accept decimal or 0x hex, with optional k/m/g suffix (1024)."
 msgstr "A DIV és a BIAS tizes vagy 0x hexadecimális alakot fogad, opcionális k/m/g utótaggal (1024)."
 
-msgid "Try '%s --help' for more information.\n"
-msgstr "További információ: %s --help\n"
-
+#: src/naan.c:167
+#, c-format
 msgid "%s: invalid DIV: %s\n"
 msgstr "%s: érvénytelen DIV: %s\n"
 
+#: src/naan.c:173
+#, c-format
 msgid "%s: invalid BIAS: %s\n"
 msgstr "%s: érvénytelen BIAS: %s\n"
 
+#: src/naan.c:179
+#, c-format
 msgid "%s: unknown profile: %s\n"
 msgstr "%s: ismeretlen profil: %s\n"
 
+#: src/naan.c:190 src/naan.c:197
+#, c-format
+msgid "Try '%s --help' for more information.\n"
+msgstr "További információ: %s --help\n"
+
+#: src/naan.c:196
+#, c-format
 msgid "%s: missing name\n"
 msgstr "%s: hiányzó név\n"
 
+#: src/naan.c:202
+#, c-format
 msgid "%s: DIV must be greater than 0\n"
 msgstr "%s: a DIV-nek nagyobbnak kell lennie 0-nál\n"
 
+#: src/naan.c:211
+#, c-format
 msgid "%s: failed to compute number for '%s'\n"
 msgstr "%s: nem sikerült számot számítani erre: '%s'\n"
 
+#: src/naan.c:216 src/naan.c:222
+#, c-format
 msgid "%s: write error\n"
 msgstr "%s: írási hiba\n"

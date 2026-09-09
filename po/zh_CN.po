@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: naan\n"
 "Report-Msgid-Bugs-To: naan@bodz.net\n"
-"POT-Creation-Date: 2026-09-06 07:28+0800\n"
+"POT-Creation-Date: 2026-09-07 16:46+0800\n"
 "PO-Revision-Date: 2026-09-06 07:28+0800\n"
 "Last-Translator: Lenik <naan@bodz.net>\n"
 "Language-Team: Chinese (simplified)\n"
@@ -13,101 +13,143 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: src/naan.c:32
 msgid "License AGPL-3.0-or-later: GNU AGPL version 3 or later"
 msgstr "许可证 AGPL-3.0-or-later：GNU AGPL 第 3 版或更高版本"
 
+#: src/naan.c:36
+#, c-format
 msgid "Usage: %s [OPTION]... NAME...\n"
 msgstr "用法：%s [选项]... 名称...\n"
 
+#: src/naan.c:37
 msgid "Compute a number from each name."
 msgstr "由每个名称计算出一个数字。"
 
-msgid "  -5, --md5           hash with MD5"
-msgstr "  -5, --md5           使用 MD5 哈希"
+#: src/naan.c:40
+msgid "hash with MD5\n"
+msgstr "使用 MD5 哈希\n"
 
-msgid "  -1, --sha1          hash with SHA-1"
-msgstr "  -1, --sha1          使用 SHA-1 哈希"
+#: src/naan.c:42
+msgid "hash with SHA-1\n"
+msgstr "使用 SHA-1 哈希\n"
 
-msgid "      --sha224        hash with SHA-224"
-msgstr "      --sha224        使用 SHA-224 哈希"
+#: src/naan.c:44
+msgid "hash with SHA-224\n"
+msgstr "使用 SHA-224 哈希\n"
 
-msgid "  -2, --sha256        hash with SHA-256 (default)"
-msgstr "  -2, --sha256        使用 SHA-256 哈希（默认）"
+#: src/naan.c:46
+msgid "hash with SHA-256 (default)\n"
+msgstr "使用 SHA-256 哈希（默认）\n"
 
-msgid "      --sha384        hash with SHA-384"
-msgstr "      --sha384        使用 SHA-384 哈希"
+#: src/naan.c:48
+msgid "hash with SHA-384\n"
+msgstr "使用 SHA-384 哈希\n"
 
-msgid "  -8, --sha512        hash with SHA-512"
-msgstr "  -8, --sha512        使用 SHA-512 哈希"
+#: src/naan.c:50
+msgid "hash with SHA-512\n"
+msgstr "使用 SHA-512 哈希\n"
 
-msgid "  -3, --sha3-256      hash with SHA3-256"
-msgstr "  -3, --sha3-256      使用 SHA3-256 哈希"
+#: src/naan.c:52
+msgid "hash with SHA3-256\n"
+msgstr "使用 SHA3-256 哈希\n"
 
-msgid "      --sha3-512      hash with SHA3-512"
-msgstr "      --sha3-512      使用 SHA3-512 哈希"
+#: src/naan.c:54
+msgid "hash with SHA3-512\n"
+msgstr "使用 SHA3-512 哈希\n"
 
-msgid "      --blake2s       hash with BLAKE2s"
-msgstr "      --blake2s       使用 BLAKE2s 哈希"
+#: src/naan.c:56
+msgid "hash with BLAKE2s\n"
+msgstr "使用 BLAKE2s 哈希\n"
 
-msgid "      --blake2b       hash with BLAKE2b"
-msgstr "      --blake2b       使用 BLAKE2b 哈希"
+#: src/naan.c:58
+msgid "hash with BLAKE2b\n"
+msgstr "使用 BLAKE2b 哈希\n"
 
-msgid "      --ripemd160     hash with RIPEMD-160"
-msgstr "      --ripemd160     使用 RIPEMD-160 哈希"
+#: src/naan.c:60
+msgid "hash with RIPEMD-160\n"
+msgstr "使用 RIPEMD-160 哈希\n"
 
-msgid "      --crc16         digest with CRC-16"
-msgstr "      --crc16         使用 CRC-16 摘要"
+#: src/naan.c:62
+msgid "digest with CRC-16\n"
+msgstr "使用 CRC-16 摘要\n"
 
-msgid "  -c, --crc32         digest with CRC-32"
-msgstr "  -c, --crc32         使用 CRC-32 摘要"
+#: src/naan.c:64
+msgid "digest with CRC-32\n"
+msgstr "使用 CRC-32 摘要\n"
 
-msgid "  -m, --mod DIV       modulus (default: 65536)"
-msgstr "  -m, --mod DIV       模数（默认：65536）"
+#: src/naan.c:66
+msgid "modulus (default: 65536)\n"
+msgstr "模数（默认：65536）\n"
 
-msgid "  -b, --bias BIAS     added after reduction (default: 0)"
-msgstr "  -b, --bias BIAS     约简后加上的偏置（默认：0）"
+#: src/naan.c:68
+msgid "added after reduction (default: 0)\n"
+msgstr "约简后加上的偏置（默认：0）\n"
 
-msgid "  -p, --profile NAME  hash and range profile (default: w)"
-msgstr "  -p, --profile NAME  哈希与范围预设（默认：w）"
+#: src/naan.c:70
+msgid "hash and range profile (default: w)\n"
+msgstr "哈希与范围预设（默认：w）\n"
 
-msgid "  -h, --help          display this help and exit"
-msgstr "  -h, --help          显示此帮助并退出"
+#: src/naan.c:72
+msgid "display this help and exit\n"
+msgstr "显示此帮助并退出\n"
 
-msgid "      --version       output version information and exit"
-msgstr "      --version       输出版本信息并退出"
+#: src/naan.c:74
+msgid "output version information and exit\n"
+msgstr "输出版本信息并退出\n"
 
+#: src/naan.c:76
 msgid "Each output line is:"
 msgstr "每行输出为："
 
+#: src/naan.c:79
 msgid "Profiles:"
 msgstr "预设："
 
+#: src/naan.c:81
 msgid "default"
 msgstr "默认"
 
+#: src/naan.c:85
 msgid "DIV and BIAS accept decimal or 0x hex, with optional k/m/g suffix (1024)."
 msgstr "DIV 和 BIAS 可为十进制或 0x 十六进制，并可带 k/m/g 后缀（1024）。"
 
-msgid "Try '%s --help' for more information.\n"
-msgstr "更多信息请尝试“%s --help”。\n"
-
+#: src/naan.c:167
+#, c-format
 msgid "%s: invalid DIV: %s\n"
 msgstr "%s：无效的 DIV：%s\n"
 
+#: src/naan.c:173
+#, c-format
 msgid "%s: invalid BIAS: %s\n"
 msgstr "%s：无效的 BIAS：%s\n"
 
+#: src/naan.c:179
+#, c-format
 msgid "%s: unknown profile: %s\n"
 msgstr "%s：未知预设：%s\n"
 
+#: src/naan.c:190 src/naan.c:197
+#, c-format
+msgid "Try '%s --help' for more information.\n"
+msgstr "更多信息请尝试“%s --help”。\n"
+
+#: src/naan.c:196
+#, c-format
 msgid "%s: missing name\n"
 msgstr "%s：缺少名称\n"
 
+#: src/naan.c:202
+#, c-format
 msgid "%s: DIV must be greater than 0\n"
 msgstr "%s：DIV 必须大于 0\n"
 
+#: src/naan.c:211
+#, c-format
 msgid "%s: failed to compute number for '%s'\n"
 msgstr "%s：无法为“%s”计算数字\n"
 
+#: src/naan.c:216 src/naan.c:222
+#, c-format
 msgid "%s: write error\n"
 msgstr "%s：写入错误\n"

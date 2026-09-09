@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: naan\n"
 "Report-Msgid-Bugs-To: naan@bodz.net\n"
-"POT-Creation-Date: 2026-09-06 07:28+0800\n"
+"POT-Creation-Date: 2026-09-07 16:46+0800\n"
 "PO-Revision-Date: 2026-09-06 07:28+0800\n"
 "Last-Translator: Lenik <naan@bodz.net>\n"
 "Language-Team: Korean\n"
@@ -13,101 +13,143 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: src/naan.c:32
 msgid "License AGPL-3.0-or-later: GNU AGPL version 3 or later"
 msgstr "라이선스 AGPL-3.0-or-later: GNU AGPL 버전 3 이상"
 
+#: src/naan.c:36
+#, c-format
 msgid "Usage: %s [OPTION]... NAME...\n"
 msgstr "사용법: %s [옵션]... 이름...\n"
 
+#: src/naan.c:37
 msgid "Compute a number from each name."
 msgstr "각 이름에서 숫자를 계산합니다."
 
-msgid "  -5, --md5           hash with MD5"
-msgstr "  -5, --md5           MD5로 해시"
+#: src/naan.c:40
+msgid "hash with MD5\n"
+msgstr "MD5로 해시\n"
 
-msgid "  -1, --sha1          hash with SHA-1"
-msgstr "  -1, --sha1          SHA-1로 해시"
+#: src/naan.c:42
+msgid "hash with SHA-1\n"
+msgstr "SHA-1로 해시\n"
 
-msgid "      --sha224        hash with SHA-224"
-msgstr "      --sha224        SHA-224로 해시"
+#: src/naan.c:44
+msgid "hash with SHA-224\n"
+msgstr "SHA-224로 해시\n"
 
-msgid "  -2, --sha256        hash with SHA-256 (default)"
-msgstr "  -2, --sha256        SHA-256로 해시 (기본값)"
+#: src/naan.c:46
+msgid "hash with SHA-256 (default)\n"
+msgstr "SHA-256로 해시 (기본값)\n"
 
-msgid "      --sha384        hash with SHA-384"
-msgstr "      --sha384        SHA-384로 해시"
+#: src/naan.c:48
+msgid "hash with SHA-384\n"
+msgstr "SHA-384로 해시\n"
 
-msgid "  -8, --sha512        hash with SHA-512"
-msgstr "  -8, --sha512        SHA-512로 해시"
+#: src/naan.c:50
+msgid "hash with SHA-512\n"
+msgstr "SHA-512로 해시\n"
 
-msgid "  -3, --sha3-256      hash with SHA3-256"
-msgstr "  -3, --sha3-256      SHA3-256로 해시"
+#: src/naan.c:52
+msgid "hash with SHA3-256\n"
+msgstr "SHA3-256로 해시\n"
 
-msgid "      --sha3-512      hash with SHA3-512"
-msgstr "      --sha3-512      SHA3-512로 해시"
+#: src/naan.c:54
+msgid "hash with SHA3-512\n"
+msgstr "SHA3-512로 해시\n"
 
-msgid "      --blake2s       hash with BLAKE2s"
-msgstr "      --blake2s       BLAKE2s로 해시"
+#: src/naan.c:56
+msgid "hash with BLAKE2s\n"
+msgstr "BLAKE2s로 해시\n"
 
-msgid "      --blake2b       hash with BLAKE2b"
-msgstr "      --blake2b       BLAKE2b로 해시"
+#: src/naan.c:58
+msgid "hash with BLAKE2b\n"
+msgstr "BLAKE2b로 해시\n"
 
-msgid "      --ripemd160     hash with RIPEMD-160"
-msgstr "      --ripemd160     RIPEMD-160로 해시"
+#: src/naan.c:60
+msgid "hash with RIPEMD-160\n"
+msgstr "RIPEMD-160로 해시\n"
 
-msgid "      --crc16         digest with CRC-16"
-msgstr "      --crc16         CRC-16 다이제스트"
+#: src/naan.c:62
+msgid "digest with CRC-16\n"
+msgstr "CRC-16 다이제스트\n"
 
-msgid "  -c, --crc32         digest with CRC-32"
-msgstr "  -c, --crc32         CRC-32 다이제스트"
+#: src/naan.c:64
+msgid "digest with CRC-32\n"
+msgstr "CRC-32 다이제스트\n"
 
-msgid "  -m, --mod DIV       modulus (default: 65536)"
-msgstr "  -m, --mod DIV       모듈러스 (기본값: 65536)"
+#: src/naan.c:66
+msgid "modulus (default: 65536)\n"
+msgstr "모듈러스 (기본값: 65536)\n"
 
-msgid "  -b, --bias BIAS     added after reduction (default: 0)"
-msgstr "  -b, --bias BIAS     환원 후 더함 (기본값: 0)"
+#: src/naan.c:68
+msgid "added after reduction (default: 0)\n"
+msgstr "환원 후 더함 (기본값: 0)\n"
 
-msgid "  -p, --profile NAME  hash and range profile (default: w)"
-msgstr "  -p, --profile NAME  해시 및 범위 프로필 (기본값: w)"
+#: src/naan.c:70
+msgid "hash and range profile (default: w)\n"
+msgstr "해시 및 범위 프로필 (기본값: w)\n"
 
-msgid "  -h, --help          display this help and exit"
-msgstr "  -h, --help          이 도움말을 표시하고 종료"
+#: src/naan.c:72
+msgid "display this help and exit\n"
+msgstr "이 도움말을 표시하고 종료\n"
 
-msgid "      --version       output version information and exit"
-msgstr "      --version       버전 정보를 출력하고 종료"
+#: src/naan.c:74
+msgid "output version information and exit\n"
+msgstr "버전 정보를 출력하고 종료\n"
 
+#: src/naan.c:76
 msgid "Each output line is:"
 msgstr "각 출력 줄은 다음과 같습니다:"
 
+#: src/naan.c:79
 msgid "Profiles:"
 msgstr "프로파일:"
 
+#: src/naan.c:81
 msgid "default"
 msgstr "기본값"
 
+#: src/naan.c:85
 msgid "DIV and BIAS accept decimal or 0x hex, with optional k/m/g suffix (1024)."
 msgstr "DIV와 BIAS는 십진수 또는 0x 십육진수를 받으며, 선택적으로 k/m/g 접미사(1024)를 붙일 수 있습니다."
 
-msgid "Try '%s --help' for more information.\n"
-msgstr "자세한 내용은 '%s --help'를 실행하세요.\n"
-
+#: src/naan.c:167
+#, c-format
 msgid "%s: invalid DIV: %s\n"
 msgstr "%s: 잘못된 DIV: %s\n"
 
+#: src/naan.c:173
+#, c-format
 msgid "%s: invalid BIAS: %s\n"
 msgstr "%s: 잘못된 BIAS: %s\n"
 
+#: src/naan.c:179
+#, c-format
 msgid "%s: unknown profile: %s\n"
 msgstr "%s: 알 수 없는 프로파일: %s\n"
 
+#: src/naan.c:190 src/naan.c:197
+#, c-format
+msgid "Try '%s --help' for more information.\n"
+msgstr "자세한 내용은 '%s --help'를 실행하세요.\n"
+
+#: src/naan.c:196
+#, c-format
 msgid "%s: missing name\n"
 msgstr "%s: 이름이 없습니다\n"
 
+#: src/naan.c:202
+#, c-format
 msgid "%s: DIV must be greater than 0\n"
 msgstr "%s: DIV는 0보다 커야 합니다\n"
 
+#: src/naan.c:211
+#, c-format
 msgid "%s: failed to compute number for '%s'\n"
 msgstr "%s: '%s'의 숫자를 계산하지 못했습니다\n"
 
+#: src/naan.c:216 src/naan.c:222
+#, c-format
 msgid "%s: write error\n"
 msgstr "%s: 쓰기 오류\n"

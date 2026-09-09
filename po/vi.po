@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: naan\n"
 "Report-Msgid-Bugs-To: naan@bodz.net\n"
-"POT-Creation-Date: 2026-09-06 07:28+0800\n"
+"POT-Creation-Date: 2026-09-07 16:46+0800\n"
 "PO-Revision-Date: 2026-09-06 07:28+0800\n"
 "Last-Translator: Lenik <naan@bodz.net>\n"
 "Language-Team: Vietnamese\n"
@@ -13,101 +13,143 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: src/naan.c:32
 msgid "License AGPL-3.0-or-later: GNU AGPL version 3 or later"
 msgstr "Giấy phép AGPL-3.0-or-later: GNU AGPL phiên bản 3 trở lên"
 
+#: src/naan.c:36
+#, c-format
 msgid "Usage: %s [OPTION]... NAME...\n"
 msgstr "Cách dùng: %s [TÙY CHỌN]... TÊN...\n"
 
+#: src/naan.c:37
 msgid "Compute a number from each name."
 msgstr "Tính một số từ mỗi tên."
 
-msgid "  -5, --md5           hash with MD5"
-msgstr "  -5, --md5           băm bằng MD5"
+#: src/naan.c:40
+msgid "hash with MD5\n"
+msgstr "băm bằng MD5\n"
 
-msgid "  -1, --sha1          hash with SHA-1"
-msgstr "  -1, --sha1          băm bằng SHA-1"
+#: src/naan.c:42
+msgid "hash with SHA-1\n"
+msgstr "băm bằng SHA-1\n"
 
-msgid "      --sha224        hash with SHA-224"
-msgstr "      --sha224        băm bằng SHA-224"
+#: src/naan.c:44
+msgid "hash with SHA-224\n"
+msgstr "băm bằng SHA-224\n"
 
-msgid "  -2, --sha256        hash with SHA-256 (default)"
-msgstr "  -2, --sha256        băm bằng SHA-256 (mặc định)"
+#: src/naan.c:46
+msgid "hash with SHA-256 (default)\n"
+msgstr "băm bằng SHA-256 (mặc định)\n"
 
-msgid "      --sha384        hash with SHA-384"
-msgstr "      --sha384        băm bằng SHA-384"
+#: src/naan.c:48
+msgid "hash with SHA-384\n"
+msgstr "băm bằng SHA-384\n"
 
-msgid "  -8, --sha512        hash with SHA-512"
-msgstr "  -8, --sha512        băm bằng SHA-512"
+#: src/naan.c:50
+msgid "hash with SHA-512\n"
+msgstr "băm bằng SHA-512\n"
 
-msgid "  -3, --sha3-256      hash with SHA3-256"
-msgstr "  -3, --sha3-256      băm bằng SHA3-256"
+#: src/naan.c:52
+msgid "hash with SHA3-256\n"
+msgstr "băm bằng SHA3-256\n"
 
-msgid "      --sha3-512      hash with SHA3-512"
-msgstr "      --sha3-512      băm bằng SHA3-512"
+#: src/naan.c:54
+msgid "hash with SHA3-512\n"
+msgstr "băm bằng SHA3-512\n"
 
-msgid "      --blake2s       hash with BLAKE2s"
-msgstr "      --blake2s       băm bằng BLAKE2s"
+#: src/naan.c:56
+msgid "hash with BLAKE2s\n"
+msgstr "băm bằng BLAKE2s\n"
 
-msgid "      --blake2b       hash with BLAKE2b"
-msgstr "      --blake2b       băm bằng BLAKE2b"
+#: src/naan.c:58
+msgid "hash with BLAKE2b\n"
+msgstr "băm bằng BLAKE2b\n"
 
-msgid "      --ripemd160     hash with RIPEMD-160"
-msgstr "      --ripemd160     băm bằng RIPEMD-160"
+#: src/naan.c:60
+msgid "hash with RIPEMD-160\n"
+msgstr "băm bằng RIPEMD-160\n"
 
-msgid "      --crc16         digest with CRC-16"
-msgstr "      --crc16         tóm tắt CRC-16"
+#: src/naan.c:62
+msgid "digest with CRC-16\n"
+msgstr "tóm tắt CRC-16\n"
 
-msgid "  -c, --crc32         digest with CRC-32"
-msgstr "  -c, --crc32         tóm tắt CRC-32"
+#: src/naan.c:64
+msgid "digest with CRC-32\n"
+msgstr "tóm tắt CRC-32\n"
 
-msgid "  -m, --mod DIV       modulus (default: 65536)"
-msgstr "  -m, --mod DIV       modulus (mặc định: 65536)"
+#: src/naan.c:66
+msgid "modulus (default: 65536)\n"
+msgstr "modulus (mặc định: 65536)\n"
 
-msgid "  -b, --bias BIAS     added after reduction (default: 0)"
-msgstr "  -b, --bias BIAS     cộng sau khi rút gọn (mặc định: 0)"
+#: src/naan.c:68
+msgid "added after reduction (default: 0)\n"
+msgstr "cộng sau khi rút gọn (mặc định: 0)\n"
 
-msgid "  -p, --profile NAME  hash and range profile (default: w)"
-msgstr "  -p, --profile NAME  hồ sơ hàm băm và phạm vi (mặc định: w)"
+#: src/naan.c:70
+msgid "hash and range profile (default: w)\n"
+msgstr "hồ sơ hàm băm và phạm vi (mặc định: w)\n"
 
-msgid "  -h, --help          display this help and exit"
-msgstr "  -h, --help          hiện trợ giúp này rồi thoát"
+#: src/naan.c:72
+msgid "display this help and exit\n"
+msgstr "hiện trợ giúp này rồi thoát\n"
 
-msgid "      --version       output version information and exit"
-msgstr "      --version       hiện phiên bản rồi thoát"
+#: src/naan.c:74
+msgid "output version information and exit\n"
+msgstr "hiện phiên bản rồi thoát\n"
 
+#: src/naan.c:76
 msgid "Each output line is:"
 msgstr "Mỗi dòng xuất là:"
 
+#: src/naan.c:79
 msgid "Profiles:"
 msgstr "Hồ sơ:"
 
+#: src/naan.c:81
 msgid "default"
 msgstr "mặc định"
 
+#: src/naan.c:85
 msgid "DIV and BIAS accept decimal or 0x hex, with optional k/m/g suffix (1024)."
 msgstr "DIV và BIAS nhận thập phân hoặc thập lục phân 0x, với hậu tố k/m/g tùy chọn (1024)."
 
-msgid "Try '%s --help' for more information.\n"
-msgstr "Thử '%s --help' để biết thêm.\n"
-
+#: src/naan.c:167
+#, c-format
 msgid "%s: invalid DIV: %s\n"
 msgstr "%s: DIV không hợp lệ: %s\n"
 
+#: src/naan.c:173
+#, c-format
 msgid "%s: invalid BIAS: %s\n"
 msgstr "%s: BIAS không hợp lệ: %s\n"
 
+#: src/naan.c:179
+#, c-format
 msgid "%s: unknown profile: %s\n"
 msgstr "%s: hồ sơ không rõ: %s\n"
 
+#: src/naan.c:190 src/naan.c:197
+#, c-format
+msgid "Try '%s --help' for more information.\n"
+msgstr "Thử '%s --help' để biết thêm.\n"
+
+#: src/naan.c:196
+#, c-format
 msgid "%s: missing name\n"
 msgstr "%s: thiếu tên\n"
 
+#: src/naan.c:202
+#, c-format
 msgid "%s: DIV must be greater than 0\n"
 msgstr "%s: DIV phải lớn hơn 0\n"
 
+#: src/naan.c:211
+#, c-format
 msgid "%s: failed to compute number for '%s'\n"
 msgstr "%s: không tính được số cho '%s'\n"
 
+#: src/naan.c:216 src/naan.c:222
+#, c-format
 msgid "%s: write error\n"
 msgstr "%s: lỗi ghi\n"
