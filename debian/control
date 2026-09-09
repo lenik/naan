@@ -3,7 +3,7 @@ Section: utils
 Priority: optional
 Maintainer: Lenik <naan@bodz.net>
 Build-Depends: debhelper-compat (= 13), meson, ninja-build, pkgconf,
-               libssl-dev, gettext, asciidoctor
+               libssl-dev, libbas-c-dev, gettext, asciidoctor
 Standards-Version: 4.6.0
 Homepage: https://github.com/lenik/naan
 Rules-Requires-Root: no

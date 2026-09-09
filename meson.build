@@ -52,6 +52,10 @@ configure_file(
     configuration: config_h,
 )
 
+bas_c_dep = dependency('bas-c', required: true)
+bas_args = ['-DLOGGER_NAME=' + meson.project_name(), '-DTEXT_DOMAIN=' + meson.project_name()]
+c_args_bas = bas_args
+
 inc = include_directories('src', '.')
 
 crypto_dep = dependency('libcrypto')
@@ -70,7 +74,8 @@ foreach source : app_sources
         name,
         [source] + shared_sources,
         include_directories: inc,
-        dependencies: [crypto_dep],
+        dependencies: [bas_c_dep, crypto_dep],
+        c_args: c_args_bas,
         install: true,
         install_dir: bindir,
     )

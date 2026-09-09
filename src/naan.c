@@ -9,15 +9,17 @@
 #include "name_number.h"
 #include "config.h"
 
+#include <bas/locale/i18n.h>
+#include <bas/log/deflog.h>
+#include <bas/proc/env.h>
+
 #include <getopt.h>
 #include <inttypes.h>
-#include <libintl.h>
-#include <locale.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-#define _(s) gettext(s)
+define_logger();
 
 static const char *progname(const char *argv0) {
     const char *base = strrchr(argv0, '/');
@@ -34,24 +36,42 @@ static void print_help(const char *prog) {
     printf(_("Usage: %s [OPTION]... NAME...\n"), prog);
     printf("%s\n", _("Compute a number from each name."));
     printf("\n");
-    printf("%s\n", _("  -5, --md5           hash with MD5"));
-    printf("%s\n", _("  -1, --sha1          hash with SHA-1"));
-    printf("%s\n", _("      --sha224        hash with SHA-224"));
-    printf("%s\n", _("  -2, --sha256        hash with SHA-256 (default)"));
-    printf("%s\n", _("      --sha384        hash with SHA-384"));
-    printf("%s\n", _("  -8, --sha512        hash with SHA-512"));
-    printf("%s\n", _("  -3, --sha3-256      hash with SHA3-256"));
-    printf("%s\n", _("      --sha3-512      hash with SHA3-512"));
-    printf("%s\n", _("      --blake2s       hash with BLAKE2s"));
-    printf("%s\n", _("      --blake2b       hash with BLAKE2b"));
-    printf("%s\n", _("      --ripemd160     hash with RIPEMD-160"));
-    printf("%s\n", _("      --crc16         digest with CRC-16"));
-    printf("%s\n", _("  -c, --crc32         digest with CRC-32"));
-    printf("%s\n", _("  -m, --mod DIV       modulus (default: 65536)"));
-    printf("%s\n", _("  -b, --bias BIAS     added after reduction (default: 0)"));
-    printf("%s\n", _("  -p, --profile NAME  hash and range profile (default: w)"));
-    printf("%s\n", _("  -h, --help          display this help and exit"));
-    printf("%s\n", _("      --version       output version information and exit"));
+    fputs("  -5, --md5           ", stdout);
+    fputs(_("hash with MD5\n"), stdout);
+    fputs("  -1, --sha1          ", stdout);
+    fputs(_("hash with SHA-1\n"), stdout);
+    fputs("      --sha224        ", stdout);
+    fputs(_("hash with SHA-224\n"), stdout);
+    fputs("  -2, --sha256        ", stdout);
+    fputs(_("hash with SHA-256 (default)\n"), stdout);
+    fputs("      --sha384        ", stdout);
+    fputs(_("hash with SHA-384\n"), stdout);
+    fputs("  -8, --sha512        ", stdout);
+    fputs(_("hash with SHA-512\n"), stdout);
+    fputs("  -3, --sha3-256      ", stdout);
+    fputs(_("hash with SHA3-256\n"), stdout);
+    fputs("      --sha3-512      ", stdout);
+    fputs(_("hash with SHA3-512\n"), stdout);
+    fputs("      --blake2s       ", stdout);
+    fputs(_("hash with BLAKE2s\n"), stdout);
+    fputs("      --blake2b       ", stdout);
+    fputs(_("hash with BLAKE2b\n"), stdout);
+    fputs("      --ripemd160     ", stdout);
+    fputs(_("hash with RIPEMD-160\n"), stdout);
+    fputs("      --crc16         ", stdout);
+    fputs(_("digest with CRC-16\n"), stdout);
+    fputs("  -c, --crc32         ", stdout);
+    fputs(_("digest with CRC-32\n"), stdout);
+    fputs("  -m, --mod DIV       ", stdout);
+    fputs(_("modulus (default: 65536)\n"), stdout);
+    fputs("  -b, --bias BIAS     ", stdout);
+    fputs(_("added after reduction (default: 0)\n"), stdout);
+    fputs("  -p, --profile NAME  ", stdout);
+    fputs(_("hash and range profile (default: w)\n"), stdout);
+    fputs("  -h, --help          ", stdout);
+    fputs(_("display this help and exit\n"), stdout);
+    fputs("      --version       ", stdout);
+    fputs(_("output version information and exit\n"), stdout);
     printf("\n");
     printf("%s\n", _("Each output line is:"));
     printf("  (digest(NAME) mod DIV) + BIAS\n");
@@ -88,12 +108,13 @@ int main(int argc, char **argv) {
         {NULL, 0, NULL, 0},
     };
 
-    const char *prog = progname(argv[0]);
+    const char *exe = self_exe();
+    init_i18n(LOCALEDIR);
+    const char *prog = progname(argv[0] != NULL && argv[0][0] != '\0'
+                                    ? argv[0]
+                                    : (exe != NULL ? exe : "naan"));
     naan_algo algo = NAAN_ALGO_SHA256;
 
-    setlocale(LC_ALL, "");
-    bindtextdomain(GETTEXT_PACKAGE, LOCALEDIR);
-    textdomain(GETTEXT_PACKAGE);
     uint64_t div = 65536;
     uint64_t bias = 0;
     int c;
