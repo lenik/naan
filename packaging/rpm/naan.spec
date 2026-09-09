@@ -24,7 +24,7 @@ BuildRequires:  asciidoctor
 %description
 naan hashes each name and prints one decimal number:
 (digest(NAME) mod DIV) + BIAS. Profiles set the hash and DIV/BIAS
-(b/w/dw use SHA-256; wm uses SHA-1 in 2000 through 3999).
+(b/w/dw use SHA-256; wm uses SHA-1 with DIV=2000 and BIAS=0).
 
 %prep
 %setup -q -n %{name}-%{srcversion}
@@ -44,8 +44,10 @@ meson compile -C build
 meson install -C build --destdir=%{buildroot}
 
 %files
+%{_bindir}/naan
 %{_datadir}/bash-completion/completions/naan
 %{_datadir}/locale/*/LC_MESSAGES/naan.mo
+%{_mandir}/man1/naan.1*
 %{_mandir}/*/man1/naan.1*
 %{_datadir}/doc/naan/
 %changelog

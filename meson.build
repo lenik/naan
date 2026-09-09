@@ -154,6 +154,25 @@ run_target(
     ],
 )
 
+custom_target(
+    'naan-man',
+    input: 'docs/naan.adoc',
+    output: 'naan.1',
+    command: [
+        asciidoctor,
+        '-b', 'manpage',
+        '-a', 'project-version=' + meson.project_version(),
+        '-a', 'project-year=@0@'.format(project_year),
+        '-a', 'project-author=' + project_author,
+        '-a', 'project-email=' + project_email,
+        '-o', '@OUTPUT@',
+        '@INPUT@',
+    ],
+    build_by_default: true,
+    install: true,
+    install_dir: mandir / 'man1',
+)
+
 man_i18n_langs = [
     'fr', 'it', 'de', 'es_MX', 'zh_CN', 'ja', 'ko', 'ar',
     'id', 'vi', 'th', 'pt_BR', 'nl', 'pl', 'tr', 'ru', 'hi',
