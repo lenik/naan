@@ -1,3 +1,13 @@
+naan (1.0.2) unstable; urgency=medium
+
+  * Satisfy zfr lint -w for C bas conventions: init_i18n(LOCALEDIR),
+    self_exe(), and define_logger() via libbas-c.
+  * Keep help option-column padding outside gettext _() so translations
+    are not tied to English spacing.
+  * Build-depend on libbas-c-dev and link bas-c from Meson.
+
+ -- Lenik (谢继雷) <lenik@bodz.net>  Wed, 09 Sep 2026 18:11:20 +0800
+
 naan (1.0.1) unstable; urgency=medium
 
   * Changed profile wm bias to 0.
