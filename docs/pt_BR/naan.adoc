@@ -91,7 +91,7 @@ O digest é interpretado como inteiro big-endian.  O hash padrão é SHA-256.  O
     sha256 `DIV=4G` `BIAS=0`
 
 *wm*::
-    sha1 `DIV=2000` `BIAS=2000`
+    sha1 `DIV=2000` `BIAS=0`
 
 == Exemplos
 

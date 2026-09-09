@@ -98,7 +98,7 @@ profile *w* (SHA-256, `DIV=65536`, `BIAS=0`).
     SHA-256 `DIV=4G` `BIAS=0` (double word).
 
 *wm*::
-    SHA-1 `DIV=2000` `BIAS=2000` (2000 through 3999).
+    SHA-1 `DIV=2000` `BIAS=0` (0 through 1999).
 
 == Examples
 
@@ -112,10 +112,10 @@ Use MD5 with the byte range (hash after the profile so MD5 wins):
   $ naan -p b -5 hello
   146
 
-Keep numbers in 2000 through 3999 with SHA-1:
+Keep numbers in 0 through 1999 with SHA-1:
 
   $ naan -p wm hello
-  3181
+  1181
 
 == Exit status
 

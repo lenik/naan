@@ -80,13 +80,13 @@ int main(void) {
     expect_ok("profile wm", naan_apply_profile("wm", &algo, &div, &bias));
     expect_eq_u64("profile wm algo", (uint64_t)algo, NAAN_ALGO_SHA1);
     expect_eq_u64("profile wm div", div, 2000);
-    expect_eq_u64("profile wm bias", bias, 2000);
+    expect_eq_u64("profile wm bias", bias, 0);
     expect_err("profile unknown", naan_apply_profile("xx", &algo, &div, &bias));
 
     check_number("hello sha256 w", "hello", NAAN_ALGO_SHA256, 65536, 0, 38948);
     check_number("hello sha256 b", "hello", NAAN_ALGO_SHA256, 256, 0, 36);
     check_number("hello sha256 dw", "hello", NAAN_ALGO_SHA256, 4294967296ULL, 0, 2475399204ULL);
-    check_number("hello sha1 wm", "hello", NAAN_ALGO_SHA1, 2000, 2000, 3181);
+    check_number("hello sha1 wm", "hello", NAAN_ALGO_SHA1, 2000, 0, 1181);
     check_number("hello md5 w", "hello", NAAN_ALGO_MD5, 65536, 0, 50578);
     check_number("hello sha1 w", "hello", NAAN_ALGO_SHA1, 65536, 0, 17229);
     check_number("world sha256 w", "world", NAAN_ALGO_SHA256, 65536, 0, 47271);

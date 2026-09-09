@@ -91,7 +91,7 @@ Digest se čte jako celé číslo big-endian.  Výchozí hash je SHA-256.  Vých
     sha256 `DIV=4G` `BIAS=0`
 
 *wm*::
-    sha1 `DIV=2000` `BIAS=2000`
+    sha1 `DIV=2000` `BIAS=0`
 
 == Příklady
 

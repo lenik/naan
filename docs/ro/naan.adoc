@@ -91,7 +91,7 @@ Digestul este interpretat ca întreg big-endian.  Hash-ul implicit este SHA-256.
     sha256 `DIV=4G` `BIAS=0`
 
 *wm*::
-    sha1 `DIV=2000` `BIAS=2000`
+    sha1 `DIV=2000` `BIAS=0`
 
 == Exemple
 

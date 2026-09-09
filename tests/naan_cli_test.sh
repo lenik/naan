@@ -24,10 +24,10 @@ eq "$("$naan" --sha512 hello)" 49219 "sha512 hello"
 eq "$("$naan" --sha3-256 hello)" 62354 "sha3-256 hello"
 eq "$("$naan" -p b hello)" 36 "profile b"
 eq "$("$naan" -p dw hello)" 2475399204 "profile dw"
-eq "$("$naan" -p wm hello)" 3181 "profile wm"
+eq "$("$naan" -p wm hello)" 1181 "profile wm"
 eq "$("$naan" -m 1048576 hello)" 759844 "mod 1M"
-eq "$("$naan" -5 -p wm world)" 3603 "sha1 after md5 then wm"
-eq "$("$naan" -p wm -5 world)" 3351 "md5 overrides wm hash"
+eq "$("$naan" -5 -p wm world)" 1603 "sha1 after md5 then wm"
+eq "$("$naan" -p wm -5 world)" 1351 "md5 overrides wm hash"
 
 got=$("$naan" hello world)
 want=$(printf '%s\n' 38948 47271)

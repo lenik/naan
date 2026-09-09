@@ -48,7 +48,7 @@ Help text and man pages are translated for L3 locales (Tier I–III).
 | `b` | SHA-256 | 256 | 0 |
 | `w` (default) | SHA-256 | 65536 | 0 |
 | `dw` | SHA-256 | 4G (4294967296) | 0 |
-| `wm` | SHA-1 | 2000 | 2000 |
+| `wm` | SHA-1 | 2000 | 0 |
 
 ## Examples
 

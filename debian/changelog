@@ -1,3 +1,10 @@
+naan (1.0.4) unstable; urgency=medium
+
+  * Fix tests and docs for profile wm BIAS=0 (missed when bias changed
+    in 1.0.1).
+
+ -- Lenik (谢继雷) <lenik@bodz.net>  Wed, 09 Sep 2026 21:04:55 +0800
+
 naan (1.0.3) unstable; urgency=medium
 
   * Align packaging/Meson/man pages to current zephyr style (zfr ize).
