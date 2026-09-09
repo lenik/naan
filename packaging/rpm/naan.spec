@@ -44,13 +44,10 @@ meson compile -C build
 meson install -C build --destdir=%{buildroot}
 
 %files
-%{_bindir}/naan
 %{_datadir}/bash-completion/completions/naan
-%{_mandir}/man1/naan.1*
-%{_mandir}/*/man1/naan.1*
 %{_datadir}/locale/*/LC_MESSAGES/naan.mo
-%{_datadir}/doc/%{name}/
-
+%{_mandir}/*/man1/naan.1*
+%{_datadir}/doc/naan/
 %changelog
 * Thu Aug 20 2026 Lenik <naan@bodz.net>
 - Align spec with debian/control (Meson, AGPL-3.0-or-later).
