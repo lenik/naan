@@ -1,3 +1,10 @@
+naan (1.0.7) stable; urgency=medium
+
+  * CI: sync with bas-c (component main, raspi_bookworm armhf/v6,
+    uos/kylin loong64-only, RPM bash-builtins via bash).
+
+ -- Lenik (谢继雷) <lenik@bodz.net>  Sun, 20 Sep 2026 22:58:23 +0800
+
 naan (1.0.6) stable; urgency=medium
 
   * CI: sync matrix/build scripts with bas-c (bullseye-security, RPM

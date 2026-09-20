@@ -1,6 +1,15 @@
 #!/usr/bin/env bash
 # Build an RPM inside a Rocky/CentOS container (no host tooling, no zfr).
 # Usage: build-rpm.sh <image> <platform> <el_release> <arch> [outdir]
+#
+# Debian Build-Depends → RPM package mapping (experiential):
+#   bash-builtins  → bash (ships bash.pc; we alias as bash-builtins.pc)
+#   libglib2.0-dev → glib2-devel
+#   libcurl4-*-dev → libcurl-devel
+#   zlib1g-dev     → zlib-devel
+#   libicu-dev     → libicu-devel
+#   pkg-config     → pkgconf
+#   meson/ninja-build kept as-is (EPEL/CRB or pip)
 set -euo pipefail
 
 IMAGE=${1:?image}
@@ -44,13 +53,30 @@ tar -C "$ROOT" \
   cat "$SPEC"
 } >"$STAGE/SPECS/${NAME}.spec"
 
+# Export debian Build-Depends names for in-container mapping (optional).
+if [ -f "$ROOT/debian/control" ]; then
+  python3 - "$ROOT/debian/control" "$STAGE/debian-build-deps.txt" <<'PY'
+import re, sys
+from pathlib import Path
+text = Path(sys.argv[1]).read_text(encoding="utf-8", errors="ignore")
+# First stanza Build-Depends (folded)
+m = re.search(r"(?ms)^Build-Depends:\s*(.*?)(?=\n\S|\Z)", text)
+deps = []
+if m:
+    raw = re.sub(r"\s*\n\s*", " ", m.group(1))
+    for part in raw.split(","):
+        name = re.split(r"[(\s|]", part.strip(), 1)[0].strip()
+        if name and name not in deps:
+            deps.append(name)
+Path(sys.argv[2]).write_text("\n".join(deps) + ("\n" if deps else ""), encoding="utf-8")
+PY
+fi
+
 if [ -n "${CI_DEPS_DIR:-}" ] && [ -d "$CI_DEPS_DIR" ]; then
   mkdir -p "$STAGE/deps"
   cp -a "$CI_DEPS_DIR"/. "$STAGE/deps/" || true
 fi
 
-# RHEL package names for common C build deps; projects may still declare Debian
-# names in the spec — we install a baseline set and use --nodeps as fallback.
 docker run --rm --platform "$PLATFORM" \
   -v "$STAGE:/rpmbuild" \
   -e NAME="$NAME" \
@@ -82,29 +108,81 @@ if command -v dnf >/dev/null 2>&1; then
 fi
 $PM -y install rpm-build rpmdevtools pkgconf gcc gcc-c++ make \
   tar xz which python3 python3-pip \
-  openssl-devel zlib-devel || true
+  openssl-devel zlib-devel bash || true
 # meson/ninja: distro packages (EPEL/CRB) or pip fallback.
 $PM -y install meson ninja-build 2>/dev/null \
   || pip3 install --no-cache-dir meson ninja
-# Optional deps used by bas-c / similar C libs (ignore if unavailable).
-$PM -y install glib2-devel libcurl-devel libicu-devel rubygem-asciidoctor asciidoctor \
-  gettext gettext-devel bash 2>/dev/null || true
+
+# Map Debian Build-Depends → RPM packages (experiential heuristics).
+map_deb_to_rpm() {
+  case "$1" in
+    bash-builtins) echo bash ;;  # provides bash.pc; alias below
+    libglib2.0-dev|libglib2.0-0) echo glib2-devel ;;
+    libcurl4-openssl-dev|libcurl4-gnutls-dev|libcurl4-nss-dev|libcurl-dev)
+      echo libcurl-devel ;;
+    zlib1g-dev|zlib-dev) echo zlib-devel ;;
+    libicu-dev) echo libicu-devel ;;
+    libssl-dev|openssl) echo openssl-devel ;;
+    pkg-config|pkgconf) echo pkgconf ;;
+    meson) echo meson ;;
+    ninja-build) echo ninja-build ;;
+    gettext|gettext-base) echo gettext ;;
+    asciidoctor|ruby-asciidoctor) echo asciidoctor ;;
+    # packaging-only / skip
+    debhelper|debhelper-compat|dh-*|build-essential|fakeroot|equivs|dpkg-dev|devscripts) ;;
+    *) ;;
+  esac
+}
+
+RPM_EXTRA=()
+if [[ -f /rpmbuild/debian-build-deps.txt ]]; then
+  while read -r debdep || [[ -n "${debdep:-}" ]]; do
+    [[ -z "$debdep" ]] && continue
+    mapped=$(map_deb_to_rpm "$debdep" || true)
+    [[ -n "${mapped:-}" ]] && RPM_EXTRA+=("$mapped")
+  done < /rpmbuild/debian-build-deps.txt
+fi
+# Always pull common C library -devel packages used by bas-c-like projects.
+RPM_EXTRA+=(glib2-devel libcurl-devel libicu-devel gettext asciidoctor bash)
+# Unique
+mapfile -t RPM_EXTRA < <(printf "%s\n" "${RPM_EXTRA[@]}" | awk "NF && !seen[\$0]++")
+$PM -y install "${RPM_EXTRA[@]}" 2>/dev/null || true
+
 # Optional prebuilt dependency rpms (never nested-build other projects).
 if ls /rpmbuild/deps/*.rpm >/dev/null 2>&1; then
   $PM -y install /rpmbuild/deps/*.rpm || rpm -Uvh --nodeps /rpmbuild/deps/*.rpm || true
 fi
 command -v meson >/dev/null
 command -v ninja >/dev/null || command -v ninja-build >/dev/null
-# RHEL ships bash.pc; Meson projects often look up bash-builtins.
-if ! pkg-config --exists bash-builtins 2>/dev/null; then
+
+# Debian pkg-config module "bash-builtins" ← RHEL/Rocky package "bash" (bash.pc).
+ensure_bash_builtins_pc() {
+  export PKG_CONFIG_PATH="/usr/share/pkgconfig:/usr/lib64/pkgconfig:/usr/lib/pkgconfig:${PKG_CONFIG_PATH:-}"
+  if pkg-config --exists bash-builtins 2>/dev/null; then
+    return 0
+  fi
+  local pc dest=/usr/share/pkgconfig/bash-builtins.pc
+  mkdir -p /usr/share/pkgconfig
   pc=$(find /usr -name bash.pc 2>/dev/null | head -n1 || true)
   if [ -n "${pc:-}" ]; then
-    mkdir -p /usr/share/pkgconfig
-    cp "$pc" /usr/share/pkgconfig/bash-builtins.pc
+    # Keep Cflags/Libs from bash.pc; rewrite Name so Meson finds bash-builtins.
+    sed "s/^Name:.*/Name: bash-builtins/" "$pc" >"$dest"
+    echo "build-rpm: aliased $pc -> $dest (bash provides bash-builtins)"
+  else
+    printf "%s\n" \
+      "prefix=/usr" \
+      "Name: bash-builtins" \
+      "Description: Bash loadable builtins (provided by bash)" \
+      "Version: 5.0" \
+      "Cflags: -I\${prefix}/include" \
+      >"$dest"
+    echo "build-rpm: wrote stub $dest (no bash.pc found)"
   fi
-fi
-# Soften hard bash-builtins requirement when headers are present.
-export PKG_CONFIG_PATH="/usr/share/pkgconfig:${PKG_CONFIG_PATH:-}"
+  pkg-config --exists bash-builtins
+}
+ensure_bash_builtins_pc
+export PKG_CONFIG_PATH="/usr/share/pkgconfig:/usr/lib64/pkgconfig:/usr/lib/pkgconfig:${PKG_CONFIG_PATH:-}"
+
 rpmbuild --define "_topdir /rpmbuild" -bb /rpmbuild/SPECS/${NAME}.spec || \
   rpmbuild --define "_topdir /rpmbuild" --nodeps -bb /rpmbuild/SPECS/${NAME}.spec
 '

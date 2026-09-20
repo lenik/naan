@@ -80,7 +80,7 @@ docker run --rm --platform "$PLATFORM" \
   -e no_proxy -e NO_PROXY \
   -e "REPODEB_URL=${REPODEB_URL:-}" \
   -e "REPODEB_SUITE=${REPODEB_SUITE:-$RELEASE}" \
-  -e "REPODEB_COMPONENT=${REPODEB_COMPONENT:-contrib}" \
+  -e "REPODEB_COMPONENT=${REPODEB_COMPONENT:-main}" \
   -e "BUILD_SUITE=${RELEASE}" \
   "$IMAGE" \
   bash -lc '
@@ -117,7 +117,7 @@ apt-get install -y -qq --no-install-recommends --fix-missing \
 # "stable".
 if [ -n "${REPODEB_URL:-}" ]; then
   suite=${REPODEB_SUITE:-${BUILD_SUITE:-trixie}}
-  component=${REPODEB_COMPONENT:-contrib}
+  component=${REPODEB_COMPONENT:-main}
   echo "deb [trusted=yes] ${REPODEB_URL%/}/ ${suite} ${component}" \
     > /etc/apt/sources.list.d/repodeb.list
   apt-get update -qq || true
