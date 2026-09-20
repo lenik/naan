@@ -20,6 +20,8 @@ BuildRequires:  pkgconf
 BuildRequires:  openssl-devel
 BuildRequires:  gettext
 BuildRequires:  asciidoctor
+BuildRequires:  bas-c
+Requires:       bas-c
 
 %description
 naan hashes each name and prints one decimal number:
@@ -50,7 +52,11 @@ meson install -C build --destdir=%{buildroot}
 %{_mandir}/man1/naan.1*
 %{_mandir}/*/man1/naan.1*
 %{_datadir}/doc/naan/
+
 %changelog
+* Sun Sep 20 2026 Lenik <naan@bodz.net>
+- Declare bas-c BuildRequires/Requires (install prebuilt packages in CI).
+
 * Thu Aug 20 2026 Lenik <naan@bodz.net>
 - Align spec with debian/control (Meson, AGPL-3.0-or-later).
 - Version comes from `zfr version`, the same method meson.build uses.

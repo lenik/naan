@@ -58,6 +58,19 @@ naan -5 -p b alice bob
 naan -p wm service-name
 ```
 
+## Spreadsheet helpers
+
+`helper.ods` (LibreOffice) and `helper.xlsx` (Excel) provide columns
+`Name`, `Algorithm`, `Modulus`, `Bias`, and `Number`, where `Number` is
+`(digest(Name) mod Modulus) + Bias` via a `NAAN()` formula/UDF.
+
+- LibreOffice: enable macros; `NAAN()` uses Python hashlib.
+- Excel: paste VBA from the `VBA` sheet or `helper-naan.bas`, then save
+  as `.xlsm` if you want macros kept.
+
+Regenerate with `scripts/build_helper_spreadsheets.py` (LibreOffice UNO
+socket for `.ods`; Python `openpyxl` for `.xlsx`).
+
 ## Repository layout
 
 - `src/` - application sources (`naan.c`) and helpers (`name_number.c`)

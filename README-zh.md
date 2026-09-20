@@ -57,6 +57,17 @@ naan -5 -p b alice bob
 naan -p wm service-name
 ```
 
+## 电子表格辅助
+
+`helper.ods`（LibreOffice）与 `helper.xlsx`（Excel）提供列
+`Name`、`Algorithm`、`Modulus`、`Bias`、`Number`，其中 `Number` 为
+`(digest(Name) mod Modulus) + Bias`，由 `NAAN()` 公式/UDF 计算。
+
+- LibreOffice：需启用宏；`NAAN()` 使用 Python hashlib。
+- Excel：从 `VBA` 工作表或 `helper-naan.bas` 粘贴 VBA，需要保留宏时另存为 `.xlsm`。
+
+可用 `scripts/build_helper_spreadsheets.py` 重新生成。
+
 ## 仓库结构
 
 - `src/` - 应用源码（`naan.c`）与辅助模块（`name_number.c`）

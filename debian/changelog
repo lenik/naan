@@ -1,3 +1,20 @@
+naan (1.0.5) stable; urgency=medium
+
+  * debian/changelog: use distribution stable (urgency=medium).
+  * CI: publish to aptly suite from build distro (ignore changelog
+    stable); component contrib; fix workflow YAML quotes for
+    multi-arch.
+  * Add helper.ods / helper.xlsx spreadsheet helpers with NAAN() formula
+    matching the CLI.
+  * Document spreadsheet helpers in README and README-zh.
+  * Add GitHub Actions release-packages workflow; install bas-c from
+    release assets (scripts/ci/deps.conf), never nested-build.
+  * packaging/rpm/naan.spec: declare bas-c BuildRequires/Requires.
+  * CI: prefer REPODEB_URL apt for bas-c deps; anonymous publish to
+    repodeb/reporpm.
+
+ -- Lenik (谢继雷) <lenik@bodz.net>  Tue, 15 Sep 2026 15:54:51 +0800
+
 naan (1.0.4) unstable; urgency=medium
 
   * Fix tests and docs for profile wm BIAS=0 (missed when bias changed
