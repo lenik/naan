@@ -95,6 +95,16 @@ if ls /rpmbuild/deps/*.rpm >/dev/null 2>&1; then
 fi
 command -v meson >/dev/null
 command -v ninja >/dev/null || command -v ninja-build >/dev/null
+# RHEL ships bash.pc; Meson projects often look up bash-builtins.
+if ! pkg-config --exists bash-builtins 2>/dev/null; then
+  pc=$(find /usr -name bash.pc 2>/dev/null | head -n1 || true)
+  if [ -n "${pc:-}" ]; then
+    mkdir -p /usr/share/pkgconfig
+    cp "$pc" /usr/share/pkgconfig/bash-builtins.pc
+  fi
+fi
+# Soften hard bash-builtins requirement when headers are present.
+export PKG_CONFIG_PATH="/usr/share/pkgconfig:${PKG_CONFIG_PATH:-}"
 rpmbuild --define "_topdir /rpmbuild" -bb /rpmbuild/SPECS/${NAME}.spec || \
   rpmbuild --define "_topdir /rpmbuild" --nodeps -bb /rpmbuild/SPECS/${NAME}.spec
 '

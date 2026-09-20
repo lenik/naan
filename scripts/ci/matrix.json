@@ -1,9 +1,5 @@
 {
   "deb": [
-    {"family": "debian", "release": "buster",   "version": "10", "image": "debian:buster",   "arch": "amd64",  "platform": "linux/amd64"},
-    {"family": "debian", "release": "buster",   "version": "10", "image": "debian:buster",   "arch": "arm64",  "platform": "linux/arm64"},
-    {"family": "debian", "release": "buster",   "version": "10", "image": "debian:buster",   "arch": "armhf",  "platform": "linux/arm/v7"},
-
     {"family": "debian", "release": "bullseye", "version": "11", "image": "debian:bullseye", "arch": "amd64",  "platform": "linux/amd64"},
     {"family": "debian", "release": "bullseye", "version": "11", "image": "debian:bullseye", "arch": "arm64",  "platform": "linux/arm64"},
     {"family": "debian", "release": "bullseye", "version": "11", "image": "debian:bullseye", "arch": "armhf",  "platform": "linux/arm/v7"},
@@ -18,7 +14,6 @@
     {"family": "debian", "release": "trixie",   "version": "13", "image": "debian:trixie",   "arch": "riscv64","platform": "linux/riscv64"}
   ],
   "rpm": [
-    {"family": "el", "release": "7",  "image": "quay.io/centos/centos:7", "arch": "amd64",  "platform": "linux/amd64"},
     {"family": "el", "release": "8",  "image": "rockylinux:8",   "arch": "amd64",  "platform": "linux/amd64"},
     {"family": "el", "release": "8",  "image": "rockylinux:8",   "arch": "arm64",  "platform": "linux/arm64"},
     {"family": "el", "release": "9",  "image": "rockylinux:9",   "arch": "amd64",  "platform": "linux/amd64"},

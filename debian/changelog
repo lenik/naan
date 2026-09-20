@@ -1,3 +1,10 @@
+naan (1.0.6) stable; urgency=medium
+
+  * CI: sync matrix/build scripts with bas-c (bullseye-security, RPM
+    bash.pc).
+
+ -- Lenik (谢继雷) <lenik@bodz.net>  Sun, 20 Sep 2026 22:39:53 +0800
+
 naan (1.0.5) stable; urgency=medium
 
   * debian/changelog: use distribution stable (urgency=medium).

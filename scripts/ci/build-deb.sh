@@ -86,7 +86,7 @@ docker run --rm --platform "$PLATFORM" \
   bash -lc '
 set -euo pipefail
 suite=${BUILD_SUITE:-}
-# EOL / archive suites: official mirrors drop Release files.
+# EOL / stale suite apt sources (official mirrors drop or desync Release/pool).
 case "$suite" in
   buster|stretch|jessie)
     printf "%s\n" \
@@ -98,7 +98,13 @@ case "$suite" in
       > /etc/apt/apt.conf.d/99archive
     ;;
   bullseye)
-    # Stale security indexes in the image → 404; force a full refresh.
+    # Image often still lists bullseye/updates with superseded pool filenames.
+    printf "%s\n" \
+      "deb http://deb.debian.org/debian bullseye main contrib non-free" \
+      "deb http://deb.debian.org/debian-security bullseye-security main contrib non-free" \
+      "deb http://deb.debian.org/debian bullseye-updates main contrib non-free" \
+      > /etc/apt/sources.list
+    rm -f /etc/apt/sources.list.d/*
     apt-get clean
     rm -rf /var/lib/apt/lists/*
     ;;
@@ -118,8 +124,13 @@ if [ -n "${REPODEB_URL:-}" ]; then
 fi
 # Optional prebuilt dependency debs (never nested-build other projects).
 if ls /work/deps/*.deb >/dev/null 2>&1; then
-  dpkg -i /work/deps/*.deb || apt-get -y -f install
+  dpkg -i /work/deps/*.deb || true
+  apt-get -y -f install --no-install-recommends --fix-missing || true
 fi
+# Peer -dev packages often Requires: glib/curl/zlib via .pc but omit -dev Depends.
+apt-get install -y -qq --no-install-recommends --fix-missing \
+  libglib2.0-dev libcurl4-openssl-dev zlib1g-dev libicu-dev bash-builtins \
+  pkg-config 2>/dev/null || true
 if [ -f debian/control ]; then
   mk-build-deps -i -r -t "apt-get -y -qq --no-install-recommends --fix-missing"
 fi
