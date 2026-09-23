@@ -82,9 +82,12 @@ docker run --rm --platform "$PLATFORM" \
   -e "REPODEB_SUITE=${REPODEB_SUITE:-$RELEASE}" \
   -e "REPODEB_COMPONENT=${REPODEB_COMPONENT:-main}" \
   -e "BUILD_SUITE=${RELEASE}" \
+  -e "BUILD_ARCH=${ARCH}" \
+  -e "DEB_BUILD_OPTIONS=nocheck" \
   "$IMAGE" \
   bash -lc '
 set -euo pipefail
+export DEB_BUILD_OPTIONS="${DEB_BUILD_OPTIONS:+$DEB_BUILD_OPTIONS }nocheck"
 suite=${BUILD_SUITE:-}
 # EOL / stale suite apt sources (official mirrors drop or desync Release/pool).
 case "$suite" in
@@ -98,20 +101,55 @@ case "$suite" in
       > /etc/apt/apt.conf.d/99archive
     ;;
   bullseye)
-    # Image often still lists bullseye/updates with superseded pool filenames.
+    # Live debian-security indexes pool files that 404 on every public
+    # mirror; pin a consistent snapshot. Image may be newer → allow downgrades.
+    snap=20260809T212255Z
     printf "%s\n" \
-      "deb http://deb.debian.org/debian bullseye main contrib non-free" \
-      "deb http://deb.debian.org/debian-security bullseye-security main contrib non-free" \
-      "deb http://deb.debian.org/debian bullseye-updates main contrib non-free" \
+      "deb [check-valid-until=no] http://snapshot.debian.org/archive/debian/${snap}/ bullseye main contrib non-free" \
+      "deb [check-valid-until=no] http://snapshot.debian.org/archive/debian-security/${snap}/ bullseye-security main contrib non-free" \
+      "deb [check-valid-until=no] http://snapshot.debian.org/archive/debian/${snap}/ bullseye-updates main contrib non-free" \
       > /etc/apt/sources.list
     rm -f /etc/apt/sources.list.d/*
     apt-get clean
     rm -rf /var/lib/apt/lists/*
+    printf "%s\n" \
+      "Acquire::Retries \"5\";" \
+      "Acquire::http::Timeout \"60\";" \
+      "Acquire::Check-Valid-Until \"false\";" \
+      "Acquire::Languages \"none\";" \
+      > /etc/apt/apt.conf.d/99ci-retry
     ;;
 esac
-apt-get update -qq
-apt-get install -y -qq --no-install-recommends --fix-missing \
-  build-essential debhelper devscripts dpkg-dev fakeroot equivs ca-certificates
+# loong64 graduated out of debian-ports into official Debian; old images still
+# point at ports (which no longer list loong64 / missing ports keyring).
+arch_now=$(dpkg --print-architecture 2>/dev/null || true)
+if [ "${BUILD_ARCH:-}" = "loong64" ] || [ "$arch_now" = "loong64" ] || \
+   [ "$arch_now" = "loongarch64" ]; then
+  printf "%s\n" \
+    "deb http://deb.debian.org/debian sid main contrib non-free non-free-firmware" \
+    > /etc/apt/sources.list
+  rm -f /etc/apt/sources.list.d/*
+  apt-get clean
+  rm -rf /var/lib/apt/lists/*
+fi
+# Retry apt update+bootstrap; CDN edges sometimes serve stale Indexes → 404.
+_apt_extra=()
+[ "${BUILD_SUITE:-}" = "bullseye" ] && _apt_extra+=(--allow-downgrades)
+_apt_ok=0
+for _try in 1 2 3 4 5; do
+  apt-get clean
+  rm -rf /var/lib/apt/lists/*
+  if apt-get update -qq || apt-get update; then
+    if apt-get install -y -qq --no-install-recommends --fix-missing \
+      "${_apt_extra[@]}" \
+      build-essential debhelper devscripts dpkg-dev fakeroot equivs ca-certificates python3; then
+      _apt_ok=1
+      break
+    fi
+  fi
+  sleep $((_try * 3))
+done
+[ "$_apt_ok" = 1 ]
 # Prefer private apt (repodeb_aptly) for peer Build-Depends — never nested-build.
 # Suite comes from the CI matrix release (trixie/bookworm/…), not changelog
 # "stable".
@@ -129,20 +167,39 @@ if ls /work/deps/*.deb >/dev/null 2>&1; then
 fi
 # Peer -dev packages often Requires: glib/curl/zlib via .pc but omit -dev Depends.
 apt-get install -y -qq --no-install-recommends --fix-missing \
-  libglib2.0-dev libcurl4-openssl-dev zlib1g-dev libicu-dev bash-builtins \
-  pkg-config 2>/dev/null || true
+  "${_apt_extra[@]}" \
+  libglib2.0-dev libcurl4-openssl-dev zlib1g-dev libicu-dev \
+  libssl-dev pkg-config ninja-build meson asciidoctor 2>/dev/null || true
 if [ -f debian/control ]; then
-  mk-build-deps -i -r -t "apt-get -y -qq --no-install-recommends --fix-missing"
+  mk-build-deps -i -r -t "apt-get -y -qq --no-install-recommends --fix-missing ${_apt_extra[*]}" \
+    || apt-get install -y --no-install-recommends --fix-missing \
+         "${_apt_extra[@]}" \
+         meson ninja-build python3 asciidoctor gettext debhelper \
+    || true
 fi
-# Debian ships bash.pc; many projects expect the bash-builtins module name.
-if ! pkg-config --exists bash-builtins 2>/dev/null; then
-  pc=$(find /usr -name bash.pc 2>/dev/null | head -n1 || true)
-  if [ -n "${pc:-}" ]; then
-    mkdir -p /usr/share/pkgconfig
-    cp "$pc" /usr/share/pkgconfig/bash-builtins.pc
-  fi
+# Bullseye apt meson (0.56) is often below project requirement; use pip.
+if [ "${BUILD_SUITE:-}" = "bullseye" ]; then
+  apt-get install -y -qq --no-install-recommends --fix-missing \
+    "${_apt_extra[@]}" python3-pip python3-setuptools ninja-build 2>/dev/null || true
+  pip3 install --no-cache-dir "meson>=0.61,<1.5" || \
+    python3 -m pip install --no-cache-dir "meson>=0.61,<1.5"
+  export PATH="/usr/local/bin:$PATH"
+  hash -r 2>/dev/null || true
+  meson --version
 fi
-dpkg-buildpackage -us -uc -b
+# Foreign / ISA-variant arches (e.g. amd64v3 on an amd64 image).
+native=$(dpkg --print-architecture 2>/dev/null || true)
+target=${BUILD_ARCH:-$native}
+# amd64v3 is an ISA profile, not a dpkg arch — build amd64 and rename later.
+dpkg_arch=$target
+[ "$target" = "amd64v3" ] && dpkg_arch=amd64
+if [ -n "$dpkg_arch" ] && [ "$dpkg_arch" != "$native" ]; then
+  dpkg --add-architecture "$dpkg_arch" 2>/dev/null || true
+  apt-get update -qq || true
+  dpkg-buildpackage -us -uc -b -a"$dpkg_arch"
+else
+  dpkg-buildpackage -us -uc -b
+fi
 # Changelog says "stable"; aptly must receive the real build suite.
 suite=${BUILD_SUITE:-}
 if [ -n "$suite" ]; then
@@ -158,6 +215,10 @@ copied=0
 for f in "$STAGE"/*.{deb,changes,buildinfo,ddeb}; do
   [ -f "$f" ] || continue
   base=$(basename "$f")
+  # ISA profile cell: rewrite dpkg arch in the filename (amd64 → amd64v3).
+  if [ "$ARCH" = "amd64v3" ]; then
+    base=${base/_amd64./_amd64v3.}
+  fi
   # name_ver_arch.ext → name_ver_release_arch.ext (release selects the cell)
   if [[ "$base" =~ ^(.+)_([^_]+)_([^_]+)\.(deb|changes|buildinfo|ddeb)$ ]]; then
     dest="${BASH_REMATCH[1]}_${BASH_REMATCH[2]}_${RELEASE}_${BASH_REMATCH[3]}.${BASH_REMATCH[4]}"

@@ -1,9 +1,12 @@
 naan (1.0.7) stable; urgency=medium
 
-  * CI: sync with bas-c (component main, raspi_bookworm armhf/v6,
-    uos/kylin loong64-only, RPM bash-builtins via bash).
+  * CI: sync bas-c (UCRT x64/arm64, drop cygwin, reponupkg_forgejo,
+    WinGet/Scoop/Choco manifests).
+  * CI publish-private: REPORPM :1993; REPONUPKG :2080 (not git :1544).
+  * CI: sync bas-c build-deb/rpm harden + matrix images + release verify.
+  * CI: install lenik/bas-c release packages before building (deps.conf).
 
- -- Lenik (谢继雷) <lenik@bodz.net>  Sun, 20 Sep 2026 22:58:23 +0800
+ -- Lenik (谢继雷) <lenik@bodz.net>  Mon, 21 Sep 2026 17:14:22 +0800
 
 naan (1.0.6) stable; urgency=medium
 

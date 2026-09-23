@@ -1,11 +1,18 @@
 #!/usr/bin/env bash
-# Publish built packages to private repos (repodeb_aptly / reporpm_createrepo-c).
+# Publish built packages to private repos
+# (repodeb_aptly / reporpm_createrepo-c / reponupkg_forgejo).
 #
 # Preferred (CI / anonymous):
 #   REPODEB_URL=http://host:1130   — PUT /upload/<suite>/ + GET /process?sync=1
-#   REPORPM_URL=http://host:2505   — PUT /upload/ + GET /rescan?sync=1
+#   REPORPM_URL=http://host:1993   — PUT /upload/ + GET /rescan?sync=1
 #   REPORPM_USER / REPORPM_PASS    — required for reporpm (auth) unless
 #                                    REPORPM_ANON=1 and the server allows it
+#   REPONUPKG_URL=http://host:2080/api/packages/<owner>/nuget
+#                                    — Forgejo NuGet (reponupkg_forgejo)
+#   REPONUPKG_TOKEN                — Forgejo PAT (package write)
+#   REPONUPKG_OWNER                — Forgejo owner (default: extracted from URL)
+#
+# Legacy aliases: REPONUGET_URL/REPONUGET_API_KEY → REPONUPKG_*
 #
 # Deb suite is taken from the artifact name / path (debian-<suite>-<arch>),
 # never from debian/changelog Distribution: (projects use "stable").
@@ -20,13 +27,16 @@ REPODEB_URL=${REPODEB_URL:-}
 REPORPM_URL=${REPORPM_URL:-${RPM_REPO_URL:-}}
 REPORPM_USER=${REPORPM_USER:-${RPM_REPO_USER:-}}
 REPORPM_PASS=${REPORPM_PASS:-${RPM_REPO_PASS:-}}
+REPONUPKG_URL=${REPONUPKG_URL:-${REPONUGET_URL:-${NUGET_REPO_URL:-}}}
+REPONUPKG_TOKEN=${REPONUPKG_TOKEN:-${REPONUGET_API_KEY:-${NUGET_API_KEY:-${FORGEJO_TOKEN:-}}}}
+REPONUPKG_OWNER=${REPONUPKG_OWNER:-${FORGEJO_OWNER:-}}
 
-# Infer aptly suite from zip/path/filename. Ignore changelog "stable".
+_ARCH_RE='amd64|amd64v3|arm64|armhf|i386|riscv64|loong64|loongarch64|ppc64el|s390x|all'
+
 infer_deb_suite() {
   local hint=$1
   local base suite
   base=$(basename "$hint")
-  # bas-c-debian-trixie-amd64.zip / debian-trixie-amd64 / …_trixie_amd64.deb
   if [[ "$base" =~ debian-([A-Za-z0-9._+-]+)- ]]; then
     echo "${BASH_REMATCH[1]}"
     return 0
@@ -35,7 +45,7 @@ infer_deb_suite() {
     echo "${BASH_REMATCH[1]}"
     return 0
   fi
-  if [[ "$base" =~ _([A-Za-z0-9._+-]+)_(amd64|arm64|armhf|i386|riscv64|loong64|loongarch64|all)\.(deb|changes|buildinfo|ddeb)$ ]]; then
+  if [[ "$base" =~ _([A-Za-z0-9._+-]+)_(${_ARCH_RE})\.(deb|changes|buildinfo|ddeb)$ ]]; then
     suite=${BASH_REMATCH[1]}
     case "$suite" in
       stable|unstable|testing|experimental|sid) ;;
@@ -59,8 +69,6 @@ rewrite_changes_distribution() {
   shopt -u nullglob
 }
 
-# Strip CI-embedded suite from filenames so aptly Files: checksums match.
-# name_ver_suite_arch.ext → name_ver_arch.ext
 normalize_deb_basenames() {
   local dir=$1
   local f base dest
@@ -68,14 +76,13 @@ normalize_deb_basenames() {
   for f in "$dir"/*.{deb,changes,buildinfo,ddeb}; do
     [ -f "$f" ] || continue
     base=$(basename "$f")
-    if [[ "$base" =~ ^(.+)_([^_]+)_([A-Za-z0-9._+-]+)_(amd64|arm64|armhf|i386|riscv64|loong64|loongarch64|all)\.(deb|changes|buildinfo|ddeb)$ ]]; then
+    if [[ "$base" =~ ^(.+)_([^_]+)_([A-Za-z0-9._+-]+)_(${_ARCH_RE})\.(deb|changes|buildinfo|ddeb)$ ]]; then
       case "${BASH_REMATCH[3]}" in
         stable|unstable|testing|experimental|sid) continue ;;
       esac
       dest="${BASH_REMATCH[1]}_${BASH_REMATCH[2]}_${BASH_REMATCH[4]}.${BASH_REMATCH[5]}"
       if [ "$base" != "$dest" ]; then
         mv -f "$f" "$dir/$dest"
-        # Keep Files: lines inside .changes consistent after rename.
         if [[ "$dest" == *.changes ]]; then
           sed -i "s/${base%.changes}/${dest%.changes}/g" "$dir/$dest" || true
         fi
@@ -163,7 +170,52 @@ publish_rpm() {
   echo "publish-private: uploaded $remote"
 }
 
+# Forgejo NuGet (reponupkg_forgejo → repogit_forgejo packages).
+publish_nupkg() {
+  local nupkg=$1
+  if [ -z "${REPONUPKG_URL:-}" ]; then
+    echo "publish-private: skip nupkg (REPONUPKG_URL unset)"
+    return 0
+  fi
+  if [ -z "${REPONUPKG_TOKEN:-}" ]; then
+    echo "publish-private: ERROR: REPONUPKG_TOKEN required for $nupkg" >&2
+    return 1
+  fi
+  local url owner base
+  url=${REPONUPKG_URL%/}
+  # Accept either .../nuget or .../nuget/index.json
+  url=${url%/index.json}
+  base=$(basename "$nupkg")
+  owner=${REPONUPKG_OWNER:-}
+  if [ -z "$owner" ] && [[ "$url" =~ /api/packages/([^/]+)/nuget ]]; then
+    owner=${BASH_REMATCH[1]}
+  fi
+  owner=${owner:-lenik}
+  # Prefer multipart form (Gitea/Forgejo); fall back to raw PUT + token auth.
+  if curl -fsS -X PUT -u "${owner}:${REPONUPKG_TOKEN}" \
+      -F "package=@${nupkg}" \
+      "$url" ; then
+    :
+  else
+    curl -fsS -X PUT \
+      -H "Authorization: token ${REPONUPKG_TOKEN}" \
+      -H "Content-Type: application/octet-stream" \
+      --data-binary @"$nupkg" \
+      "$url"
+  fi
+  echo "publish-private: uploaded nupkg $base → $url"
+}
+
 shopt -s nullglob
+for nupkg in "$DIST_ROOT"/*.nupkg "$DIST_ROOT"/*/*.nupkg; do
+  [ -f "$nupkg" ] || continue
+  # Skip chocolatey staging copies under windows-manifests/choco if any
+  case "$nupkg" in
+    */windows-manifests/*) continue ;;
+  esac
+  publish_nupkg "$nupkg" || true
+done
+
 for z in "$DIST_ROOT"/*/*.zip "$DIST_ROOT"/*.zip; do
   [ -f "$z" ] || continue
   tmp=$(mktemp -d)
@@ -195,6 +247,10 @@ for z in "$DIST_ROOT"/*/*.zip "$DIST_ROOT"/*.zip; do
       *.src.rpm) continue ;;
     esac
     publish_rpm "$r" || true
+  done
+  for nupkg in "$tmp"/*.nupkg; do
+    [ -f "$nupkg" ] || continue
+    publish_nupkg "$nupkg" || true
   done
   rm -rf "$tmp"
 done
